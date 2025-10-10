@@ -1,6 +1,6 @@
-baseURL: "https://pushkardave.com/"
+baseURL: "https://Zhu-Chenyu.github.io/"
 languageCode: "en-us"
-title: "Pushkar's Portfolio"
+title: "Chenyu's Portfolio"
 theme: hugo-profile
 
 outputs:
@@ -32,12 +32,17 @@ Menus:
     - identifier: github
       name: Github
       title: github Link
-      url: https://github.com/rdlynx19
+      url: https://github.com/Zhu-Chenyu
       weight: 2
     - identifier: resume
       name: Resume
       title: resume Link
       url: /resume
+      weight: 2
+    - identifier: LinkedIn
+      name: LinkedIn
+      title: LinkedIn Profile
+      url: https://www.linkedin.com/in/chenyu-zhu/
       weight: 2
 
     #Dropdown menu
@@ -59,8 +64,8 @@ Menus:
     #   weight: 2
 
 params:
-  title: "Pushkar's Portfolio"
-  description: MS Robotics @ Northwestern
+  title: "Chenyu Zhu"
+  description: MS Robotics 26' @ Northwestern
   # staticPath: ""  # The path to serve the static files from
   favicon: "/headshot-modified.png"
 
@@ -115,7 +120,7 @@ params:
     align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
     # brandLogo:  # Logo for the brand | default is the favicon variable
     # showBrandLogo: true # Show brand logo in nav bar | default is true
-    brandName: "Pushkar Dave" # Brand name for the brand | default is the title variable
+    brandName: "Chenyu Zhu" # Brand name for the brand | default is the title variable
     disableSearch: true
     # searchPlaceholder: "Search"
     stickyNavBar:
@@ -192,56 +197,7 @@ params:
   #         url: "https://example.com"
   #       content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
 
-  #     - job: "Software Developer"
-  #       company: "Amazon"
-  #       companyUrl: "https://example.com"
-  #       date: "Sep 2020 - Dec 2021"
-  #       featuredLink:
-  #         enable: true
-  #         url: "https://example.com"
-  #       info:
-  #         enable: true
-  #         content: I worked as a software developer for more than one year in Amazon.
-  #       content: |
-  #         I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
-  #         - Lead backend developer for a product.
-  #         - Created a frontend design for a product.
-
-  #     - job: "Junior Software Developer"
-  #       company: "Apple"
-  #       companyUrl: "https://example.com"
-  #       date: "Jan 2020 - Aug 2020"
-  #       info:
-  #         enable: false
-  #       featuredLink:
-  #         enable: true
-  #         url: "https://example.com"
-  #       content: |
-  #         I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
-  #         - Lead backend developer for a product.
-  #         - Created a frontend design for a product.
-
-  #     - job: "UI/UX Designer"
-  #       company: "Netflix"
-  #       companyUrl: "https://example.com"
-  #       date: "June 2017 - Nov 2019"
-  #       featuredLink:
-  #         enable: true
-  #         url: "https://example.com"
-  #       content: |
-  #         I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
-  #         - Lead backend developer for a product.
-  #         - Created a frontend design for a product.
-
-  #     - job: "Product Designer"
-  #       company: "Google"
-  #       companyUrl: "https://example.com"
-  #       date: "Feb 2016 - Mar 2017"
-  #       content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
-
+ 
   # Education
   # education:
   #   enable: false
@@ -307,57 +263,42 @@ params:
   #       content: Contributed to a open source project.
   #       url: https://example.com
 
-  featured_projects:
+  featured:
     enable: true
     title: "Featured Projects"
     items:
 
-    - title: Collaborative Mapping using a Quadrotor and Quadruped
-      content: Building Occupancy Grids using RGBD odometry and 3D point clouds in a Multi-Robot setup
-      image: /images/projects/multi-robot/mrm-viz.gif
-      featured:
-        name: Read More
-        link: /multi-robot-mapping
-      badges:
-        - "C++"
-        - "ROS2"
-        - "Mapping"
-        - "Localization"
-        - "Docker"
-      links:
-        - icon: fab fa-github
-          url: https://github.com/rdlynx19/multi-robot-mapping
+    - title:  Who Stole My Pen? - Vision-Guided Robot Pen Grasping
+      content: Robotic arm detects a pen via image processing (camera calibration, masking, centroid detection), plans a grasping path, picks up pen and returns it to home.  
+      image: /images/projects/robot-pen-grasping/pen_grasping.gif  # or .gif/.png  
+      featured:  
+        name: Read More  
+        link: /robot-pen-grasping  
+      badges:  
+        - "Python"  
+        - "Computer Vision"  
+        - "Path Planning"  
+        - "Robot Control"  
+      links:  
+        - icon: fab fa-github  
+          url: https://github.com/Zhu-Chenyu/Who-stole-my-pen  
 
-    - title: Franka Plays Whack a Mole
-      content: ROS2 Package to make the 7-DOF Franka Robot play Whack-a-Mole using MoveIt2 and OpenCV.
-      image: /images/projects/franka-mole/franka.gif
-      featured:
-          name: Read More
-          link: /franka-whack-a-mole
-      badges:
-          - "Python"
-          - "ROS2"
-          - "MoveIt2"
-          - "OpenCV"
-      links:
-          - icon: fab fa-github
-            url: https://github.com/ME495-EmbeddedSystems/finalproject-whack-a-mole
 
-    - title: Feedback Control of Omnidirectional Mobile Manipulator 
-      content: Controlling a KUKA YouBot to pick and place a cube in CoppeliaSim
-      image: /images/projects/kuka-sim/you-bot.gif
-      featured:
-        name: Read More
-        link: /kuka-sim
-      badges:
-        - "Python"
-        - "Kinematics"
-        - "CoppeliaSim"
-        - "Trajectory Generation"
-        - "Motion Planning"
-      links:
-        - icon: fab fa-github
-          url: https://github.com/rdlynx19/KUKAYouBotSim
+    - title: Reinforcement Learning for Base Station Optimization  
+      content: Compare multiple RL algorithms to jointly optimize throughput and energy consumption across a network of cellular base stations.  
+      image: /images/projects/base-station-rl/policy_performance_comparison.png  
+      featured:  
+        name: Read More  
+        link: /base-station-optimization  
+      badges:  
+        - "Python"  
+        - "Reinforcement Learning"  
+        - "Simulation"  
+        - "Optimization"  
+      links:  
+        - icon: fab fa-github  
+          url: https://github.com/Zhu-Chenyu/DRL-for-base-station-optimization  
+
        
 
 
@@ -369,164 +310,51 @@ params:
     items:
 
 
-      - title: Knuckles - Music Instrument
-        content: A digital music instrument modeled after the Knuckle-style controllers
-        image: /images/projects/knuckles/playback.gif
-        featured:
-          name: Read More
-          link: /knuckles
-        badges:
-          - "Arduino"
-          - "Max MSP"
-          - "Digital Music"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/rdlynx19/knuckles-max
+      - title: Ants vs SomeBees (Game Development)  
+        content: Tower defense–style game coded in Python. Designed behaviors for various kinds of ants and bees to select, managed game logic and GUI.  
+        image: /images/projects/ants-vs-bees/gameplay.gif  
+        featured:  
+          name: Read More  
+          link: /ants-vs-bees  
+        badges:  
+          - "Python"  
+          - "Game Dev"  
+          - "OOP"  
+          - "GUI"  
+        links:  
+          - icon: fab fa-github  
+            url: https://github.com/Zhu-Chenyu/Ants-vs-Some-Bees  
 
-      - title: Multibody Dynamics Simulation
-        content: Simulating the physics of a jack bouncing around in a box
-        image: /images/projects/jack-sim/jack-sim.gif
-        featured:
-          name: Read More
-          link: /jack-box-simulation
-        badges:
-          - "Python"
-          - "Dynamics"
-          - "Lagrangian Mechanics"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/rdlynx19/jack-box-sim
-      
-      - title: Low Level Motor Controller 
-        content: PID Control of a DC Motor using a custom PIC32MX170F256B microcontroller dev-board
-        image: /images/projects/motor-controller/motor.gif
-        featured:
-          name: Read More
-          link: /motor-controller
-        badges:
-          - "C"
-          - "PIC32"
-          - "Mechatronics"
-          - "PID Control"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/rdlynx19/pic32MotorControl
 
-      - title: Quadrotor Control and Trajectory Generation
-        content: Generating a minimum snap trajectory and implementing PD control on a quadrotor
-        image: /images/projects/quad-matlab/helix-quad.gif
-        featured:
-          name: Read More
-          link: /quad-trajectory
-        badges:
-          - "MATLAB"
-          - "Trajectory Generation"
-          - "Control"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/rdlynx19/quadrotor-control-and-trajectory-generation
+      - title: Intuitive Surgical Intern
+        content: Conducted an experimental study on the cooling performance of ultrasonic scalpels with various coatings and materials using the Da Vinci Surgical System. Controlled the robot to execute precise cutting and cooling tests, collected temperature-decay data, and modeled the results by curve fitting to derive cooling coefficients for each scalpel type.  
+        image: /images/internships/intuitive/da_vinci_cooling_test.png
+        featured:  
+          name: Read More  
+          link: /intuitive-surgical  
+        badges:  
+          - "Robotics"  
+          - "Experiment Design"  
+          - "Data Modeling"  
+          - "Medical Devices"
 
-      # - title: Image Denoising using Convolutional Autoencoders
-      #   content: Implementation of an image-denoising autoencoder model on the MNIST dataset
-      #   image: /images/projects/denoising/image-denoising.png
-      #   featured:
-      #     name: Read More
-      #     link: /image-denoising
-      #   badges:
-      #     - "Python"
-      #     - "Deep Learning"
-      #     - "MNIST"
-      #   links:
-      #     - icon: fab fa-github
-      #       url: https://github.com/rdlynx19/ImageDenoisingAE
-    
-      # - title: Tethered UAV 2D Simulation
-      #   content: Simulation of a tethered UAV using Newtonian Dynamics and PD Control
-      #   image: /images/projects/taut-cable/taut-cable.gif
-      #   featured:
-      #     name: Read More
-      #     link: /taut-cable-sim
-      #   badges:
-      #     - "Python"
-      #     - "Dynamics"
-      #     - "Control"
-      #   links:
-      #     - icon: fab fa-github
-      #       url: https://github.com/rdlynx19/taut-cable-2D-control 
-      
-      - title: Trajectory Generation using Particle Swarm Optimization (PSO)
-        content: Solving the Traveling Salesman Problem (TSP) using PSO to generate quadrotor trajectories
-        image: /images/projects/pso-trajectory/pso-tracer.gif
-        featured:
-          name: Read More
-          link: /pso-trajectory
-        badges:
-          - "C++"
-          - "Particle Swarm Optimization"
-          - "Trajectory Generation"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/rdlynx19/pso-trajectory
 
-      - title: SenseVR - SteamVR Compatible Headset
-        content: Custom Designed Virtual Reality Headset based on HadesVR
-        image: /images/projects/headset/headset2.JPG
-        featured:
-          name: Read More
-          link: /headset
-        badges:
-          - "Virtual Reality"
-          - "SteamVR"
-          - "Arduino"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/rdlynx19/SenseVR
+            
+      - title: CryoFocus Medical Instruments  
+        content: Designed a novel foldable balloon mechanism for cryoablation catheters. Developed a balloon folding mechanism using metal wires and a sheath, enabling controlled folding along pre-creased regions for safer retraction. The design was granted Patent CN220988900U.  
+        image: /images/internships/cryofocus/balloon_folding.jpg  
+        featured:  
+          name: Read More  
+          link: /cryofocus-patent  
+        badges:  
+          - "Medical Devices"  
+          - "Mechanical Design"  
+          - "Patent"  
+          - "Biomechatronics"  
+        links:  
+          - icon: fas fa-file-alt  
+            url: https://patents.google.com/patent/CN220988900U/en  
 
-      # - title: Rapidly Exploring Random Trees
-      #   content: Implementation of the RRT Path Finding Algorithm
-      #   image: /images/projects/rrt/obstacle-rrt.gif
-      #   featured:
-      #     name: Read More
-      #     link: /rrt-implementation
-      #   badges:
-      #     - "Python"
-      #     - "Path Planning"
-      #     - "RRT"
-      #   links:
-      #     - icon: fab fa-github
-      #       url: https://github.com/rdlynx19/RRT_Challenge
-
-      # - title: Maze Solving using Wavefront Algorithm
-      #   content: Implementation of the Wavefront Path Finding Algorithm
-      #   image: /images/projects/wavefront/maze1.gif
-      #   featured:
-      #     name: Read More
-      #     link: /wavefront-maze
-      #   badges:
-      #     - "Python"
-      #     - "Path Planning"
-      #     - "BFS"
-      #   links:
-      #     - icon: fab fa-github
-      #       url: https://github.com/rdlynx19/maze-solving
-
-      
-      
-
-      # - title: ESP32 Navigation Device 
-      #   content: ESP32 based Visual Navigation device using Bluetooth Communication and Frequency Detection
-      #   image: /images/projects/wayfinder/wayfinder.gif
-      #   featured:
-      #     name: Read More
-      #     link: /wayfinder
-      #   badges:
-      #     - "C++"
-      #     - "ESP32"
-      #     - "Microcontrollers"
-      #   links:
-      #     - icon: fab fa-github
-      #       url: https://github.com/rdlynx19/ESP32-Wayfinder
-      
       
 
   # Contact
@@ -551,9 +379,9 @@ params:
       enable: false
       disableFeaturedImage: false
     socialNetworks:
-      github: https://github.com/rdlynx19
-      linkedin: https://www.linkedin.com/in/pushkar-dave/
-      email: pushkar@u.northwestern.edu
+      github: https://github.com/Zhu-Chenyu
+      linkedin: https://www.linkedin.com/in/chenyu-zhu/
+      email: chenyuzhu2026@u.northwestern.edu
       # twitter: https://twitter.com
       # instagram: https://instagram.com
       # facebook: https://facebook.com
