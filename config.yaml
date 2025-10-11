@@ -290,7 +290,7 @@ params:
 
     - title: Reinforcement Learning for Base Station Optimization  
       content: Compare multiple RL algorithms to jointly optimize throughput and energy consumption across a network of cellular base stations.  
-      image: /images/projects/base-station-rl/policy_performance_comparison.png  
+      image: /images/projects/base-station-rl/DRL.gif 
       featured:  
         name: Read More  
         link: /base-station-optimization  
@@ -346,7 +346,7 @@ params:
             
       - title: CryoFocus Medical Instruments  
         content: Designed a novel foldable balloon mechanism for cryoablation catheters. Developed a balloon folding mechanism using metal wires and a sheath, enabling controlled folding along pre-creased regions for safer retraction. The design was granted Patent CN220988900U.  
-        image: /images/internships/cryofocus/balloon_folding.jpg  
+        image: /images/internships/patent/balloon_retracting.gif  
         featured:  
           name: Read More  
           link: /cryofocus-patent  
