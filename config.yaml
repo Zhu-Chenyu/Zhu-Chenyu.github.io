@@ -277,7 +277,7 @@ params:
       image: /images/projects/robot-pen-grasping/pen_grasping.gif  # or .gif/.png  
       featured:  
         name: Read More  
-        link: /robot-pen-grasping  
+        link: https://github.com/Zhu-Chenyu/Who-stole-my-pen 
       badges:  
         - "Python"  
         - "Computer Vision"  
@@ -293,7 +293,7 @@ params:
       image: /images/projects/base-station-rl/DRL.gif 
       featured:  
         name: Read More  
-        link: /base-station-optimization  
+        link: https://github.com/Zhu-Chenyu/DRL-for-base-station-optimization  
       badges:  
         - "Python"  
         - "Reinforcement Learning"  
@@ -319,7 +319,7 @@ params:
         image: /images/projects/ants-vs-bees/gameplay.gif  
         featured:  
           name: Read More  
-          link: /ants-vs-bees  
+          link: https://github.com/Zhu-Chenyu/Ants-vs-Some-Bees  
         badges:  
           - "Python"  
           - "Game Dev"  
@@ -335,7 +335,7 @@ params:
         image: /images/internships/intuitive/da_vinci_cooling_test.png
         featured:  
           name: Read More  
-          link: /intuitive-surgical  
+          #link: /intuitive-surgical  
         badges:  
           - "Robotics"  
           - "Experiment Design"  
@@ -349,7 +349,7 @@ params:
         image: /images/internships/patent/balloon_retracting.gif  
         featured:  
           name: Read More  
-          link: /cryofocus-patent  
+          link: https://patents.google.com/patent/CN220988900U/en  
         badges:  
           - "Medical Devices"  
           - "Mechanical Design"  
