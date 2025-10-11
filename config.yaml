@@ -277,7 +277,7 @@ params:
       image: /images/projects/robot-pen-grasping/pen_grasping.gif  # or .gif/.png  
       featured:  
         name: Read More  
-        link: https://github.com/Zhu-Chenyu/Who-stole-my-pen 
+        link: /grab_pen 
       badges:  
         - "Python"  
         - "Computer Vision"  
@@ -319,7 +319,7 @@ params:
         image: /images/projects/ants-vs-bees/gameplay.gif  
         featured:  
           name: Read More  
-          link: https://github.com/Zhu-Chenyu/Ants-vs-Some-Bees  
+          link: /ants_vs_bees  
         badges:  
           - "Python"  
           - "Game Dev"  
