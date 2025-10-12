@@ -13,7 +13,8 @@ tags:
 image: /images/projects/robot-pen-grasping/pen_grasping.gif
 description: "A complete robotic vision and control pipeline for detecting, localizing, and grasping a pen using an Interbotix PX100 robot arm and RealSense depth camera."
 toc: true
-mathjax: false
+mathjax: true
+math: true
 repoName: grab_pen
 ---
 
@@ -75,10 +76,7 @@ To allow the robot to act based on camera observations, a **transformation matri
   - **Rotation matrix (R)** via vector alignment between point clouds.
   - **Translation vector (T)** by centroid offset.
 
-Resulting transformation:  
-\[
-\mathbf{P_{robot}} = R \times \mathbf{P_{camera}} + T
-\]
+
 
 <div style="display:flex; justify-content:center; gap:20px;">
   <img src="/images/projects/robot-pen-grasping/picture2.png" width="48%" alt=" Before calibration">
@@ -121,4 +119,3 @@ Resulting transformation:
 This project was developed as part of a **Northwestern University Hackathon** under the guidance and design framework of **Professor Matthew Elwin**.  
 His mentorship and course materials provided the foundation for integrating computer vision, robotic calibration, and motion control into a cohesive system.  
 Special thanks to the **Northwestern MS Robotics 2025 cohort** for their collaboration and support that made this project possible.
-
