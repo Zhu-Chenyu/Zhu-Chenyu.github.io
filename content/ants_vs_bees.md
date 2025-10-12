@@ -32,9 +32,6 @@ This project demonstrates strong **object-oriented design**, **event-driven prog
 - **Terrain:** Water cells kill non-waterproof ants instantly.  
 - **Victory:** Eliminate all bees before any reach the nest.
 
-<div style="display: flex; justify-content: center;">
-  <img src="/images/projects/ants-vs-bees/overview.png" alt="Ants vs SomeBees overview" style="width: 80%; height: auto;"/>
-</div>
 
 ---
 
@@ -58,10 +55,10 @@ This project demonstrates strong **object-oriented design**, **event-driven prog
 
 ## Combat Logic
 
-1. **Ants act first:** attack, harvest, or defend.
-2. **Bees act second:** move toward the Queen or sting the nearest ant.
-3. **Health check:** ants or bees with ≤ 0 health are removed.
-4. **Loop continues** until either all bees die (win) or the Queen is reached (lose).
+- **Ants act first:** attack, harvest, or defend.
+- **Bees act second:** move toward the Queen or sting the nearest ant.
+- **Health check:** ants or bees with ≤ 0 health are removed.
+- **Loop continues** until either all bees die (win) or the Queen is reached (lose).
 
 This simple sequence produces surprisingly complex strategies when combined with different ant types.
 
@@ -79,9 +76,6 @@ The codebase emphasizes **class inheritance**, **encapsulation**, and **polymorp
 
 Each new ant type is a subclass of `Ant`, allowing for **clean feature expansion** without modifying existing logic.
 
-<div style="display: flex; justify-content: center;">
-  <img src="/images/projects/ants-vs-bees/class_diagram.png" alt="Class hierarchy diagram" style="width: 75%; height: auto;"/>
-</div>
 
 ---
 

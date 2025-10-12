@@ -89,10 +89,10 @@ Resulting transformation:
 ---
 
 ### 5. Pen Grasping Execution
-1. Convert the detected pen’s pixel and depth data into **3D camera coordinates**.  
-2. Apply the calibration transformation to compute **robot coordinates**.  
-3. Command the PX100 arm to move the end-effector to the computed point.  
-4. Close the gripper — the pen is caught red-handed!
+- Convert the detected pen’s pixel and depth data into **3D camera coordinates**.  
+- Apply the calibration transformation to compute **robot coordinates**.  
+- Command the PX100 arm to move the end-effector to the computed point.  
+- Close the gripper — the pen is caught red-handed!
 
 <div style="display:flex; justify-content:center;">
   <img src="/images/projects/robot-pen-grasping/pen_grasping.gif" width="85%" alt="Robot grasping the pen">
@@ -121,3 +121,4 @@ Resulting transformation:
 This project was developed as part of a **Northwestern University Hackathon** under the guidance and design framework of **Professor Matthew Elwin**.  
 His mentorship and course materials provided the foundation for integrating computer vision, robotic calibration, and motion control into a cohesive system.  
 Special thanks to the **Northwestern MS Robotics 2025 cohort** for their collaboration and support that made this project possible.
+

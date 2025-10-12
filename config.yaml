@@ -330,12 +330,12 @@ params:
             url: https://github.com/Zhu-Chenyu/Ants-vs-Some-Bees  
 
 
-      - title: Intuitive Surgical Intern
-        content: Conducted an experimental study on the cooling performance of ultrasonic scalpels with various coatings and materials using the Da Vinci Surgical System. Controlled the robot to execute precise cutting and cooling tests, collected temperature-decay data, and modeled the results by curve fitting to derive cooling coefficients for each scalpel type.  
+      - title: Experimental Study on Thermal Performance of Robotic Surgical Tools
+        content: During my internship in Intuitive Surgical, I conducted an experimental study on the cooling performance of ultrasonic scalpels with various coatings and materials using the Da Vinci Surgical System. Controlled the robot to execute precise cutting and cooling tests, collected temperature-decay data, and modeled the results by curve fitting to derive cooling coefficients for each scalpel type.  
         image: /images/internships/intuitive/da_vinci_cooling_test.png
         featured:  
           name: Read More  
-          #link: /intuitive-surgical  
+          link: /intuitive
         badges:  
           - "Robotics"  
           - "Experiment Design"  
@@ -344,7 +344,7 @@ params:
 
 
             
-      - title: CryoFocus Medical Instruments  
+      - title: Innovative Balloon Retraction System (Structure Design Patent)  
         content: Designed a novel foldable balloon mechanism for cryoablation catheters. Developed a balloon folding mechanism using metal wires and a sheath, enabling controlled folding along pre-creased regions for safer retraction. The design was granted Patent CN220988900U.  
         image: /images/internships/patent/balloon_retracting.gif  
         featured:  
