@@ -3,3 +3,11 @@ zhuc1915@gmail.com
 https://zhu-chenyu.github.io/
 https://www.linkedin.com/in/chenyu-zhu/
 https://github.com/Zhu-Chenyu
+
+Built, coded, designed, and debugged a competition robot from scratch within 2 weeks during internship in General Electrics. It was a group work, and I was mainly listening to feedbacks from group members and finish the work independently. Eventually got a 3rd place among 10 teams. (This was my first coding and designing a robot.)
+
+Coded and debugged a robot that can locate a pen using RealSense camera and find a collision-free path to pick it up. All finished in 2 days in my hackathon(prepare course) for graduate study.
+
+ Calculus knowledge isn't required in my high school, so I was first exposed to it in my undergraduate. However, I still managed to get top 10% in a very hard calculus exam in class when most of my classmates had learned calculus for 2 years.
+
+ 
