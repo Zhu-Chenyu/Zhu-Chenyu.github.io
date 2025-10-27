@@ -57,5 +57,5 @@ September 2021 - June 2025
 To contact me, please email to:
 chenyuzhu2026@u.northwestern.edu \
 I'm happy to chat about robots, tennis, guitar and vehicles.\
-For my resume, please refer to: [Pushkar's Resume](https://pushkardave.com/resume)
+For my resume, please refer to: [Chenyu's Resume](https://zhu-chenyu.github.io/resume)
  
