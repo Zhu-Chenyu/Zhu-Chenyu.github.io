@@ -12,21 +12,26 @@ socialShare: false
 ---
 ## About Me
 
-
 <aside class="aboutImg">
     <div class="aboutImg-content">
         <p align="left">
             Hi! I am an MS Robotics Student at Northwestern University. Previously, I was an undergraduate student at Southeast University.<br>
-            My goal is to develop autonomous driving vehicle that everyone can fully rely on!
+            My goal is to develop autonomous driving vehicle that everyone can confidently rely on!
         </p>
-    <img src="/images/misc/big_photo.jpg"  alt="drawing" />
+        <p class="contact-intro">
+            You can reach me at <a href="mailto:zhuc1915@gmail.com">zhuc1915@gmail.com</a>,  
+            connect with me on <a href="https://www.linkedin.com/in/chenyu-zhu/" target="_blank" rel="noopener">LinkedIn</a>,  
+            or view my resume <a href="/Chenyu_Zhu_resume.pdf" target="_blank" rel="noopener">here</a>.
+        </p>
+    <img src="/images/misc/working_photo.jpg"  alt="drawing" width="800"/>
     </div>
 </aside>
 
 ---
 
 ## Education
-<img align="left" src="/images/misc/nu.jpeg" alt="drawing" width="100" style="margin-right: 15px;"/>
+
+<img align="left" src="/images/misc/nu.jpeg" alt="drawing" width="100" style="margin-right: 20px;"/>
 
 Northwestern University - MS in Robotics
 
@@ -50,12 +55,12 @@ September 2021 - June 2025
 
 <br>
 
----
+<!-- ---
 
 ## Contact
 
 To contact me, please email to:
-chenyuzhu2026@u.northwestern.edu \
+zhuc1915@gmail.com \
 I'm happy to chat about robots, tennis, guitar and vehicles.\
-For my resume, please refer to: [Chenyu's Resume](https://zhu-chenyu.github.io/resume)
+For my resume, please refer to: [Chenyu's Resume](https://zhu-chenyu.github.io/resume) -->
  

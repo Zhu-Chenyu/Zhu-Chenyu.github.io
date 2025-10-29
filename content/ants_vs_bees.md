@@ -7,7 +7,6 @@ tags:
   - Python
   - Game Development
   - Object-Oriented Programming
-  - CS61A
 image: /images/projects/ants-vs-bees/gameplay.gif
 description: "A strategic, turn-based tower defense game where ants defend their colony from invading bees using limited resources and diverse abilities."
 toc: true

@@ -9,7 +9,7 @@ tags:
   - Calibration
   - RealSense
   - Python
-  - ROS
+  - Path Planning
 image: /images/projects/robot-pen-grasping/pen_grasping.gif
 description: "A complete robotic vision and control pipeline for detecting, localizing, and grasping a pen using an Interbotix PX100 robot arm and RealSense depth camera."
 toc: true

@@ -291,7 +291,7 @@ params:
 
     - title: Reinforcement Learning for Base Station Optimization  
       content: Compare multiple RL algorithms to jointly optimize throughput and energy consumption across a network of cellular base stations.  
-      image: /images/projects/base-station-rl/DRL.gif 
+      image: /images/projects/base-station-rl/DRL_slides.gif 
       featured:  
         name: Read More  
         link: https://github.com/Zhu-Chenyu/DRL-for-base-station-optimization  
@@ -397,7 +397,7 @@ params:
 
   # Single pages like blog and post
   singlePages:
-    socialShare: True
+    socialShare: false
     readTime:
       enable: false
       content: "min read"
