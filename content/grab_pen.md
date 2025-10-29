@@ -35,7 +35,7 @@ The project integrates **RGB-D sensing, coordinate transformation, and motion co
 |------------|-------------|
 | **Robot Arm** | [Interbotix PX100](https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html), 5 DOF, controlled via ROS Python API |
 | **Camera** | [Intel RealSense](https://www.intel.com/content/www/us/en/architecture-and-technology/realsense-overview.html), providing synchronized RGB and depth streams |
-| **Environment** | Ubuntu 22.04 / ROS Kilted / Python 3.11 |
+| **Environment** | Ubuntu 24.04 / ROS Kilted / Python 3.12 |
 | **Control Interface** | Interbotix Python API, OpenCV, NumPy |
 
 
