@@ -149,28 +149,39 @@
 
                     <!-- custom menus from the user -->
                     {{ range .Site.Menus.main }}
+                        {{- $u := .URL -}}
+                        {{- $isExternal := or (strings.HasPrefix (lower $u) "http://") (strings.HasPrefix (lower $u) "https://") -}}
                     {{ if .HasChildren }}
                     <!-- Dropdown menu -->
                     <li class="nav-item navbar-text dropdown">
-                        <a class="nav-link dropdown-toggle" href="{{ .URL }}" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{ .Title }}">
-                            {{ .Name }}
+                        <a class="nav-link dropdown-toggle"
+                        href="{{ if $isExternal }}{{ $u }}{{ else }}{{ $u | relURL }}{{ end }}"
+                        {{ if or $isExternal (eq .Params.target "_blank") }}target="_blank" rel="noopener noreferrer"{{ end }}
+                        id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{ .Title }}">
+                        {{ .Name }}
                         </a>
                         <div class="dropdown-menu shadow-lg rounded" aria-labelledby="navbarDropdown">
-                            {{ range .Children }}
-                            <a class="dropdown-item text-center nav-link" href="{{ .URL }}"
-                                title="{{ .Title }}">
-                                {{ .Name }}
-                            </a>
-                            {{ end }}
+                        {{ range .Children }}
+                        {{- $cu := .URL -}}
+                        {{- $childExternal := or (strings.HasPrefix (lower $cu) "http://") (strings.HasPrefix (lower $cu) "https://") -}}
+                        <a class="dropdown-item text-center nav-link"
+                            href="{{ if $childExternal }}{{ $cu }}{{ else }}{{ $cu | relURL }}{{ end }}"
+                            {{ if or $childExternal (eq .Params.target "_blank") }}target="_blank" rel="noopener noreferrer"{{ end }}
+                            title="{{ .Title }}">
+                            {{ .Name }}
+                        </a>
+                        {{ end }}
                         </div>
                     </li>
                     {{else}}
                     <!-- Single menu item -->
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{.URL}}" title="{{ .Title }}">
-                            {{ .Pre }}
-                            {{ .Name }}
+                        <a class="nav-link"
+                        href="{{ if $isExternal }}{{ $u }}{{ else }}{{ $u | relURL }}{{ end }}"
+                        {{ if or $isExternal (eq .Params.target "_blank") }}target="_blank" rel="noopener noreferrer"{{ end }}
+                        title="{{ .Title }}">
+                        {{ .Pre }}
+                        {{ .Name }}
                         </a>
                     </li>
                     {{end}}
