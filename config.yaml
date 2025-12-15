@@ -332,7 +332,7 @@ params:
 
       - title: Ants vs SomeBees (Game Development)  
         content: Tower defense–style game coded in Python. Designed behaviors for various kinds of ants and bees to select, managed game logic and GUI.  
-        image: /images/projects/ants-vs-bees/gameplay.gif  
+        image: /images/projects/ants-vs-bees/gameplay.mp4
         featured:  
           name: Read More  
           link: /ants_vs_bees  
@@ -347,8 +347,8 @@ params:
 
 
       - title: Experimental Study on Thermal Performance of Robotic Surgical Tools
-        content: During my internship in Intuitive Surgical, I conducted an experimental study on the cooling performance of ultrasonic scalpels with various coatings and materials using the Da Vinci Surgical System. Controlled the robot to execute precise cutting and cooling tests, collected temperature-decay data, and modeled the results by curve fitting to derive cooling coefficients for each scalpel type.  
-        image: /images/internships/intuitive/da_vinci_cooling_test.png
+        content: Experimental study on the thermal performance of ultrasonic surgical tools using the Da Vinci Surgical System, focusing on cooling behavior under different coatings and materials.
+        image: /images/internships/intuitive/cooling_cropped.jpg
         featured:  
           name: Read More  
           link: /intuitive
