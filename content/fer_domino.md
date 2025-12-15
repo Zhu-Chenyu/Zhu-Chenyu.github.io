@@ -178,7 +178,7 @@ The system is modular, allowing perception, planning, and execution to be tested
 
 ## Acknowledgments
 
-This project was developed as a **final project for ME495: Embedded Systems in Robotics** at **Northwestern University**.  
-It was completed collaboratively with **Gregory Aiosa**, **Daniel Augustin**, and **Michael Jenz**, under the instruction of **Professor Matthew Elwin**.
+This project was developed as a **final project for ME495: Embedded Systems in Robotics** at **Northwestern University**, under the instruction of **Professor Matthew Elwin**.
+It was completed collaboratively with **Gregory Aiosa**, **Daniel Augustin**, and **Michael Jenz**, whose teamwork and technical contributions were essential to the project’s success.
 
 The project emphasizes real-world robotic system design, highlighting the gap between idealized simulation and physical execution.

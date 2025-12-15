@@ -116,6 +116,6 @@ To allow the robot to act based on camera observations, a **transformation matri
 
 ## Acknowledgments
 
-This project was developed as part of a **Northwestern University Hackathon** under the guidance and design framework of **Professor Matthew Elwin**.  
+This project was developed as part of a **Northwestern University Hackathon** under the guidance and framework design of **Professor Matthew Elwin**.  
 His mentorship and course materials provided the foundation for integrating computer vision, robotic calibration, and motion control into a cohesive system.  
-Special thanks to the **Northwestern MS Robotics 2025 cohort** for their collaboration and support that made this project possible.
+Special thanks to the **Northwestern MS Robotics 2025 cohort** for their collaboration and support, which greatly enriched the development process.
