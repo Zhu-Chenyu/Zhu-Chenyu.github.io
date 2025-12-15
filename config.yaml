@@ -275,7 +275,7 @@ params:
 
     - title: Vision-Guided Domino Placement with Franka Emika Robot
       content: Vision-based robotic system that detects domino positions, plans collision-aware trajectories, and autonomously places dominoes using Franka Emika Robot in ROS 2.
-      image: /images/projects/ur5-domino/domino_demo.gif
+      image: /images/projects/fer_domino/squigle_domino.mp4
       featured:
         name: Read More
         link: /fer_domino

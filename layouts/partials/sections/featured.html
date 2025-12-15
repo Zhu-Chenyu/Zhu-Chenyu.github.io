@@ -24,7 +24,20 @@
                 {{- $isExternal := or (strings.HasPrefix (lower $link) "http://") (strings.HasPrefix (lower $link) "https://") -}}
                 <div class="card my-3 h-100 position-relative" title="{{ .title }}">
                     <div class="card-head overflow-hidden">
-                    <img class="card-img-top" src="{{ .image }}" alt="{{ .title }}">
+                      {{- $src := .image -}}
+                      {{- $lower := lower $src -}}
+                      {{- if or (strings.HasSuffix $lower ".mp4") (strings.HasSuffix $lower ".webm") -}}
+                        <video class="card-img-top" autoplay loop muted playsinline preload="metadata"
+                              style="width:100%; height:auto; display:block; object-fit:cover;">
+                          {{- if strings.HasSuffix $lower ".webm" -}}
+                            <source src="{{ $src | relURL }}" type="video/webm">
+                          {{- else -}}
+                            <source src="{{ $src | relURL }}" type="video/mp4">
+                          {{- end -}}
+                        </video>
+                      {{- else -}}
+                        <img class="card-img-top" src="{{ $src | relURL }}" alt="{{ .title }}">
+                      {{- end -}}
                     </div>
                     <div class="card-body bg-transparent p-3">
                     <div class="pb-2 bg-transparent">
