@@ -12,6 +12,11 @@
 
   /* keep zoom clipped */
   #featured .card-head { overflow: hidden; }
+
+  #featured .icon-link {
+    position: relative;
+    z-index: 2;
+  }
 </style>
 
 <section id="featured" class="py-5">
@@ -56,9 +61,12 @@
                     <div class="card-footer py-3">
                     {{ range .links }}
                     <span class="m-1 mx-2">
-                        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+                      <a href="{{ .url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="icon-link">
                         <i class="{{ .icon }}"></i>
-                        </a>
+                      </a>
                     </span>
                     {{ end }}
                     </div>

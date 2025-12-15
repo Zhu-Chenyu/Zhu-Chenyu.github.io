@@ -16,7 +16,7 @@ socialShare: false
     <div class="aboutImg-content">
         <p align="left">
             Hi! I am an MS Robotics Student at Northwestern University. Previously, I was an undergraduate student at Southeast University.<br>
-            My goal is to develop autonomous driving vehicle that everyone can confidently rely on!
+            I am interested in building reliable robotic systems that combine perception, planning, and control to operate safely in real-world environments.
         </p>
         <p class="contact-intro">
             You can reach me at <a href="mailto:zhuc1915@gmail.com">zhuc1915@gmail.com</a>,  

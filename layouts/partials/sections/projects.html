@@ -1,4 +1,12 @@
 {{ if .Site.Params.projects.enable | default false }}
+
+<style>
+  #projects .card-footer a{
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
 <section id="projects" class="py-5">
     <div class="container">
         <h3 class="text-center">{{ .Site.Params.projects.title | default "Projects" }}</h3>
@@ -33,8 +41,8 @@
                     <div class="card-footer py-3">
                     {{ range .links }}
                     <span class="m-1 mx-2">
-                        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
-                        <i class="{{ .icon }}"></i>
+                        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="icon-link">
+                            <i class="{{ .icon }}"></i>
                         </a>
                     </span>
                     {{ end }}
