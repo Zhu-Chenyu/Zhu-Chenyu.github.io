@@ -292,7 +292,7 @@ params:
 
     - title: Impact-Aware Dynamics Simulation (Box–Jack)
       content: Hybrid dynamics simulator derived in SymPy with unilateral contact constraints and inelastic impact updates, with Plotly animation and time-series verification.
-      image: /images/projects/box_jack_impact/box_jack_inelastic.mp4
+      image: /images/projects/box_jack_impact/inelastic_impact.mp4
       featured:
         name: Read More
         link: /box_jack_impact
