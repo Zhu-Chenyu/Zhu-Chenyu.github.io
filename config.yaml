@@ -273,6 +273,23 @@ params:
     title: "Featured Projects"
     items:
 
+    - title: Vision-Guided Domino Placement with Franka Emika Robot
+      content: Vision-based robotic system that detects domino positions, plans collision-aware trajectories, and autonomously places dominoes using Franka Emika Robot in ROS 2.
+      image: /images/projects/ur5-domino/domino_demo.gif
+      featured:
+        name: Read More
+        link: /fer_domino
+      badges:
+        - "ROS 2"
+        - "Python"
+        - "Robot Manipulation"
+        - "Motion Planning"
+        - "Computer Vision"
+      links:
+        - icon: fab fa-github
+          url: https://github.com/ME495-EmbeddedSystems/final-project-africanpanda
+    
+    
     - title:  Who Stole My Pen? - Vision-Guided Robot Pen Grasping
       content: Robotic arm detects a pen via image processing (camera calibration, masking, centroid detection), plans a grasping path, picks up pen and returns it to home.  
       image: /images/projects/robot-pen-grasping/pen_grasping.gif  # or .gif/.png  
