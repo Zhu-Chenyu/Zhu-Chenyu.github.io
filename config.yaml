@@ -287,7 +287,7 @@ params:
         - "Computer Vision"
       links:
         - icon: fab fa-github
-          url: https://github.com/ME495-EmbeddedSystems/final-project-africanpanda
+          url: https://github.com/Zhu-Chenyu/Franka-Domino-Project
     
 
     - title: Impact-Aware Dynamics Simulation (Box–Jack)
