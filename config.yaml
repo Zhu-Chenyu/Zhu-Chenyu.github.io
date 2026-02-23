@@ -306,21 +306,22 @@ params:
         - icon: fas fa-external-link-alt
           url: https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=1mpudsGeVxwh
 
-    - title:  Who Stole My Pen? - Vision-Guided Robot Pen Grasping
-      content: Robotic arm detects a pen via image processing (camera calibration, masking, centroid detection), plans a grasping path, picks up pen and returns it to home.  
-      image: /images/projects/robot-pen-grasping/pen_grasping.gif  # or .gif/.png  
-      featured:  
-        name: Read More  
-        link: /grab_pen 
-      badges:  
-        - "Python"  
-        - "Computer Vision"  
-        - "Path Planning"  
-        - "Robot Control"  
-      links:  
-        - icon: fab fa-github  
-          url: https://github.com/Zhu-Chenyu/Who-stole-my-pen  
-       
+    - title: Force-Compliant Drone with Obstacle Avoidance
+      content: A quadrotor that moves in the direction of applied external forces. A Kalman filter estimates force from position observations alone, and LiDAR-based potential fields prevent collisions while preserving the intended direction of motion.
+      image: /images/projects/drone/main_demo.MP4
+      featured:
+        name: Read More
+        link: /drone
+      badges:
+        - "ROS 2"
+        - "C++"
+        - "Kalman Filter"
+        - "Obstacle Avoidance"
+        - "PX4"
+      links:
+        - icon: fab fa-youtube
+          url: https://www.youtube.com/watch?v=fADfVLkpe30
+
 
 
   # projects
@@ -330,7 +331,23 @@ params:
     items:
 
 
-      - title: Ants vs SomeBees (Game Development)  
+      - title: Who Stole My Pen? - Vision-Guided Robot Pen Grasping
+        content: Robotic arm detects a pen via image processing (camera calibration, masking, centroid detection), plans a grasping path, picks up pen and returns it to home.
+        image: /images/projects/robot-pen-grasping/pen_grasping.gif
+        featured:
+          name: Read More
+          link: /grab_pen
+        badges:
+          - "Python"
+          - "Computer Vision"
+          - "Path Planning"
+          - "Robot Control"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/Zhu-Chenyu/Who-stole-my-pen
+
+
+      - title: Ants vs SomeBees (Game Development)
         content: Tower defense–style game coded in Python. Designed behaviors for various kinds of ants and bees to select, managed game logic and GUI.  
         image: /images/projects/ants-vs-bees/gameplay.mp4
         featured:  
