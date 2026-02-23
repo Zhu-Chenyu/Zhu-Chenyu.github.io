@@ -100,6 +100,12 @@ The algorithm assumes:
 
 In practice, these assumptions introduce small pose errors that accumulate during placement, motivating the need for force-aware control.
 
+The following demo shows the vision pipeline in action — the camera scans the table, detects each domino, and publishes its position and orientation as markers before the robot begins picking them up:
+
+<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+  <source src="/images/projects/fer_domino/cv.MP4" type="video/mp4">
+</video>
+
 ---
 
 ## Camera–Robot Calibration
