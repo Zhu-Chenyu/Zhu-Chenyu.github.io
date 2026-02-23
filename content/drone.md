@@ -78,7 +78,7 @@ The drone stays still when no force is applied. Push it in any horizontal direct
 A tilted quadrotor that is not accelerating horizontally must be experiencing an external horizontal force. This is the core insight that makes sensorless force estimation possible.
 
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <img src="/images/projects/drone/ModelDiagram.jpg" width="700" alt="Force Decomposition Diagram" style="border-radius:8px;">
+  <img src="/images/projects/drone/ModelDiagram.jpg" width="600" alt="Force Decomposition Diagram" style="border-radius:8px;">
 </div>
 
 At quasi-steady-state, the force balance gives:
@@ -116,7 +116,7 @@ Because PX4 produces horizontal motion by tilting the drone, pitch and roll are 
 **Pitch correlates with X position error (NED):**
 
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <img src="/images/projects/drone/pitch_to_xe.png" width="650" alt="Pitch to X Error Correlation" style="border-radius:8px;">
+  <img src="/images/projects/drone/pitch_to_xe.png" width="750" alt="Pitch to X Error Correlation" style="border-radius:8px;">
 </div>
 
 Correlation = 0.732. Pitch tracks the X-axis error, confirming the model: when the drone is pushed forward, PX4 pitches nose-down to accelerate, producing a position error that grows until it matches the commanded velocity.
@@ -124,7 +124,7 @@ Correlation = 0.732. Pitch tracks the X-axis error, confirming the model: when t
 **Roll correlates with Y position error (NED):**
 
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <img src="/images/projects/drone/roll_to_ye.png" width="650" alt="Roll to Y Error Correlation" style="border-radius:8px;">
+  <img src="/images/projects/drone/roll_to_ye.png" width="750" alt="Roll to Y Error Correlation" style="border-radius:8px;">
 </div>
 
 Correlation = −0.777 (negative due to the FRD→NED sign convention). Roll tracks Y-axis error with the expected sign flip, consistent with the frame rotation.
@@ -161,7 +161,7 @@ The estimated $[F_x, F_y]$ drives the velocity setpoint. Obstacle repulsion forc
 Repulsive forces from the RPLidar scan are superimposed on the estimated external force using a potential field approach.
 
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <img src="/images/projects/drone/Potential field.jpg" width="600" alt="Potential Field Obstacle Avoidance" style="border-radius:8px;">
+  <img src="/images/projects/drone/Potential field.jpg" width="550" alt="Potential Field Obstacle Avoidance" style="border-radius:8px;">
 </div>
 
 The diagram shows the full force superposition: the orange arc is the hemicircle detection zone facing $F_{ext}$ (red). Obstacles inside generate avoidance forces (teal and purple arrows) pushing the drone away. Velocity damping (pink) opposes the current velocity when repulsion is active. The command force (blue dashed) is the vector sum of all contributions.
