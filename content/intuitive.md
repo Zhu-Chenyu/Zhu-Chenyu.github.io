@@ -1,5 +1,5 @@
 ---
-title: "Robotic Scalpel Cooling Experiment – Intuitive Surgical"
+title: "Intuitive Surgical（直觉外科）实习：机器人手术器械热性能实验研究"
 date: 2025-08-12
 draft: false
 author: "Chenyu Zhu"
@@ -10,97 +10,97 @@ tags:
   - Medical Devices
   - Thermal Analysis
   - Da Vinci Surgical System
-description: "An experimental study conducted at Intuitive Surgical using the Da Vinci Surgical System to analyze the cooling behavior of ultrasonic scalpels through robotic automation and thermal imaging."
+description: "在 Intuitive Surgical 使用达芬奇手术系统开展的实验研究，通过机器人自动化和热成像分析超声刀的冷却特性。"
 toc: true
 mathjax: false
 repoName: intuitive
 ---
 
-## Overview
+## 概述
 
-During my internship at **Intuitive Surgical**, I participated in an **experimental study on ultrasonic scalpel cooling performance** using the **Da Vinci Surgical System**.  
-The goal was to develop a repeatable and data-driven framework to evaluate how surgical instruments dissipate heat after activation.
+在 **Intuitive Surgical** 的实习期间，我参与了一项使用**达芬奇手术系统**进行的**超声刀冷却性能实验研究**。
+目标是开发一套可重复、数据驱动的框架，评估手术器械在激活后的散热表现。
 
-I worked on designing and automating the **robot-assisted testing process**, integrating **thermal imaging data collection** and **curve fitting models** to analyze the cooling behavior of surgical tools.  
-This project combined skills in **robotics, thermal analysis, and experimental data modeling** within a medical device research environment.
-
----
-
-## System Components
-
-| Component | Description |
-|------------|-------------|
-| **Robot System** | Da Vinci Surgical System, programmed for precise motion sequences |
-| **Instruments** | Ultrasonic scalpels with varied materials and coatings |
-| **Sensors** | Thermal imaging system for surface temperature monitoring |
-| **Software Tools** | Python, OpenCV, NumPy, and curve-fitting libraries |
-| **Work Environment** | Controlled lab conditions for repeatable robotic experiments |
+我负责设计和自动化**机器人辅助测试流程**，集成**热成像数据采集**和**曲线拟合模型**来分析手术器械的冷却特性。
+本项目综合运用了**机器人学、热分析和实验数据建模**技能，应用于医疗器械研发环境。
 
 ---
 
-## Experimental Workflow
+## 系统组成
 
-### 1. Robotic Operation Setup
-- Programmed the Da Vinci robot to perform repeatable **cutting and cooling sequences** with fixed speed, path, and force.  
-- Ensured consistency in contact duration, angle, and motion trajectory.  
-- Verified robotic precision through multiple calibration cycles before each trial.
+| 组件 | 描述 |
+|------|------|
+| **机器人系统** | 达芬奇手术系统，编程执行精确运动序列 |
+| **器械** | 不同材料和涂层的超声刀 |
+| **传感器** | 热成像系统，用于表面温度监测 |
+| **软件工具** | Python、OpenCV、NumPy 和曲线拟合库 |
+| **工作环境** | 可控实验室条件，确保机器人实验的可重复性 |
 
 ---
 
-### 2. Thermal Imaging and Data Collection
-- Used a **thermal camera** to continuously record the temperature decay of the surgical instrument after activation.  
-- Defined **regions of interest (ROI)** to focus analysis on critical contact areas.  
-- Extracted time–temperature data series for later processing.
+## 实验工作流程
+
+### 1. 机器人操作设置
+- 编程控制达芬奇机器人以固定速度、路径和力执行可重复的**切割与冷却序列**。
+- 确保接触时间、角度和运动轨迹的一致性。
+- 每次试验前通过多次标定循环验证机器人精度。
+
+---
+
+### 2. 热成像与数据采集
+- 使用**热像仪**连续记录手术器械激活后的温度衰减。
+- 定义**感兴趣区域（ROI）**以聚焦分析关键接触区域。
+- 提取时间-温度数据序列供后续处理。
 
 <div style="display:flex; justify-content:center;">
-  <img src="/images/internships/intuitive/da_vinci_cooling_test.png" width="75%" alt="Thermal imaging of ultrasonic scalpels during cooling test">
+  <img src="/images/internships/intuitive/da_vinci_cooling_test.png" width="75%" alt="冷却测试中超声刀的热成像">
 </div>
 
 ---
 
-### 3. Data Modeling and Analysis
-- Processed recorded temperature data using Python.  
-- Applied **curve fitting techniques** to model cooling behavior over time.  
-- Implemented exponential decay fitting to estimate **cooling parameters** under different configurations.  
-- Compared model accuracy across multiple repetitions to verify experimental reliability.
+### 3. 数据建模与分析
+- 使用 Python 处理记录的温度数据。
+- 应用**曲线拟合技术**建模随时间变化的冷却特性。
+- 实现指数衰减拟合以估计不同配置下的**冷却参数**。
+- 通过多次重复实验对比模型精度以验证实验可靠性。
 
 ---
 
-### 4. Instrument Handling and Inspection
-- Assisted in preparing and securing instruments for each trial.  
-- Conducted **microscopic inspections** after each round to check for potential surface or coating changes.  
+### 4. 器械处理与检查
+- 协助每次试验的器械准备与固定。
+- 每轮试验后进行**显微检查**，检测表面或涂层的潜在变化。
 
 <div style="display:flex; justify-content:center;">
-  <img src="/images/internships/intuitive/scalpel.png" width="70%" alt="Ultrasonic scalpel under magnification inspection">
+  <img src="/images/internships/intuitive/scalpel.png" width="70%" alt="放大检查下的超声刀">
 </div>
 
 ---
 
-## Skills and Contributions
+## 技能与贡献
 
-- **Robotics Programming:** Operated and scripted motion routines for the Da Vinci Surgical System.  
-- **Experimental Design:** Planned repeatable testing conditions, ensuring accuracy and reproducibility.  
-- **Thermal Data Analysis:** Processed and modeled time–temperature data with Python.  
-- **Team Collaboration:** Worked alongside R&D engineers in a regulated, multidisciplinary lab setting.  
-- **Documentation:** Recorded procedures, setup configurations, and data workflow for internal reporting.
-
----
-
-## Takeaways
-
-This internship strengthened my understanding of how **robotics and data modeling intersect in medical device research**.  
-I learned to apply engineering principles — precision, repeatability, and safety — in a high-stakes, real-world environment, bridging software, hardware, and human factors in surgical robotics.
+- **机器人编程：** 操作并编写达芬奇手术系统的运动程序。
+- **实验设计：** 规划可重复的测试条件，确保准确性和可重复性。
+- **热数据分析：** 使用 Python 处理和建模时间-温度数据。
+- **团队协作：** 在受管控的跨学科实验室环境中与研发工程师协作。
+- **文档记录：** 记录实验流程、设备配置和数据工作流以供内部报告。
 
 ---
 
-## Acknowledgments
+## 收获
 
-I would like to thank the **R&D team at Intuitive Surgical** for their mentorship and guidance during this internship.  
-Their insights into robotic instrumentation, data validation, and safety testing greatly shaped my learning experience.
+这次实习加深了我对**机器人学与数据建模在医疗器械研发中交叉应用**的理解。
+我学会了在高风险的真实环境中运用工程原则 —— 精度、可重复性和安全性 —— 在手术机器人领域架起软件、硬件与人因工程的桥梁。
 
 ---
 
-## Disclaimer
+## 致谢
 
-All photographs shown on this page are used **under authorization** and depict only **non-confidential, educationally appropriate content**.  
-No proprietary data, internal results, or intellectual property of Intuitive Surgical are disclosed in this project summary.
+感谢 **Intuitive Surgical 研发团队**在实习期间的指导与帮助。
+他们在机器人器械、数据验证和安全测试方面的见解极大地塑造了我的学习体验。
+
+---
+
+## 免责声明
+
+本页展示的所有照片均**经授权使用**，仅展示**非机密、适合教育用途的内容**。
+本项目摘要未披露 Intuitive Surgical 的任何专有数据、内部结果或知识产权。

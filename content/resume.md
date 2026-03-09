@@ -1,10 +1,10 @@
 ---
-title: "Chenyu's Resume"
+title: "朱宸宇的简历"
 date: 2025-10-09
 draft: false
 author: "Chenyu Zhu"
 tags:
-image: 
+image:
 description: ""
 toc: true
 mathjax: true

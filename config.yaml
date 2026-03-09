@@ -1,6 +1,6 @@
 baseURL: "https://Zhu-Chenyu.github.io/"
-languageCode: "en-us"
-title: "Chenyu's Portfolio"
+languageCode: "zh-cn"
+title: "朱宸宇的作品集"
 theme: hugo-profile
 
 outputs:
@@ -25,28 +25,28 @@ markup:
 Menus:
   main:
     - identifier: projects
-      name: Projects
-      title: Featured Projects
+      name: 项目
+      title: 精选项目
       url: "/#featured"   # this jumps to <section id="featured">
       weight: 1
     - identifier: About
-      name: About
-      title: About Me
+      name: 关于
+      title: 关于我
       url: /about
       weight: 2
     - identifier: github
       name: Github
-      title: github Link
+      title: Github 链接
       url: https://github.com/Zhu-Chenyu
       weight: 2
     - identifier: resume
-      name: Resume
-      title: resume Link
+      name: 简历
+      title: 简历链接
       url: /resume
       weight: 2
     - identifier: LinkedIn
       name: LinkedIn
-      title: LinkedIn Profile
+      title: LinkedIn 主页
       url: https://www.linkedin.com/in/chenyu-zhu/
       weight: 2
 
@@ -69,8 +69,8 @@ Menus:
     #   weight: 2
 
 params:
-  title: "Chenyu Zhu"
-  description: MS Robotics 26' @ Northwestern
+  title: "朱宸宇"
+  description: 美国西北大学 机器人学硕士 26'
   # staticPath: ""  # The path to serve the static files from
   favicon: "/IMG_6321.png"
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
@@ -125,7 +125,7 @@ params:
     align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
     # brandLogo:  # Logo for the brand | default is the favicon variable
     # showBrandLogo: true # Show brand logo in nav bar | default is true
-    brandName: "Chenyu Zhu" # Brand name for the brand | default is the title variable
+    brandName: "朱宸宇" # Brand name for the brand | default is the title variable
     disableSearch: true
     # searchPlaceholder: "Search"
     stickyNavBar:
@@ -202,7 +202,7 @@ params:
   #         url: "https://example.com"
   #       content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
 
- 
+
   # Education
   # education:
   #   enable: false
@@ -270,14 +270,14 @@ params:
 
   featured:
     enable: true
-    title: "Featured Projects"
+    title: "精选项目"
     items:
 
-    - title: Force-Compliant Drone with Obstacle Avoidance
-      content: A quadrotor that moves in the direction of applied external forces. A Kalman filter estimates force from position observations alone, and LiDAR-based potential fields prevent collisions while preserving the intended direction of motion.
+    - title: 力柔顺交互四旋翼：LiDAR 避障
+      content: 一架可沿施加外力方向移动的四旋翼无人机。通过卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。
       image: /images/projects/drone/main_demo.MP4
       featured:
-        name: Read More
+        name: 查看详情
         link: /drone
       badges:
         - "ROS 2"
@@ -289,11 +289,11 @@ params:
         - icon: fab fa-github
           url: https://github.com/Zhu-Chenyu/Interaction-Guided-Aerial-Navigation
 
-    - title: Vision-Guided Domino Placement with Franka Emika Robot
-      content: Vision-based robotic system that detects domino positions, plans collision-aware trajectories, and autonomously places dominoes using Franka Emika Robot in ROS 2.
+    - title: 基于视觉引导的 Franka 机械臂多米诺骨牌摆放
+      content: 基于视觉的机器人操作系统，可在 ROS 2 环境下使用 Franka Emika 机械臂检测多米诺骨牌位置、规划碰撞感知轨迹并自主完成骨牌摆放。
       image: /images/projects/fer_domino/squigle_domino.mp4
       featured:
-        name: Read More
+        name: 查看详情
         link: /fer_domino
       badges:
         - "ROS 2"
@@ -304,13 +304,13 @@ params:
       links:
         - icon: fab fa-github
           url: https://github.com/Zhu-Chenyu/Franka-Domino-Project
-    
 
-    - title: Impact-Aware Dynamics Simulation (Box–Jack)
-      content: Hybrid dynamics simulator derived in SymPy with unilateral contact constraints and inelastic impact updates, with Plotly animation and time-series verification.
+
+    - title: 碰撞感知动力学仿真（Box-Jack 系统）
+      content: 基于 SymPy 符号推导的混杂动力学仿真器，包含单面接触约束和非弹性碰撞速度修正，通过 Plotly 动画和时间序列分析进行验证。
       image: /images/projects/box_jack_impact/inelastic_impact.mp4
       featured:
-        name: Read More
+        name: 查看详情
         link: /box_jack_impact
       badges:
         - "Python"
@@ -328,15 +328,15 @@ params:
   # projects
   projects:
     enable: true
-    title: "Other Projects"
+    title: "其他项目"
     items:
 
 
-      - title: Who Stole My Pen? - Vision-Guided Robot Pen Grasping
-        content: Robotic arm detects a pen via image processing (camera calibration, masking, centroid detection), plans a grasping path, picks up pen and returns it to home.
+      - title: 谁偷了我的笔？—— 视觉引导机械臂抓取
+        content: 机械臂通过图像处理（相机标定、掩模处理、质心检测）检测笔的位置，规划抓取路径，拾取笔并返回初始位置。
         image: /images/projects/robot-pen-grasping/pen_grasping.gif
         featured:
-          name: Read More
+          name: 查看详情
           link: /grab_pen
         badges:
           - "Python"
@@ -348,65 +348,65 @@ params:
             url: https://github.com/Zhu-Chenyu/Who-stole-my-pen
 
 
-      - title: Ants vs SomeBees (Game Development)
-        content: Tower defense–style game coded in Python. Designed behaviors for various kinds of ants and bees to select, managed game logic and GUI.  
+      - title: 蚂蚁大战蜜蜂（塔防策略游戏）
+        content: Python 开发的塔防风格游戏。设计了多种蚂蚁和蜜蜂的行为逻辑，管理游戏状态与图形界面。
         image: /images/projects/ants-vs-bees/gameplay.mp4
-        featured:  
-          name: Read More  
-          link: /ants_vs_bees  
-        badges:  
-          - "Python"  
-          - "Game Dev"  
-          - "OOP"  
-          - "GUI"  
-        links:  
-          - icon: fab fa-github  
-            url: https://github.com/Zhu-Chenyu/Ants-vs-Some-Bees  
+        featured:
+          name: 查看详情
+          link: /ants_vs_bees
+        badges:
+          - "Python"
+          - "Game Dev"
+          - "OOP"
+          - "GUI"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/Zhu-Chenyu/Ants-vs-Some-Bees
 
 
-      - title: Experimental Study on Thermal Performance of Robotic Surgical Tools
-        content: Experimental study on the thermal performance of ultrasonic surgical tools using the Da Vinci Surgical System, focusing on cooling behavior under different coatings and materials.
+      - title: 机器人手术器械热性能实验研究
+        content: 使用达芬奇手术系统对超声手术器械热性能进行的实验研究，重点分析不同涂层和材料下的冷却特性。
         image: /images/internships/intuitive/cooling_cropped.jpg
-        featured:  
-          name: Read More  
+        featured:
+          name: 查看详情
           link: /intuitive
-        badges:  
-          - "Robotics"  
-          - "Experiment Design"  
-          - "Data Modeling"  
+        badges:
+          - "Robotics"
+          - "Experiment Design"
+          - "Data Modeling"
           - "Medical Devices"
 
 
-            
-      - title: Innovative Balloon Retraction System (Structure Design Patent)  
-        content: Designed a novel foldable balloon mechanism for cryoablation catheters. Developed a balloon folding mechanism using metal wires and a sheath, enabling controlled folding along pre-creased regions for safer retraction. The design was granted Patent CN220988900U.  
-        image: /images/internships/patent/balloon_retracting.gif  
-        featured:  
-          name: Read More  
-          link: https://patents.google.com/patent/CN220988900U/en  
-        badges:  
-          - "Medical Devices"  
-          - "Mechanical Design"  
-          - "Patent"  
-          - "Biomechatronics"  
-        links:  
-          - icon: fas fa-file-alt  
-            url: https://patents.google.com/patent/CN220988900U/en  
 
-      - title: Reinforcement Learning for Base Station Optimization  
-        content: Compare multiple RL algorithms to jointly optimize throughput and energy consumption across a network of cellular base stations.  
-        image: /images/projects/base-station-rl/DRL_slides.gif 
-        featured:  
-          name: Read More  
-          link: https://github.com/Zhu-Chenyu/DRL-for-base-station-optimization  
-        badges:  
-          - "Python"  
-          - "Reinforcement Learning"  
-          - "Simulation"  
-          - "Optimization"  
-        links:  
-          - icon: fab fa-github  
-            url: https://github.com/Zhu-Chenyu/DRL-for-base-station-optimization  
+      - title: 球囊折叠机构（实用新型专利）
+        content: 设计了一种用于冷冻消融导管的新型可折叠球囊机构。利用金属丝和鞘管开发球囊折叠机构，可沿预折痕区域实现可控折叠，提高回缩安全性。该设计已获授权专利 CN220988900U。
+        image: /images/internships/patent/balloon_retracting.gif
+        featured:
+          name: 查看详情
+          link: https://patents.google.com/patent/CN220988900U/en
+        badges:
+          - "Medical Devices"
+          - "Mechanical Design"
+          - "Patent"
+          - "Biomechatronics"
+        links:
+          - icon: fas fa-file-alt
+            url: https://patents.google.com/patent/CN220988900U/en
+
+      - title: 基于强化学习的基站优化
+        content: 对比多种强化学习算法，联合优化蜂窝基站网络的吞吐量与能耗。
+        image: /images/projects/base-station-rl/DRL_slides.gif
+        featured:
+          name: 查看详情
+          link: https://github.com/Zhu-Chenyu/DRL-for-base-station-optimization
+        badges:
+          - "Python"
+          - "Reinforcement Learning"
+          - "Simulation"
+          - "Optimization"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/Zhu-Chenyu/DRL-for-base-station-optimization
 
 
 
@@ -414,7 +414,7 @@ params:
   # contact:
   #   enable: false
   #   # title: "Custom Name"
-  #   content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+  #   content: My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
   #   btnName: Mail me
   #   btnLink: mailto:pushkar@u.northwestern.edu
   #   # formspree:
@@ -428,7 +428,7 @@ params:
     recentPosts:
       path: "blogs"
       count: 3
-      title: Recent Posts
+      title: 最新文章
       enable: false
       disableFeaturedImage: false
     socialNetworks:
@@ -448,7 +448,7 @@ params:
     socialShare: false
     readTime:
       enable: false
-      content: "min read"
+      content: "分钟阅读"
     scrollprogress:
       enable: true
     tags:
@@ -456,11 +456,11 @@ params:
 
   # For translations
   terms:
-    read: "Read"
-    toc: "Table Of Contents"
-    copyright: "Chenyu Zhu"
-    pageNotFound: "Page not found"
-    emailText: "Check out this site"
+    read: "阅读"
+    toc: "目录"
+    copyright: "朱宸宇"
+    pageNotFound: "页面未找到"
+    emailText: "看看这个网站"
     social: GitHub
 
   datesFormat:
