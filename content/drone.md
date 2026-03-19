@@ -76,6 +76,12 @@ links:
 
 无外力施加时，无人机保持静止。沿任意水平方向拖动它，它将沿该方向加速，速度与力的大小成正比。松开后，它减速至位置保持状态。启用避障功能时，飞行员持续沿期望方向施力，无人机则会自动绕过障碍物飞行。
 
+<div style="display:flex; justify-content:center; margin: 1rem 0;">
+  <img src="/images/projects/drone/BlockDiagram.jpg" width="750" alt="系统框图" style="border-radius:8px;">
+</div>
+
+上图展示了完整的系统架构：OptiTrack 位置观测输入卡尔曼滤波器以估计外力，估计的外力与 LiDAR 产生的避障斥力叠加后，转换为速度指令发送至 PX4。
+
 ---
 
 ## 数学模型
@@ -168,7 +174,7 @@ $$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)]\,\Delta
 RPLidar 扫描产生的斥力通过人工势场方法叠加在估计的外力上。
 
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <img src="/images/projects/drone/PotentialField.jpg" width="550" alt="人工势场避障" style="border-radius:8px;">
+  <img src="/images/projects/drone/Potential_field.jpg" width="550" alt="人工势场避障" style="border-radius:8px;">
 </div>
 
 上图展示了完整的力叠加关系：橙色弧线是面向 $F_{ext}$（红色）的半圆检测区域。区域内的障碍物产生避障力（青色和紫色箭头）将无人机推离。速度阻尼（粉色）在斥力激活时抵消当前速度。指令力（蓝色虚线）是所有分量的矢量和。
@@ -277,6 +283,12 @@ A Kalman filter estimates external force from position observations alone, while
 
 With no external force, the quadrotor stays still. Pull it in any horizontal direction, and it accelerates that way at a speed proportional to the force magnitude. Release it, and it decelerates to a position hold. With obstacle avoidance enabled, the pilot applies sustained force in the desired direction, and the quadrotor automatically navigates around obstacles.
 
+<div style="display:flex; justify-content:center; margin: 1rem 0;">
+  <img src="/images/projects/drone/BlockDiagram.jpg" width="750" alt="System block diagram" style="border-radius:8px;">
+</div>
+
+The diagram above shows the full system architecture: OptiTrack position measurements feed into the Kalman filter to estimate external force, which is then combined with LiDAR-generated repulsive forces and converted into velocity setpoints sent to PX4.
+
 ---
 
 ## Mathematical Model
@@ -369,7 +381,7 @@ The estimated $[F_x, F_y]$ drives velocity setpoints. Obstacle repulsive forces 
 Repulsive forces from RPLidar scans are superimposed on the estimated external force via the potential field method.
 
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <img src="/images/projects/drone/Potential field.jpg" width="550" alt="Potential field obstacle avoidance" style="border-radius:8px;">
+  <img src="/images/projects/drone/Potential_field.jpg" width="550" alt="Potential field obstacle avoidance" style="border-radius:8px;">
 </div>
 
 The figure above shows the full force superposition: the orange arc is the hemicircle detection zone facing $F_{ext}$ (red). Obstacles within the zone generate avoidance forces (cyan and purple arrows) pushing the quadrotor away. Velocity damping (pink) counteracts current velocity when repulsive forces activate. The command force (blue dashed) is the vector sum of all components.

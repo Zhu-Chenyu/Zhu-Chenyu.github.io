@@ -433,8 +433,8 @@ params:
 
       - title: 基于强化学习的基站优化
         title_en: "Reinforcement Learning for Base Station Optimization"
-        content: 对比多种强化学习算法，联合优化蜂窝基站网络的吞吐量与能耗。
-        content_en: "Comparing multiple reinforcement learning algorithms to jointly optimize throughput and energy consumption for cellular base station networks."
+        content: 对比多种强化学习算法(DQN, DDPG, TD3, MADDPG, Greedy, Conservative)，联合优化蜂窝基站网络的吞吐量与能耗。
+        content_en: "Comparing multiple reinforcement learning algorithms(DQN, DDPG, TD3, MADDPG, Greedy, Conservative) to jointly optimize throughput and energy consumption for cellular base station networks."
         image: /images/projects/base-station-rl/DRL_slides.gif
         featured:
           name: 查看详情
