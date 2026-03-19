@@ -394,14 +394,19 @@ document.addEventListener('DOMContentLoaded', function() {
     position: relative;
     z-index: 2;
     cursor: pointer;
-    padding: 14px;
+    padding: 6px 12px;
     border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    text-decoration: none;
   }
 
    
   #featured .icon-link i,
   #projects .card-footer i {
-    font-size: 1.3rem;
+    font-size: 1rem;
     transition: transform 0.2s ease, color 0.2s ease;
   }
 
@@ -444,14 +449,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="card-footer py-3">
                     
-                    <span class="m-1 mx-2">
-                      <a href="https://github.com/Zhu-Chenyu/Interaction-Guided-Aerial-Navigation"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="icon-link">
-                        <i class="fab fa-github"></i>
-                      </a>
-                    </span>
+                    <a href="https://github.com/Zhu-Chenyu/Interaction-Guided-Aerial-Navigation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="icon-link m-1">
+                      <i class="fab fa-github"></i>
+                      <span>Github</span>
+                    </a>
                     
                     </div>
                     
@@ -477,14 +481,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="card-footer py-3">
                     
-                    <span class="m-1 mx-2">
-                      <a href="https://github.com/Zhu-Chenyu/Franka-Domino-Project"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="icon-link">
-                        <i class="fab fa-github"></i>
-                      </a>
-                    </span>
+                    <a href="https://github.com/Zhu-Chenyu/Franka-Domino-Project"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="icon-link m-1">
+                      <i class="fab fa-github"></i>
+                      <span>Github</span>
+                    </a>
                     
                     </div>
                     
@@ -510,14 +513,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="card-footer py-3">
                     
-                    <span class="m-1 mx-2">
-                      <a href="https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=1mpudsGeVxwh"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="icon-link">
-                        <i class="fas fa-external-link-alt"></i>
-                      </a>
-                    </span>
+                    <a href="https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=1mpudsGeVxwh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="icon-link m-1">
+                      <i class="fas fa-external-link-alt"></i>
+                      <span>Colab Notebook</span>
+                    </a>
                     
                     </div>
                     
@@ -532,29 +534,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <style>
    
-  #projects .card-footer a {
+  #projects .card-footer a.icon-link {
     position: relative;
     z-index: 2;
     cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    text-decoration: none;
   }
 
    
   #projects .card-footer i {
-    font-size: 1.3rem;
+    font-size: 1rem;
     transition: transform 0.2s ease, color 0.2s ease;
   }
 
    
-  #projects .card-footer a:hover i {
+  #projects .card-footer a.icon-link:hover i {
     color: #0d6efd;
     transform: scale(1.15);
   }
 
-  #projects .card-footer a {
-    padding: 14px;
-    border-radius: 14px;
-  }
-    #projects .card-footer a:hover {
+  #projects .card-footer a.icon-link:hover {
     background-color: rgba(13, 110, 253, 0.08);
   }
 </style>
@@ -587,11 +592,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="card-footer py-3">
                     
-                    <span class="m-1 mx-2">
-                        <a href="https://github.com/Zhu-Chenyu/Who-stole-my-pen" target="_blank" rel="noopener noreferrer" class="icon-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </span>
+                    <a href="https://github.com/Zhu-Chenyu/Who-stole-my-pen" target="_blank" rel="noopener noreferrer" class="icon-link m-1">
+                        <i class="fab fa-github"></i>
+                        <span>Github</span>
+                    </a>
                     
                     </div>
                     
@@ -629,11 +633,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="card-footer py-3">
                     
-                    <span class="m-1 mx-2">
-                        <a href="https://github.com/Zhu-Chenyu/Ants-vs-Some-Bees" target="_blank" rel="noopener noreferrer" class="icon-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </span>
+                    <a href="https://github.com/Zhu-Chenyu/Ants-vs-Some-Bees" target="_blank" rel="noopener noreferrer" class="icon-link m-1">
+                        <i class="fab fa-github"></i>
+                        <span>Github</span>
+                    </a>
                     
                     </div>
                     
@@ -685,11 +688,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="card-footer py-3">
                     
-                    <span class="m-1 mx-2">
-                        <a href="https://patents.google.com/patent/CN220988900U/en" target="_blank" rel="noopener noreferrer" class="icon-link">
-                            <i class="fas fa-file-alt"></i>
-                        </a>
-                    </span>
+                    <a href="https://patents.google.com/patent/CN220988900U/en" target="_blank" rel="noopener noreferrer" class="icon-link m-1">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Patent</span>
+                    </a>
                     
                     </div>
                     
@@ -718,11 +720,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="card-footer py-3">
                     
-                    <span class="m-1 mx-2">
-                        <a href="https://github.com/Zhu-Chenyu/DRL-for-base-station-optimization" target="_blank" rel="noopener noreferrer" class="icon-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </span>
+                    <a href="https://github.com/Zhu-Chenyu/DRL-for-base-station-optimization" target="_blank" rel="noopener noreferrer" class="icon-link m-1">
+                        <i class="fab fa-github"></i>
+                        <span>Github</span>
+                    </a>
                     
                     </div>
                     

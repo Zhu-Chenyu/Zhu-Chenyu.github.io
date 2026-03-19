@@ -44,6 +44,21 @@
       </div>
       <div class="col-sm-12 col-md-12 col-lg-3">
         <div id="stickySideBar" class="sticky-sidebar">
+          {{ if .Params.links }}
+          <aside class="links mb-4">
+            <h5>Links</h5>
+            <div class="d-flex flex-wrap gap-2">
+              {{ range .Params.links }}
+              <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+                style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:12px;font-size:0.85rem;text-decoration:none;border:1px solid #dee2e6;">
+                <i class="{{ .icon }}"></i>
+                <span>{{ .name | default "Source" }}</span>
+              </a>
+              {{ end }}
+            </div>
+          </aside>
+          {{ end }}
+
           {{ if .Params.toc | default true}}
           <aside class="toc">
               <h5>

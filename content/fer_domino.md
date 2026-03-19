@@ -15,6 +15,10 @@ description: "使用 Franka Emika Panda 机械臂的视觉引导机器人操作�
 toc: true
 repoName: fer_domino
 video: "/images/projects/fer_domino/squigle_domino.mp4"
+links:
+  - icon: fab fa-github
+    name: "Source"
+    url: https://github.com/Zhu-Chenyu/Franka-Domino-Project
 ---
 
 <div class="lang-zh">

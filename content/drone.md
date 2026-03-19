@@ -1,13 +1,13 @@
 ---
 title: "力顺从交互四旋翼无人机（LiDAR 避障功能）"
-title_en: "Force-Compliant UAV with LiDAR Obstacle Avoidance"
+title_en: "Force-Compliant Quadrotor with LiDAR Obstacle Avoidance"
 date: 2026-02-01
 draft: false
 author: "Chenyu Zhu"
 tags:
   - Robotics
   - ROS 2
-  - UAV
+  - Quadrotor
   - Kalman Filter
   - Obstacle Avoidance
   - Control Systems
@@ -17,6 +17,10 @@ mathjax: true
 math: true
 repoName: drone
 video: /images/projects/drone/main_demo.MP4
+links:
+  - icon: fab fa-github
+    name: "Source"
+    url: https://github.com/Zhu-Chenyu/Interaction-Guided-Aerial-Navigation
 ---
 
 <div class="lang-zh">
@@ -236,7 +240,7 @@ When I was five, I watched *WALL-E*. In this scene, EVE is in sleep mode -- but 
   <source src="/images/projects/drone/walle_eve.MP4" type="video/mp4">
 </video>
 
-That image has stayed with me ever since. This project is my attempt to build something with that same quality: a UAV that senses the force applied to it and moves with you. Besides, I want the UAV to follow smartly--it should repel or bypass when it detects obstacles in the front.
+That image has stayed with me ever since. This project is my attempt to build something with that same quality: a quadrotor that senses the force applied to it and moves with you. Besides, I want the quadrotor to follow smartly--it should repel or bypass when it detects obstacles in the front.
 
 ---
 
@@ -271,7 +275,7 @@ A Kalman filter estimates external force from position observations alone, while
 
 ## How It Works
 
-With no external force, the UAV stays still. Pull it in any horizontal direction, and it accelerates that way at a speed proportional to the force magnitude. Release it, and it decelerates to a position hold. With obstacle avoidance enabled, the pilot applies sustained force in the desired direction, and the UAV automatically navigates around obstacles.
+With no external force, the quadrotor stays still. Pull it in any horizontal direction, and it accelerates that way at a speed proportional to the force magnitude. Release it, and it decelerates to a position hold. With obstacle avoidance enabled, the pilot applies sustained force in the desired direction, and the quadrotor automatically navigates around obstacles.
 
 ---
 
@@ -293,7 +297,7 @@ By observing position via OptiTrack and knowing the thrust command, any residual
 
 ### Coordinate Frame Convention
 
-The system uses four coordinate frames, all identifiable on the physical UAV:
+The system uses four coordinate frames, all identifiable on the physical quadrotor:
 
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
   <img src="/images/projects/drone/DroneFrames.jpg" width="700" alt="Drone coordinate frames" style="border-radius:8px;">
@@ -315,7 +319,7 @@ where $x_{frd} = x_{flu}$, $y_{frd} = -y_{flu}$.
 
 ### Attitude Encodes Horizontal Force
 
-Since PX4 tilts the UAV to produce horizontal motion, pitch and roll angles are direct observations of horizontal force. This validates the model and justifies using attitude angles in the Kalman filter's control input term.
+Since PX4 tilts the quadrotor to produce horizontal motion, pitch and roll angles are direct observations of horizontal force. This validates the model and justifies using attitude angles in the Kalman filter's control input term.
 
 **Pitch vs X-axis Position Error (NED):**
 
@@ -323,7 +327,7 @@ Since PX4 tilts the UAV to produce horizontal motion, pitch and roll angles are 
   <img src="/images/projects/drone/pitch_to_xe.png" width="750" alt="Pitch vs X-axis error correlation" style="border-radius:8px;">
 </div>
 
-Correlation = 0.732. Pitch tracks X-axis error, validating the model: when the UAV is pulled forward, PX4 pitches nose-down to generate acceleration, causing position error to grow until the commanded velocity is matched.
+Correlation = 0.732. Pitch tracks X-axis error, validating the model: when the quadrotor is pulled forward, PX4 pitches nose-down to generate acceleration, causing position error to grow until the commanded velocity is matched.
 
 **Roll vs Y-axis Position Error (NED):**
 
@@ -368,7 +372,7 @@ Repulsive forces from RPLidar scans are superimposed on the estimated external f
   <img src="/images/projects/drone/Potential field.jpg" width="550" alt="Potential field obstacle avoidance" style="border-radius:8px;">
 </div>
 
-The figure above shows the full force superposition: the orange arc is the hemicircle detection zone facing $F_{ext}$ (red). Obstacles within the zone generate avoidance forces (cyan and purple arrows) pushing the UAV away. Velocity damping (pink) counteracts current velocity when repulsive forces activate. The command force (blue dashed) is the vector sum of all components.
+The figure above shows the full force superposition: the orange arc is the hemicircle detection zone facing $F_{ext}$ (red). Obstacles within the zone generate avoidance forces (cyan and purple arrows) pushing the quadrotor away. Velocity damping (pink) counteracts current velocity when repulsive forces activate. The command force (blue dashed) is the vector sum of all components.
 
 ### Two-Pass Scan Processing
 
@@ -376,17 +380,17 @@ The figure above shows the full force superposition: the orange arc is the hemic
 Scans within a ±90° cone in the direction of $F_{ext}$ (orange arc), with scan radius scaling with force magnitude. Ensures obstacles in the intended motion direction are detected early.
 
 **Pass 2 -- Omnidirectional Safety Bubble:**
-Performs a 360° scan within a fixed close-range radius (default 0.5 m). Catches side and rear obstacles when the UAV sidesteps to avoid frontal obstacles -- prevents blind-spot collisions.
+Performs a 360° scan within a fixed close-range radius (default 0.5 m). Catches side and rear obstacles when the quadrotor sidesteps to avoid frontal obstacles -- prevents blind-spot collisions.
 
-Results from both passes accumulate into the same repulsive force vector. Overlapping zones near the UAV produce stronger repulsion, exactly where it's needed most.
+Results from both passes accumulate into the same repulsive force vector. Overlapping zones near the quadrotor produce stronger repulsion, exactly where it's needed most.
 
 ### Force Superposition
 
 $$F_{cmd} = F_{ext} + F_{rep} + F_{damp}$$
 
 - $F_{ext}$ -- Kalman filter estimated external force
-- $F_{rep} = \sum k/d^2$ pointing toward the UAV from all detected obstacles (clamped to `max_repulsion_force`)
-- $F_{damp} = -\text{damping} \times (|F_{rep}| / F_{rep,max}) \times v_{cmd}$ -- counteracts velocity, scaling proportionally as the UAV enters the repulsive field
+- $F_{rep} = \sum k/d^2$ pointing toward the quadrotor from all detected obstacles (clamped to `max_repulsion_force`)
+- $F_{damp} = -\text{damping} \times (|F_{rep}| / F_{rep,max}) \times v_{cmd}$ -- counteracts velocity, scaling proportionally as the quadrotor enters the repulsive field
 
 ---
 

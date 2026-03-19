@@ -1,5 +1,5 @@
 ---
-title: "朱宸宇的简历"
+title: "我的简历"
 title_en: "Chenyu Zhu's Resume"
 date: 2025-10-09
 draft: false

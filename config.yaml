@@ -284,7 +284,7 @@ params:
     items:
 
     - title: 力顺从交互四旋翼无人机（LiDAR 避障功能）
-      title_en: "Force-Compliant UAV with LiDAR Obstacle Avoidance"
+      title_en: "Force-Compliant Quadrotor with LiDAR Obstacle Avoidance"
       content: 一架可沿施加外力方向移动的四旋翼无人机。通过卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。
       content_en: "A quadrotor that moves in the direction of applied external force. A Kalman filter estimates force from position observations alone, while a LiDAR-based potential field prevents collisions while preserving intended motion direction."
       image: /images/projects/drone/2x_demo.MP4
@@ -300,6 +300,7 @@ params:
         - "PX4"
       links:
         - icon: fab fa-github
+          name: "Github"
           url: https://github.com/Zhu-Chenyu/Interaction-Guided-Aerial-Navigation
 
     - title: 基于视觉引导的 Franka 机械臂多米诺骨牌摆放
@@ -319,6 +320,7 @@ params:
         - "Computer Vision"
       links:
         - icon: fab fa-github
+          name: "Github"
           url: https://github.com/Zhu-Chenyu/Franka-Domino-Project
 
 
@@ -339,6 +341,7 @@ params:
         - "Hybrid Systems"
       links:
         - icon: fas fa-external-link-alt
+          name: "Colab Notebook"
           url: https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=1mpudsGeVxwh
 
 
@@ -368,6 +371,7 @@ params:
           - "Robot Control"
         links:
           - icon: fab fa-github
+            name: "Github"
             url: https://github.com/Zhu-Chenyu/Who-stole-my-pen
 
 
@@ -387,6 +391,7 @@ params:
           - "GUI"
         links:
           - icon: fab fa-github
+            name: "Github"
             url: https://github.com/Zhu-Chenyu/Ants-vs-Some-Bees
 
 
@@ -423,6 +428,7 @@ params:
           - "Biomechatronics"
         links:
           - icon: fas fa-file-alt
+            name: "Patent"
             url: https://patents.google.com/patent/CN220988900U/en
 
       - title: 基于强化学习的基站优化
@@ -441,6 +447,7 @@ params:
           - "Optimization"
         links:
           - icon: fab fa-github
+            name: "Github"
             url: https://github.com/Zhu-Chenyu/DRL-for-base-station-optimization
 
 

@@ -15,6 +15,10 @@ description: "基于 SymPy 符号推导的平面 Box-Jack 系统混杂动力学�
 toc: true
 repoName: box_jack_impact
 video: "/images/projects/box_jack_impact/elastic_impact.mp4"
+links:
+  - icon: fas fa-external-link-alt
+    name: "Notebook"
+    url: https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=1mpudsGeVxwh
 ---
 
 <div class="lang-zh">

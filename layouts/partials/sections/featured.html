@@ -19,14 +19,19 @@
     position: relative;
     z-index: 2;
     cursor: pointer;
-    padding: 14px;
+    padding: 6px 12px;
     border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    text-decoration: none;
   }
 
   /* icon base size + smooth animation */
   #featured .icon-link i,
   #projects .card-footer i {
-    font-size: 1.3rem;
+    font-size: 1rem;
     transition: transform 0.2s ease, color 0.2s ease;
   }
 
@@ -86,14 +91,13 @@
                     {{ if .links }}
                     <div class="card-footer py-3">
                     {{ range .links }}
-                    <span class="m-1 mx-2">
-                      <a href="{{ .url }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="icon-link">
-                        <i class="{{ .icon }}"></i>
-                      </a>
-                    </span>
+                    <a href="{{ .url }}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="icon-link m-1">
+                      <i class="{{ .icon }}"></i>
+                      <span>{{ .name | default "Source" }}</span>
+                    </a>
                     {{ end }}
                     </div>
                     {{ end }}

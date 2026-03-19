@@ -13,6 +13,10 @@ description: "一款策略回合制塔防游戏，玩家使用有限资源和多
 toc: true
 mathjax: false
 repoName: ants-vs-bees
+links:
+  - icon: fab fa-github
+    name: "Source"
+    url: https://github.com/Zhu-Chenyu/Ants-vs-Some-Bees
 ---
 
 <div class="lang-zh">
