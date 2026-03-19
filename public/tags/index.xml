@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 朱宸宇的作品集</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on 朱宸宇的作品集</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Control Systems</title>
+      <link>http://localhost:1313/tags/control-systems/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/control-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Drone</title>
+      <link>http://localhost:1313/tags/drone/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/drone/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kalman Filter</title>
+      <link>http://localhost:1313/tags/kalman-filter/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kalman-filter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Obstacle Avoidance</title>
+      <link>http://localhost:1313/tags/obstacle-avoidance/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/obstacle-avoidance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Robotics</title>
+      <link>http://localhost:1313/tags/robotics/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/robotics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ROS 2</title>
+      <link>http://localhost:1313/tags/ros-2/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ros-2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Calibration</title>
+      <link>http://localhost:1313/tags/calibration/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/calibration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Computer Vision</title>
+      <link>http://localhost:1313/tags/computer-vision/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Game Development</title>
+      <link>http://localhost:1313/tags/game-development/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/game-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Object-Oriented Programming</title>
+      <link>http://localhost:1313/tags/object-oriented-programming/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/object-oriented-programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Path Planning</title>
+      <link>http://localhost:1313/tags/path-planning/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/path-planning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RealSense</title>
+      <link>http://localhost:1313/tags/realsense/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/realsense/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Da Vinci Surgical System</title>
+      <link>http://localhost:1313/tags/da-vinci-surgical-system/</link>
+      <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/da-vinci-surgical-system/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Modeling</title>
+      <link>http://localhost:1313/tags/data-modeling/</link>
+      <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/data-modeling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Experiment Design</title>
+      <link>http://localhost:1313/tags/experiment-design/</link>
+      <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/experiment-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Medical Devices</title>
+      <link>http://localhost:1313/tags/medical-devices/</link>
+      <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/medical-devices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Thermal Analysis</title>
+      <link>http://localhost:1313/tags/thermal-analysis/</link>
+      <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/thermal-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dynamics</title>
+      <link>http://localhost:1313/tags/dynamics/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dynamics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hybrid Systems</title>
+      <link>http://localhost:1313/tags/hybrid-systems/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hybrid-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Impact Modeling</title>
+      <link>http://localhost:1313/tags/impact-modeling/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/impact-modeling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lagrangian Mechanics</title>
+      <link>http://localhost:1313/tags/lagrangian-mechanics/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/lagrangian-mechanics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Simulation</title>
+      <link>http://localhost:1313/tags/simulation/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/simulation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SymPy</title>
+      <link>http://localhost:1313/tags/sympy/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sympy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Force Control</title>
+      <link>http://localhost:1313/tags/force-control/</link>
+      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/force-control/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Manipulation</title>
+      <link>http://localhost:1313/tags/manipulation/</link>
+      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/manipulation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Motion Planning</title>
+      <link>http://localhost:1313/tags/motion-planning/</link>
+      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/motion-planning/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

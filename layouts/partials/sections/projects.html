@@ -1,0 +1,145 @@
+{{ if .Site.Params.projects.enable | default false }}
+
+<style>
+  /* make icon clickable above stretched-link */
+  #projects .card-footer a {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  /* icon base size + animation */
+  #projects .card-footer i {
+    font-size: 1.3rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  /* hover feedback */
+  #projects .card-footer a:hover i {
+    color: #0d6efd;
+    transform: scale(1.15);
+  }
+
+  #projects .card-footer a {
+    padding: 14px;
+    border-radius: 14px;
+  }
+    #projects .card-footer a:hover {
+    background-color: rgba(13, 110, 253, 0.08);
+  }
+</style>
+
+
+<section id="projects" class="py-5">
+    <div class="container">
+        <h3 class="text-center"><span class="lang-zh">{{ .Site.Params.projects.title | default "Projects" }}</span><span class="lang-en">{{ .Site.Params.projects.title_en | default "Projects" }}</span></h3>
+        <div class="row justify-content-center px-3 px-md-5">
+            {{ range .Site.Params.projects.items }}
+                <div class="col-lg-4 col-md-6 my-3">
+                {{- $link := .featured.link -}}
+                {{- $isExternal := and $link (or (strings.HasPrefix (lower $link) "http://") (strings.HasPrefix (lower $link) "https://")) -}}
+
+                <div class="card my-3 h-100 position-relative" title="{{ .title }}">
+                    <div class="card-head">
+                        {{- $media := .image -}}
+                        {{- if strings.HasSuffix (lower $media) ".mp4" -}}
+                            <video
+                            class="card-img-top"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            style="object-fit: cover;"
+                            >
+                            <source src="{{ $media }}" type="video/mp4">
+                            </video>
+                        {{- else -}}
+                            <img class="card-img-top" src="{{ $media }}" alt="{{ .title }}">
+                        {{- end -}}
+                    </div>
+                    <div class="card-body bg-transparent p-3">
+                    <div class="pb-2 bg-transparent">
+                        {{ range .badges }}<span class="badge badge-secondary">{{ . }}</span>{{ end }}
+                    </div>
+                    <h5 class="card-title bg-transparent mt-1"><span class="lang-zh">{{ .title }}</span><span class="lang-en">{{ .title_en | default .title }}</span></h5>
+                    <div class="card-text bg-transparent secondary-font">
+                        <span class="lang-zh">{{ .content }}</span><span class="lang-en">{{ .content_en | default .content }}</span>
+                    </div>
+                    </div>
+
+                    {{/* Make whole card clickable; internal = same tab, external = new tab */}}
+                    {{ if $link }}
+                    <a href="{{ if $isExternal }}{{ $link }}{{ else }}{{ $link | relURL }}{{ end }}"
+                        {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}
+                        class="stretched-link" aria-label="{{ .title }}"></a>
+                    {{ end }}
+
+                    {{ if .links }}
+                    <div class="card-footer py-3">
+                    {{ range .links }}
+                    <span class="m-1 mx-2">
+                        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="icon-link">
+                            <i class="{{ .icon }}"></i>
+                        </a>
+                    </span>
+                    {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+                </div>
+                {{ end }}
+
+            {{ range ( where .Site.RegularPages "Type" "projects" ) }}
+            {{ if .Params.showInHome | default true }}
+            <div class="col-lg-4 col-md-6 my-3">
+                <div class="card my-3 h-100" title="{{ .Title }}">
+                    <div class="card-head">
+                        {{- $media := .Params.image -}}
+                        {{- if strings.HasSuffix (lower $media) ".mp4" -}}
+                            <video
+                            class="card-img-top"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            style="object-fit: cover;"
+                            >
+                            <source src="{{ $media }}" type="video/mp4">
+                            </video>
+                        {{- else -}}
+                            <img class="card-img-top" src="{{ $media }}" alt="{{ .Title }}">
+                        {{- end -}}
+                    </div>
+                    <div class="card-body bg-transparent p-3">
+                        <div class="pb-2 bg-transparent">
+                            {{ range .Params.badges }}
+                            <span class="badge badge-secondary">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        <h5 class="card-title bg-transparent">{{ .Title | truncate 50 }}</h5>
+                        <div class="card-text bg-transparent secondary-font">
+                            {{ .Summary | truncate 100 | safeHTML }}
+                        </div>
+                    </div>
+                    <div class="card-footer py-3">
+                        {{ range .Params.links }}
+                        <span class="m-1 mx-2">
+                            <a href="{{ .url }}">
+                                <i class="{{ .icon }}"></i>
+                            </a>
+                        </span>
+                        {{ end }}
+                        <span class="float-end">
+                            <a class="btn btn-sm" href="{{ .RelPermalink }}">
+                                <span class="lang-zh">查看详情</span><span class="lang-en">Know more</span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

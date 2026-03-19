@@ -1,0 +1,72 @@
+<!-- i18n: bilingual CSS + JS toggle infrastructure -->
+<style>
+/* Default: show English, hide Chinese */
+body[data-lang="en"] .lang-zh,
+body:not([data-lang]) .lang-zh { display: none !important; }
+body[data-lang="zh"] .lang-en { display: none !important; }
+
+/* Inline variants for spans inside headings, paragraphs, etc. */
+span.lang-en, span.lang-zh { /* inline by default */ }
+
+/* Block variants for content divs */
+div.lang-en, div.lang-zh { display: block; }
+body[data-lang="en"] div.lang-zh,
+body:not([data-lang]) div.lang-zh { display: none !important; }
+body[data-lang="zh"] div.lang-en { display: none !important; }
+
+/* Toggle button styling */
+#lang-toggle {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: inherit;
+}
+#lang-toggle:hover {
+  opacity: 0.7;
+}
+</style>
+
+<script>
+function setLanguage(lang) {
+  document.body.setAttribute('data-lang', lang);
+  var btn = document.getElementById('lang-toggle');
+  if (btn) {
+    btn.textContent = (lang === 'en') ? '中文' : 'EN';
+  }
+  localStorage.setItem('pref-lang', lang);
+  filterToc(lang);
+}
+
+function filterToc(lang) {
+  var tocLinks = document.querySelectorAll('.toc-content a');
+  tocLinks.forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+    var targetId = href.substring(1);
+    var target = document.getElementById(targetId);
+    if (!target) return;
+    // Walk up from the heading to see if it's inside a lang-zh or lang-en div
+    var parent = target.parentElement;
+    var hidden = false;
+    while (parent && parent !== document.body) {
+      if (parent.classList.contains('lang-zh') && lang === 'en') { hidden = true; break; }
+      if (parent.classList.contains('lang-en') && lang === 'zh') { hidden = true; break; }
+      parent = parent.parentElement;
+    }
+    // The link is inside an <li> in the ToC
+    var li = link.closest('li');
+    if (li) {
+      li.style.display = hidden ? 'none' : '';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var lang = localStorage.getItem('pref-lang') || 'en';
+  setLanguage(lang);
+});
+</script>

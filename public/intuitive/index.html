@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/IMG_6321.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://localhost:1313/intuitive/">
+  <meta property="og:site_name" content="朱宸宇的作品集">
+  <meta property="og:title" content="Intuitive Surgical（直觉外科）实习：机器人手术器械热性能实验研究">
+  <meta property="og:description" content="在 Intuitive Surgical 使用达芬奇手术系统开展的实验研究，通过机器人自动化和热成像分析超声刀的冷却特性。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2025-08-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-12T00:00:00+00:00">
+    <meta property="article:tag" content="Robotics">
+    <meta property="article:tag" content="Experiment Design">
+    <meta property="article:tag" content="Data Modeling">
+    <meta property="article:tag" content="Medical Devices">
+    <meta property="article:tag" content="Thermal Analysis">
+    <meta property="article:tag" content="Da Vinci Surgical System">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Intuitive Surgical（直觉外科）实习：机器人手术器械热性能实验研究">
+  <meta name="twitter:description" content="在 Intuitive Surgical 使用达芬奇手术系统开展的实验研究，通过机器人自动化和热成像分析超声刀的冷却特性。">
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content="在 Intuitive Surgical 使用达芬奇手术系统开展的实验研究，通过机器人自动化和热成像分析超声刀的冷却特性。">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+    Chenyu Zhu |
+Intuitive Surgical（直觉外科）实习：机器人手术器械热性能实验研究 | 朱宸宇的作品集
+
+  </title>
+</head>
+
+<body class="light">
+  <script>
+    
+    (function() {
+      var lang = localStorage.getItem('pref-lang') || 'en';
+      document.body.setAttribute('data-lang', lang);
+    })();
+  </script>
+<style>
+ 
+body[data-lang="en"] .lang-zh,
+body:not([data-lang]) .lang-zh { display: none !important; }
+body[data-lang="zh"] .lang-en { display: none !important; }
+
+ 
+span.lang-en, span.lang-zh {   }
+
+ 
+div.lang-en, div.lang-zh { display: block; }
+body[data-lang="en"] div.lang-zh,
+body:not([data-lang]) div.lang-zh { display: none !important; }
+body[data-lang="zh"] div.lang-en { display: none !important; }
+
+ 
+#lang-toggle {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: inherit;
+}
+#lang-toggle:hover {
+  opacity: 0.7;
+}
+</style>
+
+<script>
+function setLanguage(lang) {
+  document.body.setAttribute('data-lang', lang);
+  var btn = document.getElementById('lang-toggle');
+  if (btn) {
+    btn.textContent = (lang === 'en') ? '中文' : 'EN';
+  }
+  localStorage.setItem('pref-lang', lang);
+  filterToc(lang);
+}
+
+function filterToc(lang) {
+  var tocLinks = document.querySelectorAll('.toc-content a');
+  tocLinks.forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+    var targetId = href.substring(1);
+    var target = document.getElementById(targetId);
+    if (!target) return;
+    
+    var parent = target.parentElement;
+    var hidden = false;
+    while (parent && parent !== document.body) {
+      if (parent.classList.contains('lang-zh') && lang === 'en') { hidden = true; break; }
+      if (parent.classList.contains('lang-en') && lang === 'zh') { hidden = true; break; }
+      parent = parent.parentElement;
+    }
+    
+    var li = link.closest('li');
+    if (li) {
+      li.style.display = hidden ? 'none' : '';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var lang = localStorage.getItem('pref-lang') || 'en';
+  setLanguage(lang);
+});
+</script>
+
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                <img src="/IMG_6321.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                <span class="lang-zh">朱宸宇</span><span class="lang-en">Chenyu Zhu</span>
+                
+            </a>
+
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link"
+                        href="/#featured"
+                        
+                        title="精选项目">
+                        
+                        <span class="lang-zh">项目</span><span class="lang-en">Projects</span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link"
+                        href="https://github.com/Zhu-Chenyu"
+                        target="_blank" rel="noopener noreferrer"
+                        title="Github 链接">
+                        
+                        <span class="lang-zh">Github</span><span class="lang-en">Github</span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link"
+                        href="https://www.linkedin.com/in/chenyu-zhu/"
+                        target="_blank" rel="noopener noreferrer"
+                        title="LinkedIn 主页">
+                        
+                        <span class="lang-zh">LinkedIn</span><span class="lang-en">LinkedIn</span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link"
+                        href="/about"
+                        
+                        title="关于我">
+                        
+                        <span class="lang-zh">关于</span><span class="lang-en">About</span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link"
+                        href="/resume"
+                        
+                        title="简历链接">
+                        
+                        <span class="lang-zh">简历</span><span class="lang-en">Resume</span>
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <div class="text-center">
+                            <button id="lang-toggle" onclick="setLanguage(document.body.getAttribute('data-lang') === 'en' ? 'zh' : 'en')">中文</button>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4"><span class="lang-zh">Intuitive Surgical（直觉外科）实习：机器人手术器械热性能实验研究</span><span class="lang-en">Intuitive Surgical Internship: Thermal Performance Study of Robotic Surgical Tools</span></h1>
+            <div class="text-center">
+              
+                Chenyu Zhu
+                <small>|</small>
+              
+              Aug 12, 2025
+
+              
+            </div>
+          </div>
+          
+          <article class="page-content  p-2">
+          <div class="lang-zh">
+<h2 id="概述">概述</h2>
+<p>在 <strong>Intuitive Surgical</strong> 的实习期间，我参与了一项使用<strong>达芬奇手术系统</strong>进行的<strong>超声刀冷却性能实验研究</strong>。
+目标是开发一套可重复、数据驱动的框架，评估手术器械在激活后的散热表现。</p>
+<p>我负责设计和自动化<strong>机器人辅助测试流程</strong>，集成<strong>热成像数据采集</strong>和<strong>曲线拟合模型</strong>来分析手术器械的冷却特性。
+本项目综合运用了<strong>机器人学、热分析和实验数据建模</strong>技能，应用于医疗器械研发环境。</p>
+<hr>
+<h2 id="系统组成">系统组成</h2>
+<table>
+  <thead>
+      <tr>
+          <th>组件</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>机器人系统</strong></td>
+          <td>达芬奇手术系统，编程执行精确运动序列</td>
+      </tr>
+      <tr>
+          <td><strong>器械</strong></td>
+          <td>不同材料和涂层的超声刀</td>
+      </tr>
+      <tr>
+          <td><strong>传感器</strong></td>
+          <td>热成像系统，用于表面温度监测</td>
+      </tr>
+      <tr>
+          <td><strong>软件工具</strong></td>
+          <td>Python、OpenCV、NumPy 和曲线拟合库</td>
+      </tr>
+      <tr>
+          <td><strong>工作环境</strong></td>
+          <td>可控实验室条件，确保机器人实验的可重复性</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="实验工作流程">实验工作流程</h2>
+<h3 id="1-机器人操作设置">1. 机器人操作设置</h3>
+<ul>
+<li>编程控制达芬奇机器人以固定速度、路径和力执行可重复的<strong>切割与冷却序列</strong>。</li>
+<li>确保接触时间、角度和运动轨迹的一致性。</li>
+<li>每次试验前通过多次标定循环验证机器人精度。</li>
+</ul>
+<hr>
+<h3 id="2-热成像与数据采集">2. 热成像与数据采集</h3>
+<ul>
+<li>使用<strong>热像仪</strong>连续记录手术器械激活后的温度衰减。</li>
+<li>定义**感兴趣区域（ROI）**以聚焦分析关键接触区域。</li>
+<li>提取时间-温度数据序列供后续处理。</li>
+</ul>
+<div style="display:flex; justify-content:center;">
+  <img src="/images/internships/intuitive/da_vinci_cooling_test.png" width="75%" alt="冷却测试中超声刀的热成像">
+</div>
+<hr>
+<h3 id="3-数据建模与分析">3. 数据建模与分析</h3>
+<ul>
+<li>使用 Python 处理记录的温度数据。</li>
+<li>应用<strong>曲线拟合技术</strong>建模随时间变化的冷却特性。</li>
+<li>实现指数衰减拟合以估计不同配置下的<strong>冷却参数</strong>。</li>
+<li>通过多次重复实验对比模型精度以验证实验可靠性。</li>
+</ul>
+<hr>
+<h3 id="4-器械处理与检查">4. 器械处理与检查</h3>
+<ul>
+<li>协助每次试验的器械准备与固定。</li>
+<li>每轮试验后进行<strong>显微检查</strong>，检测表面或涂层的潜在变化。</li>
+</ul>
+<div style="display:flex; justify-content:center;">
+  <img src="/images/internships/intuitive/scalpel.png" width="70%" alt="放大检查下的超声刀">
+</div>
+<hr>
+<h2 id="技能与贡献">技能与贡献</h2>
+<ul>
+<li><strong>机器人编程：</strong> 操作并编写达芬奇手术系统的运动程序。</li>
+<li><strong>实验设计：</strong> 规划可重复的测试条件，确保准确性和可重复性。</li>
+<li><strong>热数据分析：</strong> 使用 Python 处理和建模时间-温度数据。</li>
+<li><strong>团队协作：</strong> 在受管控的跨学科实验室环境中与研发工程师协作。</li>
+<li><strong>文档记录：</strong> 记录实验流程、设备配置和数据工作流以供内部报告。</li>
+</ul>
+<hr>
+<h2 id="收获">收获</h2>
+<p>这次实习加深了我对<strong>机器人学与数据建模在医疗器械研发中交叉应用</strong>的理解。
+我学会了在高风险的真实环境中运用工程原则 —— 精度、可重复性和安全性 —— 在手术机器人领域架起软件、硬件与人因工程的桥梁。</p>
+<hr>
+<h2 id="致谢">致谢</h2>
+<p>感谢 <strong>Intuitive Surgical 研发团队</strong>在实习期间的指导与帮助。
+他们在机器人器械、数据验证和安全测试方面的见解极大地塑造了我的学习体验。</p>
+<hr>
+<h2 id="免责声明">免责声明</h2>
+<p>本页展示的所有照片均<strong>经授权使用</strong>，仅展示<strong>非机密、适合教育用途的内容</strong>。
+本项目摘要未披露 Intuitive Surgical 的任何专有数据、内部结果或知识产权。</p>
+</div>
+<div class="lang-en">
+<h2 id="overview">Overview</h2>
+<p>During my internship at <strong>Intuitive Surgical</strong>, I participated in an <strong>experimental study on ultrasonic scalpel cooling performance</strong> using the <strong>da Vinci Surgical System</strong>.
+The goal was to develop a repeatable, data-driven framework to evaluate the thermal dissipation behavior of surgical instruments after activation.</p>
+<p>I was responsible for designing and automating the <strong>robot-assisted test workflow</strong>, integrating <strong>thermal imaging data acquisition</strong> and <strong>curve fitting models</strong> to analyze the cooling characteristics of surgical instruments.
+This project combined skills in <strong>robotics, thermal analysis, and experimental data modeling</strong>, applied in a medical device R&amp;D environment.</p>
+<hr>
+<h2 id="system-components">System Components</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Robot System</strong></td>
+          <td>da Vinci Surgical System, programmed for precise motion sequences</td>
+      </tr>
+      <tr>
+          <td><strong>Instruments</strong></td>
+          <td>Ultrasonic scalpels with different materials and coatings</td>
+      </tr>
+      <tr>
+          <td><strong>Sensors</strong></td>
+          <td>Thermal imaging system for surface temperature monitoring</td>
+      </tr>
+      <tr>
+          <td><strong>Software Tools</strong></td>
+          <td>Python, OpenCV, NumPy, and curve fitting libraries</td>
+      </tr>
+      <tr>
+          <td><strong>Environment</strong></td>
+          <td>Controlled lab conditions ensuring robotic experiment repeatability</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="experimental-workflow">Experimental Workflow</h2>
+<h3 id="1-robot-operation-setup">1. Robot Operation Setup</h3>
+<ul>
+<li>Programmed the da Vinci robot to execute repeatable <strong>cutting and cooling sequences</strong> at fixed speeds, paths, and forces.</li>
+<li>Ensured consistency in contact time, angle, and motion trajectory.</li>
+<li>Verified robot accuracy through multiple calibration cycles before each trial.</li>
+</ul>
+<hr>
+<h3 id="2-thermal-imaging-and-data-acquisition">2. Thermal Imaging and Data Acquisition</h3>
+<ul>
+<li>Used a <strong>thermal camera</strong> to continuously record temperature decay after instrument activation.</li>
+<li>Defined <strong>Regions of Interest (ROI)</strong> to focus analysis on key contact areas.</li>
+<li>Extracted time-temperature data series for subsequent processing.</li>
+</ul>
+<div style="display:flex; justify-content:center;">
+  <img src="/images/internships/intuitive/da_vinci_cooling_test.png" width="75%" alt="Thermal imaging of ultrasonic scalpel during cooling test">
+</div>
+<hr>
+<h3 id="3-data-modeling-and-analysis">3. Data Modeling and Analysis</h3>
+<ul>
+<li>Processed recorded temperature data using Python.</li>
+<li>Applied <strong>curve fitting techniques</strong> to model cooling characteristics over time.</li>
+<li>Implemented exponential decay fitting to estimate <strong>cooling parameters</strong> under different configurations.</li>
+<li>Validated experimental reliability by comparing model accuracy across multiple repeated trials.</li>
+</ul>
+<hr>
+<h3 id="4-instrument-handling-and-inspection">4. Instrument Handling and Inspection</h3>
+<ul>
+<li>Assisted with instrument preparation and fixturing for each trial.</li>
+<li>Conducted <strong>microscopic inspection</strong> after each round of testing to detect potential surface or coating changes.</li>
+</ul>
+<div style="display:flex; justify-content:center;">
+  <img src="/images/internships/intuitive/scalpel.png" width="70%" alt="Ultrasonic scalpel under magnified inspection">
+</div>
+<hr>
+<h2 id="skills-and-contributions">Skills and Contributions</h2>
+<ul>
+<li><strong>Robot Programming:</strong> Operated and programmed the da Vinci Surgical System for motion sequences.</li>
+<li><strong>Experiment Design:</strong> Planned repeatable test conditions ensuring accuracy and reproducibility.</li>
+<li><strong>Thermal Data Analysis:</strong> Processed and modeled time-temperature data using Python.</li>
+<li><strong>Team Collaboration:</strong> Worked with R&amp;D engineers in a regulated, interdisciplinary lab environment.</li>
+<li><strong>Documentation:</strong> Recorded experimental procedures, equipment configurations, and data workflows for internal reports.</li>
+</ul>
+<hr>
+<h2 id="takeaways">Takeaways</h2>
+<p>This internship deepened my understanding of the <strong>intersection of robotics and data modeling in medical device R&amp;D</strong>.
+I learned to apply engineering principles &ndash; precision, repeatability, and safety &ndash; in a high-stakes real-world environment, bridging software, hardware, and human factors in the surgical robotics domain.</p>
+<hr>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>Thanks to the <strong>Intuitive Surgical R&amp;D team</strong> for their guidance and support during the internship.
+Their insights on robotic instruments, data validation, and safety testing greatly shaped my learning experience.</p>
+<hr>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>All photos shown on this page are <strong>used with permission</strong> and display only <strong>non-confidential, education-appropriate content</strong>.
+This project summary does not disclose any proprietary data, internal results, or intellectual property of Intuitive Surgical.</p>
+</div>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                <span class="lang-zh">目录</span><span class="lang-en">Table of Contents</span>
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#系统组成">系统组成</a></li>
+    <li><a href="#实验工作流程">实验工作流程</a>
+      <ul>
+        <li><a href="#1-机器人操作设置">1. 机器人操作设置</a></li>
+        <li><a href="#2-热成像与数据采集">2. 热成像与数据采集</a></li>
+        <li><a href="#3-数据建模与分析">3. 数据建模与分析</a></li>
+        <li><a href="#4-器械处理与检查">4. 器械处理与检查</a></li>
+      </ul>
+    </li>
+    <li><a href="#技能与贡献">技能与贡献</a></li>
+    <li><a href="#收获">收获</a></li>
+    <li><a href="#致谢">致谢</a></li>
+    <li><a href="#免责声明">免责声明</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#system-components">System Components</a></li>
+    <li><a href="#experimental-workflow">Experimental Workflow</a>
+      <ul>
+        <li><a href="#1-robot-operation-setup">1. Robot Operation Setup</a></li>
+        <li><a href="#2-thermal-imaging-and-data-acquisition">2. Thermal Imaging and Data Acquisition</a></li>
+        <li><a href="#3-data-modeling-and-analysis">3. Data Modeling and Analysis</a></li>
+        <li><a href="#4-instrument-handling-and-inspection">4. Instrument Handling and Inspection</a></li>
+      </ul>
+    </li>
+    <li><a href="#skills-and-contributions">Skills and Contributions</a></li>
+    <li><a href="#takeaways">Takeaways</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#disclaimer">Disclaimer</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/robotics"
+                
+              >Robotics</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/experiment-design"
+                
+              >Experiment Design</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/data-modeling"
+                
+              >Data Modeling</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/medical-devices"
+                
+              >Medical Devices</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/thermal-analysis"
+                
+              >Thermal Analysis</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/da-vinci-surgical-system"
+                
+              >Da Vinci Surgical System</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+
+
+  </div><footer>
+    
+ 
+
+<div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/Zhu-Chenyu" target="_blank" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path id="footer-socialNetworks-github-svg-path"
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://www.linkedin.com/in/chenyu-zhu/" target="_blank" aria-label="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
+                viewBox="0 0 512 512">
+                <rect width="512" height="512" fill="#0077b5" rx="15%" />
+                <circle cx="142" cy="138" r="37" />
+                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
+                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
+            </svg>
+        </a>
+    </span>
+    
+
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+                <div class="pb-2">
+                    <a href="http://localhost:1313/" title="朱宸宇的作品集">
+                        <img alt="Footer logo" src="/IMG_6321.png"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            
+            &copy; 2026 <span class="lang-zh">朱宸宇</span><span class="lang-en">Chenyu Zhu</span>
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    }
+</script>
+
+
+
+
+
+
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW" crossorigin="anonymous"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\[','\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        TeX: { equationNumbers: { autoNumber: "AMS" },
+             extensions: ["AMSmath.js", "AMSsymbols.js"] }
+      }
+    });
+</script>
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</body>
+
+</html>
