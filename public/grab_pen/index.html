@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="lang-zh">
 <h2 id="概述">概述</h2>
 <p><strong>谁偷了我的笔？</strong>
-笔刚才还在这里，现在不见了。周围没有人 —— 只有机械臂。它不可能拿走了……对吧？</p>
+我的笔刚才还在这里，但是现在不见了。周围没有人 —— 只有这个机械臂。不可能是它拿走的……吧？</p>
 <p>本项目展示了一个<strong>视觉引导机器人抓取系统</strong>，使用 <strong>RealSense 深度相机</strong>检测笔，通过<strong>相机-机器人标定</strong>计算其位置，并控制 <strong>Interbotix PX100 机械臂</strong>实时拾取 —— 全部自动完成。</p>
 <p>项目集成了 <strong>RGB-D 感知、坐标变换和运动控制</strong>，作为视觉伺服（Visual Servoing）和机器人抓取操作的小型演示。</p>
 <hr>
@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>将检测到的笔的像素和深度数据转换为 <strong>3D 相机坐标</strong>。</li>
 <li>应用标定变换计算<strong>机器人坐标</strong>。</li>
 <li>控制 PX100 机械臂将末端执行器移动到计算出的位置。</li>
-<li>关闭夹爪 —— 笔被当场抓获！</li>
+<li>关闭夹爪 —— 笔被成功抓取！</li>
 </ul>
 <div style="display:flex; justify-content:center;">
   <img src="/images/projects/robot-pen-grasping/pen_grasping.gif" width="85%" alt="机械臂抓取笔">
@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <tbody>
       <tr>
           <td><code>main.py</code></td>
-          <td>运行实时检测与控制流水线</td>
+          <td>运行实时检测与控制流程</td>
       </tr>
       <tr>
           <td><code>calibration.py</code></td>

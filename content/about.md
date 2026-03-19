@@ -14,13 +14,13 @@ socialShare: false
 
 <div class="lang-zh">
 
-## 关于我
+## 关于
 
 <aside class="aboutImg">
     <div class="aboutImg-content">
         <p align="left">
-            你好！我是美国西北大学机器人学硕士研究生。此前，我在东南大学完成了本科学业。<br>
-            我致力于构建可靠的机器人系统，融合感知、规划与控制，使其能在真实环境中安全运行。
+            哈喽！我是美国西北大学机器人学硕士研究生，本科是东南大学自动化专业。<br>
+            我的兴趣是构建可靠的机器人，融合感知、规划与学习，使其能在真实环境中稳定运行。
         </p>
         <p class="contact-intro">
             可通过邮箱 <a href="mailto:zhuc1915@gmail.com">zhuc1915@gmail.com</a> 联系我，
@@ -69,7 +69,7 @@ socialShare: false
     <div class="aboutImg-content">
         <p align="left">
             Hi! I'm a Master's student in Robotics at Northwestern University. Previously, I completed my undergraduate studies at Southeast University.<br>
-            I'm passionate about building reliable robotic systems that integrate perception, planning, and control to operate safely in real-world environments.
+            I'm passionate about building reliable robotic systems that integrate perception, planning, and learning to operate robustly in real-world environments.
         </p>
         <p class="contact-intro">
             Reach me at <a href="mailto:zhuc1915@gmail.com">zhuc1915@gmail.com</a>,

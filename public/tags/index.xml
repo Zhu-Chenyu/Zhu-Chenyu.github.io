@@ -16,13 +16,6 @@
       <description></description>
     </item>
     <item>
-      <title>Drone</title>
-      <link>http://localhost:1313/tags/drone/</link>
-      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/drone/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Kalman Filter</title>
       <link>http://localhost:1313/tags/kalman-filter/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
@@ -48,6 +41,13 @@
       <link>http://localhost:1313/tags/ros-2/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/ros-2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>UAV</title>
+      <link>http://localhost:1313/tags/uav/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/uav/</guid>
       <description></description>
     </item>
     <item>

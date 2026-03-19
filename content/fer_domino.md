@@ -44,8 +44,8 @@ video: "/images/projects/fer_domino/squigle_domino.mp4"
 | 组件 | 描述 |
 |------|------|
 | **机器人** | Franka Emika Panda（7 自由度力矩控制机械臂） |
-| **相机** | Intel RealSense RGB-D 深度相机（眼在手上配置） |
-| **中间件** | ROS 2 |
+| **相机** | Intel RealSense RGB-D 深度相机（固定在夹爪上） |
+| **系统** | ROS 2 |
 | **运动规划** | 基于 MoveIt 的笛卡尔空间和关节空间规划 |
 | **视觉** | OpenCV + 基于深度的 3D 位姿估计 |
 | **标定** | `easy_handeye2` 外参标定 |
@@ -115,7 +115,7 @@ video: "/images/projects/fer_domino/squigle_domino.mp4"
 
 精确的感知依赖于相机与机器人之间的精确外参标定。
 
-- 使用 **easy_handeye2** 在眼在手上（Eye-in-hand）配置下进行标定。
+- 使用 **easy_handeye2** 在“Eye-in-hand”（摄像头固定在夹爪上）设定下进行标定。
 - 标定结果通过专用 ROS 节点发布，用于将视觉检测结果变换到机器人基座坐标系。
 - 运行时加载固定标定文件以确保多次运行的一致性。
 

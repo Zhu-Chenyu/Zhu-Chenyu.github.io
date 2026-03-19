@@ -1,17 +1,17 @@
 ---
-title: "力柔顺交互四旋翼：LiDAR 避障"
-title_en: "Force-Compliant Drone with LiDAR Obstacle Avoidance"
+title: "力顺从交互四旋翼无人机（LiDAR 避障功能）"
+title_en: "Force-Compliant UAV with LiDAR Obstacle Avoidance"
 date: 2026-02-01
 draft: false
 author: "Chenyu Zhu"
 tags:
   - Robotics
   - ROS 2
-  - Drone
+  - UAV
   - Kalman Filter
   - Obstacle Avoidance
   - Control Systems
-description: "一架可沿施加外力方向移动的四旋翼无人机 —— 推动它，它就会跟随。卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。"
+description: "一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。"
 toc: true
 mathjax: true
 math: true
@@ -29,19 +29,19 @@ video: /images/projects/drone/main_demo.MP4
 
 ## 灵感来源
 
-五岁那年，我看了《机器人总动员》。在这个场景中，EVE 处于休眠模式 —— 但她依然悬停着。WALL-E 用绳子拖着她，她就那样……跟随着。完全顺应外力，毫不费力。
+记得五岁那年第一次看《机器人总动员》。在一个场景中，伊娃处于休眠模式，但她依然悬停着。瓦力用绳子拖着她到处走，她就那样丝滑地跟随着。完全顺应外力，显得很轻松。
 
 <video autoplay loop muted playsinline style="width:60%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/drone/walle_eve.MP4" type="video/mp4">
 </video>
 
-那个画面一直留在我脑海中。这个项目就是我试图打造出同样特质的东西：一架能感知施加在它身上的力并与你同行的无人机。
+那个画面给当时的我留下了深刻的印象。于是这个项目我就试图打造出同样特质的东西：一架能感知施加在它身上的力并与你同行的无人机。当然这样还不够有趣，我要让它可以不是简单地跟随，而是以一种聪明的方式———遇到障碍的时候要抵抗，或者丝滑地绕过去。
 
 ---
 
 ## 概述
 
-一架可沿施加外力方向移动的四旋翼无人机 —— 推动它，它就会跟随。
+一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。
 卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。
 
 **行为模式：**
@@ -70,7 +70,7 @@ video: /images/projects/drone/main_demo.MP4
 
 ## 工作原理
 
-无外力施加时，无人机保持静止。沿任意水平方向推动它，它将沿该方向加速，速度与力的大小成正比。松开后，它减速至位置保持状态。启用避障功能时，飞行员持续沿期望方向施力，无人机则会自动绕过障碍物飞行。
+无外力施加时，无人机保持静止。沿任意水平方向拖动它，它将沿该方向加速，速度与力的大小成正比。松开后，它减速至位置保持状态。启用避障功能时，飞行员持续沿期望方向施力，无人机则会自动绕过障碍物飞行。
 
 ---
 
@@ -85,10 +85,10 @@ video: /images/projects/drone/main_demo.MP4
 </div>
 
 在准稳态下，力平衡方程为：
-- **垂直方向：** $T\sin(\theta) = G$ —— 垂直推力等于重力
-- **水平方向：** $T\cos(\theta) = ma + E$ —— 水平推力克服惯性和外力 $E$
+- **垂直方向：** $T\sin(\theta) = G$ —— 垂直拉力等于重力
+- **水平方向：** $T\cos(\theta) = ma + E$ —— 水平拉力克服惯性和外力 $E$
 
-通过 OptiTrack 观测位置并已知推力指令，任何残余水平加速度都可归因于外力。
+通过 OptiTrack 观测位置并已知拉力指令，任何残余水平加速度都可归因于外力。
 
 ### 坐标系约定
 
@@ -122,7 +122,7 @@ $$y_{ned} = -\sin(\psi) x_{frd} + \cos(\psi) y_{frd}$$
   <img src="/images/projects/drone/pitch_to_xe.png" width="750" alt="俯仰角与 X 轴误差的相关性" style="border-radius:8px;">
 </div>
 
-相关系数 = 0.732。俯仰角追踪 X 轴误差，验证了模型：当无人机被向前推时，PX4 使机头下俯以产生加速度，造成位置误差不断增大，直至匹配指令速度。
+相关系数 = 0.732。俯仰角追踪 X 轴误差，验证了模型：当无人机被向前拖动时，PX4 使机头下俯以产生加速度，造成位置误差不断增大，直至匹配指令速度。
 
 **横滚角与 Y 轴位置误差（NED）的相关性：**
 
@@ -146,12 +146,12 @@ $$F_x \leftarrow F_x \quad \text{(建模为随机游走)}$$
 
 （$y$ 方向对称。）
 
-**控制输入 $Bu$** —— 考虑完整横滚/俯仰/偏航旋转后，推力产生的 NED 水平加速度：
+**控制输入 $Bu$** —— 考虑完整横滚/俯仰/偏航旋转后，拉力产生的 NED 水平加速度：
 
 $$Bu_x = -(T/m)[\cos(\psi)\sin(\theta)\cos(\phi) + \sin(\psi)\sin(\phi)]\,\Delta t$$
 $$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)]\,\Delta t$$
 
-推力大小：$T = mg / (\cos(\phi)\cos(\theta))$，因此无论倾斜角度如何，垂直分量始终等于重力。
+拉力大小：$T = mg / (\cos(\phi)\cos(\theta))$，因此无论倾斜角度如何，垂直分量始终等于重力。
 
 **观测量：** OptiTrack 2D 位置 $[p_x, p_y]$。滤波器从悬停状态约 1 秒内收敛，并持续跟踪缓慢变化的外力。
 
@@ -164,7 +164,7 @@ $$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)]\,\Delta
 RPLidar 扫描产生的斥力通过人工势场方法叠加在估计的外力上。
 
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <img src="/images/projects/drone/Potential field.jpg" width="550" alt="人工势场避障" style="border-radius:8px;">
+  <img src="/images/projects/drone/PotentialField.jpg" width="550" alt="人工势场避障" style="border-radius:8px;">
 </div>
 
 上图展示了完整的力叠加关系：橙色弧线是面向 $F_{ext}$（红色）的半圆检测区域。区域内的障碍物产生避障力（青色和紫色箭头）将无人机推离。速度阻尼（粉色）在斥力激活时抵消当前速度。指令力（蓝色虚线）是所有分量的矢量和。
@@ -236,7 +236,7 @@ When I was five, I watched *WALL-E*. In this scene, EVE is in sleep mode -- but 
   <source src="/images/projects/drone/walle_eve.MP4" type="video/mp4">
 </video>
 
-That image has stayed with me ever since. This project is my attempt to build something with that same quality: a drone that senses the force applied to it and moves with you.
+That image has stayed with me ever since. This project is my attempt to build something with that same quality: a UAV that senses the force applied to it and moves with you. Besides, I want the UAV to follow smartly--it should repel or bypass when it detects obstacles in the front.
 
 ---
 
@@ -271,7 +271,7 @@ A Kalman filter estimates external force from position observations alone, while
 
 ## How It Works
 
-With no external force, the drone stays still. Pull it in any horizontal direction, and it accelerates that way at a speed proportional to the force magnitude. Release it, and it decelerates to a position hold. With obstacle avoidance enabled, the pilot applies sustained force in the desired direction, and the drone automatically navigates around obstacles.
+With no external force, the UAV stays still. Pull it in any horizontal direction, and it accelerates that way at a speed proportional to the force magnitude. Release it, and it decelerates to a position hold. With obstacle avoidance enabled, the pilot applies sustained force in the desired direction, and the UAV automatically navigates around obstacles.
 
 ---
 
@@ -293,7 +293,7 @@ By observing position via OptiTrack and knowing the thrust command, any residual
 
 ### Coordinate Frame Convention
 
-The system uses four coordinate frames, all identifiable on the physical drone:
+The system uses four coordinate frames, all identifiable on the physical UAV:
 
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
   <img src="/images/projects/drone/DroneFrames.jpg" width="700" alt="Drone coordinate frames" style="border-radius:8px;">
@@ -315,7 +315,7 @@ where $x_{frd} = x_{flu}$, $y_{frd} = -y_{flu}$.
 
 ### Attitude Encodes Horizontal Force
 
-Since PX4 tilts the drone to produce horizontal motion, pitch and roll angles are direct observations of horizontal force. This validates the model and justifies using attitude angles in the Kalman filter's control input term.
+Since PX4 tilts the UAV to produce horizontal motion, pitch and roll angles are direct observations of horizontal force. This validates the model and justifies using attitude angles in the Kalman filter's control input term.
 
 **Pitch vs X-axis Position Error (NED):**
 
@@ -323,7 +323,7 @@ Since PX4 tilts the drone to produce horizontal motion, pitch and roll angles ar
   <img src="/images/projects/drone/pitch_to_xe.png" width="750" alt="Pitch vs X-axis error correlation" style="border-radius:8px;">
 </div>
 
-Correlation = 0.732. Pitch tracks X-axis error, validating the model: when the drone is pulled forward, PX4 pitches nose-down to generate acceleration, causing position error to grow until the commanded velocity is matched.
+Correlation = 0.732. Pitch tracks X-axis error, validating the model: when the UAV is pulled forward, PX4 pitches nose-down to generate acceleration, causing position error to grow until the commanded velocity is matched.
 
 **Roll vs Y-axis Position Error (NED):**
 
@@ -368,7 +368,7 @@ Repulsive forces from RPLidar scans are superimposed on the estimated external f
   <img src="/images/projects/drone/Potential field.jpg" width="550" alt="Potential field obstacle avoidance" style="border-radius:8px;">
 </div>
 
-The figure above shows the full force superposition: the orange arc is the hemicircle detection zone facing $F_{ext}$ (red). Obstacles within the zone generate avoidance forces (cyan and purple arrows) pushing the drone away. Velocity damping (pink) counteracts current velocity when repulsive forces activate. The command force (blue dashed) is the vector sum of all components.
+The figure above shows the full force superposition: the orange arc is the hemicircle detection zone facing $F_{ext}$ (red). Obstacles within the zone generate avoidance forces (cyan and purple arrows) pushing the UAV away. Velocity damping (pink) counteracts current velocity when repulsive forces activate. The command force (blue dashed) is the vector sum of all components.
 
 ### Two-Pass Scan Processing
 
@@ -376,17 +376,17 @@ The figure above shows the full force superposition: the orange arc is the hemic
 Scans within a ±90° cone in the direction of $F_{ext}$ (orange arc), with scan radius scaling with force magnitude. Ensures obstacles in the intended motion direction are detected early.
 
 **Pass 2 -- Omnidirectional Safety Bubble:**
-Performs a 360° scan within a fixed close-range radius (default 0.5 m). Catches side and rear obstacles when the drone sidesteps to avoid frontal obstacles -- prevents blind-spot collisions.
+Performs a 360° scan within a fixed close-range radius (default 0.5 m). Catches side and rear obstacles when the UAV sidesteps to avoid frontal obstacles -- prevents blind-spot collisions.
 
-Results from both passes accumulate into the same repulsive force vector. Overlapping zones near the drone produce stronger repulsion, exactly where it's needed most.
+Results from both passes accumulate into the same repulsive force vector. Overlapping zones near the UAV produce stronger repulsion, exactly where it's needed most.
 
 ### Force Superposition
 
 $$F_{cmd} = F_{ext} + F_{rep} + F_{damp}$$
 
 - $F_{ext}$ -- Kalman filter estimated external force
-- $F_{rep} = \sum k/d^2$ pointing toward the drone from all detected obstacles (clamped to `max_repulsion_force`)
-- $F_{damp} = -\text{damping} \times (|F_{rep}| / F_{rep,max}) \times v_{cmd}$ -- counteracts velocity, scaling proportionally as the drone enters the repulsive field
+- $F_{rep} = \sum k/d^2$ pointing toward the UAV from all detected obstacles (clamped to `max_repulsion_force`)
+- $F_{damp} = -\text{damping} \times (|F_{rep}| / F_{rep,max}) \times v_{cmd}$ -- counteracts velocity, scaling proportionally as the UAV enters the repulsive field
 
 ---
 

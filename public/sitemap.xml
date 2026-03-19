@@ -5,9 +5,6 @@
     <loc>http://localhost:1313/tags/control-systems/</loc>
     <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/drone/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/kalman-filter/</loc>
     <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -21,6 +18,9 @@
     <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/uav/</loc>
     <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/drone/</loc>

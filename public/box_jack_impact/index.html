@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </video>
 <hr>
 <h2 id="概述">概述</h2>
-<p>本项目构建了一个双刚体系统的<strong>平面刚体动力学仿真器</strong>：一个空心方形<strong>盒子</strong>和一个内部的方形<strong>千斤顶</strong>。
+<p>本项目构建了一个双刚体系统的<strong>平面刚体动力学仿真器</strong>：一个空心方形<strong>盒子</strong>和一个内部的方形<strong>骰子</strong>。
 仿真器捕获<strong>连续运动</strong>（通过欧拉-拉格朗日动力学）和<strong>离散事件</strong>（通过单面接触约束和基于冲量的速度修正），构成一个<strong>混杂系统</strong>。</p>
 <p>主要特性：</p>
 <ul>
@@ -419,14 +419,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>状态使用 6 个广义坐标：</p>
 <ul>
 <li>盒子位姿：$(x_{box}, y_{box}, \theta_{box})$</li>
-<li>千斤顶位姿：$(x_{jack}, y_{jack}, \theta_{jack}) $</li>
+<li>骰子位姿：$(x_{jack}, y_{jack}, \theta_{jack}) $</li>
 </ul>
 <p>及其速度和加速度的时间导数。</p>
 <h3 id="几何与惯量">几何与惯量</h3>
 <ul>
 <li>盒子建模为薄壁方形框架，可配置壁厚和内部尺寸。</li>
 <li>质量和转动惯量由壁面段计算，加上平行轴定理的偏移修正。</li>
-<li>千斤顶建模为均匀方形板，具有质量和平面转动惯量。</li>
+<li>骰子建模为均匀方形板，具有质量和平面转动惯量。</li>
 </ul>
 <hr>
 <h2 id="动力学推导">动力学推导</h2>
@@ -447,11 +447,11 @@ $</p>
 <p>得到的 $\ddot{q} $表达式经符号求解后数值化（Lambdify）为高速数值函数，用于时间积分。</p>
 <hr>
 <h2 id="接触约束">接触约束</h2>
-<h3 id="盒子-千斤顶壁面接触">盒子-千斤顶壁面接触</h3>
+<h3 id="盒子-骰子壁面接触">盒子-骰子壁面接触</h3>
 <p>仿真器定义了以下接触的单面间隙约束：</p>
 <ul>
 <li>四面盒壁（上/右/下/左）</li>
-<li>四个千斤顶极端点（上/右/下/左）</li>
+<li>四个骰子极端点（上/右/下/左）</li>
 </ul>
 <p>共产生 16 个约束：
 $
@@ -517,7 +517,7 @@ $</p>
 <ul>
 <li>盒子内边界</li>
 <li>盒子外边界</li>
-<li>千斤顶几何体</li>
+<li>骰子几何体</li>
 <li>地面线</li>
 </ul>
 <p>使接触事件可视化，并有助于调试约束逻辑。</p>
@@ -525,11 +525,11 @@ $</p>
 <h2 id="实现说明">实现说明</h2>
 <ul>
 <li>符号表达式（欧拉-拉格朗日项和约束雅可比矩阵）仅计算一次并数值化以提高速度。</li>
-<li>使用 SE(2) 齐次变换简洁地计算壁面/千斤顶的相对几何关系。</li>
+<li>使用 SE(2) 齐次变换简洁地计算壁面/骰子的相对几何关系。</li>
 <li>仿真器采用模块化设计：事件检测、碰撞更新和 RK4 积分相互分离。</li>
 </ul>
 <hr>
-<h2 id="代码仓库">代码仓库</h2>
+<h2 id="代码库">代码库</h2>
 <ul>
 <li>Google Colab: <a href="https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=6gZLdfdMyb39">https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=6gZLdfdMyb39</a></li>
 </ul>
@@ -699,7 +699,7 @@ Both models share the same dynamics equations, constraints, and event detection 
     </li>
     <li><a href="#接触约束">接触约束</a>
       <ul>
-        <li><a href="#盒子-千斤顶壁面接触">盒子-千斤顶壁面接触</a></li>
+        <li><a href="#盒子-骰子壁面接触">盒子-骰子壁面接触</a></li>
         <li><a href="#地面接触">地面接触</a></li>
       </ul>
     </li>
@@ -718,7 +718,7 @@ Both models share the same dynamics equations, constraints, and event detection 
       </ul>
     </li>
     <li><a href="#实现说明">实现说明</a></li>
-    <li><a href="#代码仓库">代码仓库</a></li>
+    <li><a href="#代码库">代码库</a></li>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#system-model">System Model</a>
       <ul>

@@ -283,11 +283,11 @@ params:
     title_en: "Featured Projects"
     items:
 
-    - title: 力柔顺交互四旋翼：LiDAR 避障
-      title_en: "Force-Compliant Drone with LiDAR Obstacle Avoidance"
+    - title: 力顺从交互四旋翼无人机（LiDAR 避障功能）
+      title_en: "Force-Compliant UAV with LiDAR Obstacle Avoidance"
       content: 一架可沿施加外力方向移动的四旋翼无人机。通过卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。
       content_en: "A quadrotor that moves in the direction of applied external force. A Kalman filter estimates force from position observations alone, while a LiDAR-based potential field prevents collisions while preserving intended motion direction."
-      image: /images/projects/drone/main_demo.MP4
+      image: /images/projects/drone/2x_demo.MP4
       featured:
         name: 查看详情
         name_en: "View Details"

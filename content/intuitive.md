@@ -11,7 +11,7 @@ tags:
   - Medical Devices
   - Thermal Analysis
   - Da Vinci Surgical System
-description: "在 Intuitive Surgical 使用达芬奇手术系统开展的实验研究，通过机器人自动化和热成像分析超声刀的冷却特性。"
+description: "在 Intuitive Surgical 使用达芬奇手术机器人开展的实验研究，通过机器人自动化和热成像分析超声刀的冷却特性。"
 toc: true
 mathjax: false
 repoName: intuitive
@@ -22,7 +22,7 @@ repoName: intuitive
 ## 概述
 
 在 **Intuitive Surgical** 的实习期间，我参与了一项使用**达芬奇手术系统**进行的**超声刀冷却性能实验研究**。
-目标是开发一套可重复、数据驱动的框架，评估手术器械在激活后的散热表现。
+目标是开发一套可重复、数据驱动的框架，评估超声刀在激活后的散热表现。
 
 我负责设计和自动化**机器人辅助测试流程**，集成**热成像数据采集**和**曲线拟合模型**来分析手术器械的冷却特性。
 本项目综合运用了**机器人学、热分析和实验数据建模**技能，应用于医疗器械研发环境。
@@ -52,7 +52,7 @@ repoName: intuitive
 
 ### 2. 热成像与数据采集
 - 使用**热像仪**连续记录手术器械激活后的温度衰减。
-- 定义**感兴趣区域（ROI）**以聚焦分析关键接触区域。
+- 定义**观察区域**以聚焦分析关键接触区域。
 - 提取时间-温度数据序列供后续处理。
 
 <div style="display:flex; justify-content:center;">
@@ -81,7 +81,7 @@ repoName: intuitive
 
 ## 技能与贡献
 
-- **机器人编程：** 操作并编写达芬奇手术系统的运动程序。
+- **机器人操作：** 操作达芬奇手术机器人以完成实验。
 - **实验设计：** 规划可重复的测试条件，确保准确性和可重复性。
 - **热数据分析：** 使用 Python 处理和建模时间-温度数据。
 - **团队协作：** 在受管控的跨学科实验室环境中与研发工程师协作。
@@ -174,7 +174,7 @@ This project combined skills in **robotics, thermal analysis, and experimental d
 
 ## Skills and Contributions
 
-- **Robot Programming:** Operated and programmed the da Vinci Surgical System for motion sequences.
+- **Robot Operating:** Operated the da Vinci Surgical System for testing.
 - **Experiment Design:** Planned repeatable test conditions ensuring accuracy and reproducibility.
 - **Thermal Data Analysis:** Processed and modeled time-temperature data using Python.
 - **Team Collaboration:** Worked with R&D engineers in a regulated, interdisciplinary lab environment.

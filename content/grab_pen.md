@@ -24,7 +24,7 @@ repoName: grab_pen
 ## 概述
 
 **谁偷了我的笔？**
-笔刚才还在这里，现在不见了。周围没有人 —— 只有机械臂。它不可能拿走了……对吧？
+我的笔刚才还在这里，但是现在不见了。周围没有人 —— 只有这个机械臂。不可能是它拿走的……吧？
 
 本项目展示了一个**视觉引导机器人抓取系统**，使用 **RealSense 深度相机**检测笔，通过**相机-机器人标定**计算其位置，并控制 **Interbotix PX100 机械臂**实时拾取 —— 全部自动完成。
 
@@ -93,7 +93,7 @@ repoName: grab_pen
 - 将检测到的笔的像素和深度数据转换为 **3D 相机坐标**。
 - 应用标定变换计算**机器人坐标**。
 - 控制 PX100 机械臂将末端执行器移动到计算出的位置。
-- 关闭夹爪 —— 笔被当场抓获！
+- 关闭夹爪 —— 笔被成功抓取！
 
 <div style="display:flex; justify-content:center;">
   <img src="/images/projects/robot-pen-grasping/pen_grasping.gif" width="85%" alt="机械臂抓取笔">
@@ -105,7 +105,7 @@ repoName: grab_pen
 
 | 文件 | 描述 |
 |------|------|
-| `main.py` | 运行实时检测与控制流水线 |
+| `main.py` | 运行实时检测与控制流程 |
 | `calibration.py` | 计算相机-机器人变换矩阵 |
 | `vision.py` | 管理 RealSense 数据流和对齐 |
 | `colorspace.py` | 实现 HSV 阈值分割和掩模创建 |

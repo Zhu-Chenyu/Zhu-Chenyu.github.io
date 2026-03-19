@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/drone/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="力柔顺交互四旋翼：LiDAR 避障">力柔顺交互四旋翼：LiDAR 避障</h5>
+                            <h5 class="card-title bg-transparent" title="力顺从交互四旋翼无人机（LiDAR 避障功能）">力顺从交互四旋翼无人机（LiDAR 避障功能）</h5>
                         </a>
                         <div class="card-text secondary-font">
                             <p><div class="lang-zh">
@@ -386,21 +386,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </video>
 <hr>
 <h2 id="灵感来源">灵感来源</h2>
-<p>五岁那年，我看了《机器人总动员》。在这个场景中，EVE 处于休眠模式 —— 但她依然悬停着。WALL-E 用绳子拖着她，她就那样……跟随着。完全顺应外力，毫不费力。</p>
+<p>记得五岁那年第一次看《机器人总动员》。在一个场景中，伊娃处于休眠模式，但她依然悬停着。瓦力用绳子拖着她到处走，她就那样丝滑地跟随着。完全顺应外力，显得很轻松。</p>
 <video autoplay loop muted playsinline style="width:60%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/drone/walle_eve.MP4" type="video/mp4">
 </video>
-<p>那个画面一直留在我脑海中。这个项目就是我试图打造出同样特质的东西：一架能感知施加在它身上的力并与你同行的无人机。</p>
+<p>那个画面给当时的我留下了深刻的印象。于是这个项目我就试图打造出同样特质的东西：一架能感知施加在它身上的力并与你同行的无人机。当然这样还不够有趣，我要让它可以不是简单地跟随，而是以一种聪明的方式———遇到障碍的时候要抵抗，或者丝滑地绕过去。</p>
 <hr>
 <h2 id="概述">概述</h2>
-<p>一架可沿施加外力方向移动的四旋翼无人机 —— 推动它，它就会跟随。
-卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。</p>
-<p><strong>行为模式：</strong></p>
-<ul>
-<li>无输入时原地悬停</li>
-<li>沿施力方向以与力大小成正比的速度移动</li>
-<li>外力释放后减速并保持位置</li>
-<li>使用 2D …</li></ul></div></p>
+<p>一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。
+卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防 …</p></div></p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
@@ -429,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p><div class="lang-zh">
 <h2 id="概述">概述</h2>
 <p><strong>谁偷了我的笔？</strong>
-笔刚才还在这里，现在不见了。周围没有人 —— 只有机械臂。它不可能拿走了……对吧？</p>
+我的笔刚才还在这里，但是现在不见了。周围没有人 —— 只有这个机械臂。不可能是它拿走的……吧？</p>
 <p>本项目展示了一个<strong>视觉引导机器人抓取系统</strong>，使用 <strong>RealSense 深度相机</strong>检测笔，通过<strong>相机-机器人标定</strong>计算其位置，并控制 <strong>Interbotix PX100 机械臂</strong>实时拾取 —— 全部自动完成。</p>
 <p>项目集成了 <strong>RGB-D 感知、坐标变换和运动控制</strong>，作为视觉伺服（Visual Servoing）和机器人抓取操作的小型演示。</p>
 <hr>
@@ -466,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p><div class="lang-zh">
 <h2 id="概述">概述</h2>
 <p>在 <strong>Intuitive Surgical</strong> 的实习期间，我参与了一项使用<strong>达芬奇手术系统</strong>进行的<strong>超声刀冷却性能实验研究</strong>。
-目标是开发一套可重复、数据驱动的框架，评估手术器械在激活后的散热表现。</p>
+目标是开发一套可重复、数据驱动的框架，评估超声刀在激活后的散热表现。</p>
 <p>我负责设计和自动化<strong>机器人辅助测试流程</strong>，集成<strong>热成像数据采集</strong>和<strong>曲线拟合模型</strong>来分析手术器械的冷却特性。
 本项目综合运用了<strong>机器人学、热分析和实验数据建模</strong>技能，应用于医疗器械研发环境。</p>
 <hr>

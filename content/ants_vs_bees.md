@@ -19,7 +19,7 @@ repoName: ants-vs-bees
 
 ## 概述
 
-**蚂蚁大战蜜蜂**是一款用 Python 开发的**策略回合制塔防游戏**，灵感来源于加州大学伯克利分校 **CS61A 课程的 "Ants" 项目**。
+**蚂蚁大战蜜蜂**是一款用 Python 开发的**策略回合制塔防游戏**，灵感来源于加州大学伯克利分校 **CS61A 课程的课程项目**。
 玩家需要利用有限的食物资源部署各种蚂蚁来保护蚁巢，保卫**蚁后**免受入侵蜜蜂的攻击。
 
 本项目展示了扎实的**面向对象设计**、**事件驱动编程**和**游戏逻辑架构** —— 全部从零实现。
@@ -49,7 +49,7 @@ repoName: ants-vs-bees
 | **墙蚁** | <img src="/images/projects/ants-vs-bees/Wall.gif" width="100" alt="墙蚁"> | 4 | 4 | 高耐久的肉盾 |
 | **饥饿蚁** | <img src="/images/projects/ants-vs-bees/Hungry.gif" width="100" alt="饥饿蚁"> | 4 | 1 | 每隔几回合吞噬一只蜜蜂 |
 | **保镖蚁** | <img src="/images/projects/ants-vs-bees/Bodyguard.gif" width="100" alt="保镖蚁"> | 4 | 2 | 保护另一只蚂蚁免受伤害 |
-| **坦克蚁** | <img src="/images/projects/ants-vs-bees/Tank.gif" width="100" alt="坦克蚁"> | 6 | 3 | 攻击其隧道中的所有蜜蜂 |
+| **坦克蚁** | <img src="/images/projects/ants-vs-bees/Tank.gif" width="100" alt="坦克蚁"> | 6 | 3 | 攻击其面前的所有蜜蜂 |
 | **潜水投掷蚁** | <img src="/images/projects/ants-vs-bees/Scuba.gif" width="100" alt="潜水投掷蚁"> | 6 | 1 | 防水远程攻击者 |
 | **蚁后** | <img src="/images/projects/ants-vs-bees/Queen.gif" width="100" alt="蚁后"> | 7 | 1 | 增强其他蚂蚁，被击杀则游戏结束 |
 
