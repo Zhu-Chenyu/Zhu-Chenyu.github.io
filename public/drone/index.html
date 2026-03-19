@@ -38,7 +38,7 @@
     <meta property="article:modified_time" content="2026-02-01T00:00:00+00:00">
     <meta property="article:tag" content="Robotics">
     <meta property="article:tag" content="ROS 2">
-    <meta property="article:tag" content="UAV">
+    <meta property="article:tag" content="Quadrotor">
     <meta property="article:tag" content="Kalman Filter">
     <meta property="article:tag" content="Obstacle Avoidance">
     <meta property="article:tag" content="Control Systems">
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="col-sm-12 col-md-12 col-lg-9">
         <div class="pr-lg-4">
           <div class="title mb-5">
-            <h1 class="text-center mb-4"><span class="lang-zh">力顺从交互四旋翼无人机（LiDAR 避障功能）</span><span class="lang-en">Force-Compliant UAV with LiDAR Obstacle Avoidance</span></h1>
+            <h1 class="text-center mb-4"><span class="lang-zh">力顺从交互四旋翼无人机（LiDAR 避障功能）</span><span class="lang-en">Force-Compliant Quadrotor with LiDAR Obstacle Avoidance</span></h1>
             <div class="text-center">
               
                 Chenyu Zhu
@@ -622,7 +622,7 @@ $$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)],\Delta 
 <video autoplay loop muted playsinline style="width:60%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/drone/walle_eve.MP4" type="video/mp4">
 </video>
-<p>That image has stayed with me ever since. This project is my attempt to build something with that same quality: a UAV that senses the force applied to it and moves with you. Besides, I want the UAV to follow smartly&ndash;it should repel or bypass when it detects obstacles in the front.</p>
+<p>That image has stayed with me ever since. This project is my attempt to build something with that same quality: a quadrotor that senses the force applied to it and moves with you. Besides, I want the quadrotor to follow smartly&ndash;it should repel or bypass when it detects obstacles in the front.</p>
 <hr>
 <h2 id="overview">Overview</h2>
 <p>A quadrotor that moves in the direction of applied external force &ndash; pull it, and it follows.
@@ -646,7 +646,7 @@ A Kalman filter estimates external force from position observations alone, while
 </div>
 <hr>
 <h2 id="how-it-works">How It Works</h2>
-<p>With no external force, the UAV stays still. Pull it in any horizontal direction, and it accelerates that way at a speed proportional to the force magnitude. Release it, and it decelerates to a position hold. With obstacle avoidance enabled, the pilot applies sustained force in the desired direction, and the UAV automatically navigates around obstacles.</p>
+<p>With no external force, the quadrotor stays still. Pull it in any horizontal direction, and it accelerates that way at a speed proportional to the force magnitude. Release it, and it decelerates to a position hold. With obstacle avoidance enabled, the pilot applies sustained force in the desired direction, and the quadrotor automatically navigates around obstacles.</p>
 <hr>
 <h2 id="mathematical-model">Mathematical Model</h2>
 <h3 id="force-decomposition">Force Decomposition</h3>
@@ -661,7 +661,7 @@ A Kalman filter estimates external force from position observations alone, while
 </ul>
 <p>By observing position via OptiTrack and knowing the thrust command, any residual horizontal acceleration can be attributed to external force.</p>
 <h3 id="coordinate-frame-convention">Coordinate Frame Convention</h3>
-<p>The system uses four coordinate frames, all identifiable on the physical UAV:</p>
+<p>The system uses four coordinate frames, all identifiable on the physical quadrotor:</p>
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
   <img src="/images/projects/drone/DroneFrames.jpg" width="700" alt="Drone coordinate frames" style="border-radius:8px;">
 </div>
@@ -701,12 +701,12 @@ A Kalman filter estimates external force from position observations alone, while
 $$y_{ned} = -\sin(\psi) x_{frd} + \cos(\psi) y_{frd}$$</p>
 <p>where $x_{frd} = x_{flu}$, $y_{frd} = -y_{flu}$.</p>
 <h3 id="attitude-encodes-horizontal-force">Attitude Encodes Horizontal Force</h3>
-<p>Since PX4 tilts the UAV to produce horizontal motion, pitch and roll angles are direct observations of horizontal force. This validates the model and justifies using attitude angles in the Kalman filter&rsquo;s control input term.</p>
+<p>Since PX4 tilts the quadrotor to produce horizontal motion, pitch and roll angles are direct observations of horizontal force. This validates the model and justifies using attitude angles in the Kalman filter&rsquo;s control input term.</p>
 <p><strong>Pitch vs X-axis Position Error (NED):</strong></p>
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
   <img src="/images/projects/drone/pitch_to_xe.png" width="750" alt="Pitch vs X-axis error correlation" style="border-radius:8px;">
 </div>
-<p>Correlation = 0.732. Pitch tracks X-axis error, validating the model: when the UAV is pulled forward, PX4 pitches nose-down to generate acceleration, causing position error to grow until the commanded velocity is matched.</p>
+<p>Correlation = 0.732. Pitch tracks X-axis error, validating the model: when the quadrotor is pulled forward, PX4 pitches nose-down to generate acceleration, causing position error to grow until the commanded velocity is matched.</p>
 <p><strong>Roll vs Y-axis Position Error (NED):</strong></p>
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
   <img src="/images/projects/drone/roll_to_ye.png" width="750" alt="Roll vs Y-axis error correlation" style="border-radius:8px;">
@@ -732,19 +732,19 @@ $$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)],\Delta 
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
   <img src="/images/projects/drone/Potential field.jpg" width="550" alt="Potential field obstacle avoidance" style="border-radius:8px;">
 </div>
-<p>The figure above shows the full force superposition: the orange arc is the hemicircle detection zone facing $F_{ext}$ (red). Obstacles within the zone generate avoidance forces (cyan and purple arrows) pushing the UAV away. Velocity damping (pink) counteracts current velocity when repulsive forces activate. The command force (blue dashed) is the vector sum of all components.</p>
+<p>The figure above shows the full force superposition: the orange arc is the hemicircle detection zone facing $F_{ext}$ (red). Obstacles within the zone generate avoidance forces (cyan and purple arrows) pushing the quadrotor away. Velocity damping (pink) counteracts current velocity when repulsive forces activate. The command force (blue dashed) is the vector sum of all components.</p>
 <h3 id="two-pass-scan-processing">Two-Pass Scan Processing</h3>
 <p><strong>Pass 1 &ndash; Hemicircle (Directional):</strong>
 Scans within a ±90° cone in the direction of $F_{ext}$ (orange arc), with scan radius scaling with force magnitude. Ensures obstacles in the intended motion direction are detected early.</p>
 <p><strong>Pass 2 &ndash; Omnidirectional Safety Bubble:</strong>
-Performs a 360° scan within a fixed close-range radius (default 0.5 m). Catches side and rear obstacles when the UAV sidesteps to avoid frontal obstacles &ndash; prevents blind-spot collisions.</p>
-<p>Results from both passes accumulate into the same repulsive force vector. Overlapping zones near the UAV produce stronger repulsion, exactly where it&rsquo;s needed most.</p>
+Performs a 360° scan within a fixed close-range radius (default 0.5 m). Catches side and rear obstacles when the quadrotor sidesteps to avoid frontal obstacles &ndash; prevents blind-spot collisions.</p>
+<p>Results from both passes accumulate into the same repulsive force vector. Overlapping zones near the quadrotor produce stronger repulsion, exactly where it&rsquo;s needed most.</p>
 <h3 id="force-superposition">Force Superposition</h3>
 <p>$$F_{cmd} = F_{ext} + F_{rep} + F_{damp}$$</p>
 <ul>
 <li>$F_{ext}$ &ndash; Kalman filter estimated external force</li>
-<li>$F_{rep} = \sum k/d^2$ pointing toward the UAV from all detected obstacles (clamped to <code>max_repulsion_force</code>)</li>
-<li>$F_{damp} = -\text{damping} \times (|F_{rep}| / F_{rep,max}) \times v_{cmd}$ &ndash; counteracts velocity, scaling proportionally as the UAV enters the repulsive field</li>
+<li>$F_{rep} = \sum k/d^2$ pointing toward the quadrotor from all detected obstacles (clamped to <code>max_repulsion_force</code>)</li>
+<li>$F_{damp} = -\text{damping} \times (|F_{rep}| / F_{rep,max}) \times v_{cmd}$ &ndash; counteracts velocity, scaling proportionally as the quadrotor enters the repulsive field</li>
 </ul>
 <hr>
 <h2 id="hardware">Hardware</h2>
@@ -925,9 +925,9 @@ Performs a 360° scan within a fixed close-range radius (default 0.5 m). Catches
                 
               >ROS 2</a></li>
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/uav"
+              <li class="list-inline-item"><a href="http://localhost:1313/tags/quadrotor"
                 
-              >UAV</a></li>
+              >Quadrotor</a></li>
               
               <li class="list-inline-item"><a href="http://localhost:1313/tags/kalman-filter"
                 

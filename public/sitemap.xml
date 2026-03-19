@@ -11,6 +11,9 @@
     <loc>http://localhost:1313/tags/obstacle-avoidance/</loc>
     <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/quadrotor/</loc>
+    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/robotics/</loc>
     <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -18,9 +21,6 @@
     <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/uav/</loc>
     <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/drone/</loc>
