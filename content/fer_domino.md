@@ -14,7 +14,7 @@ tags:
 description: "使用 Franka Emika Panda 机械臂的视觉引导机器人操作系统，实现多米诺骨牌的检测、重定向、力控放置及推倒，排列成预设图案。"
 toc: true
 repoName: fer_domino
-video: "/images/projects/fer_domino/squigle_domino.mp4"
+video: "/images/projects/fer_domino/full_domino_video.mp4"
 links:
   - icon: fab fa-github
     name: "Source"
@@ -23,8 +23,8 @@ links:
 
 <div class="lang-zh">
 
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/fer_domino/squigle_domino.mp4" type="video/mp4">
+<video controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+  <source src="/images/projects/fer_domino/full_domino_video.mp4" type="video/mp4">
 </video>
 
 ---
@@ -200,8 +200,8 @@ links:
 
 <div class="lang-en">
 
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/fer_domino/squigle_domino.mp4" type="video/mp4">
+<video controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+  <source src="/images/projects/fer_domino/full_domino_video.mp4" type="video/mp4">
 </video>
 
 ---

@@ -1,7 +1,7 @@
 ---
 title: "力顺从交互四旋翼无人机（LiDAR 避障功能）"
 title_en: "Force-Compliant Quadrotor with LiDAR Obstacle Avoidance"
-date: 2026-02-01
+date: 2026-03-15
 draft: false
 author: "Chenyu Zhu"
 tags:
@@ -25,7 +25,7 @@ links:
 
 <div class="lang-zh">
 
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+<video controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/drone/main_demo.MP4" type="video/mp4">
 </video>
 
@@ -232,7 +232,7 @@ OptiTrack → 笔记本电脑 (ROS 2) ──WiFi──► 树莓派 ──UART (
 
 <div class="lang-en">
 
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+<video controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/drone/main_demo.MP4" type="video/mp4">
 </video>
 
