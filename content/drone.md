@@ -25,7 +25,7 @@ links:
 
 <div class="lang-zh">
 
-<video controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+<video autoplay muted playsinline controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/drone/main_demo.MP4" type="video/mp4">
 </video>
 
@@ -232,7 +232,7 @@ OptiTrack → 笔记本电脑 (ROS 2) ──WiFi──► 树莓派 ──UART (
 
 <div class="lang-en">
 
-<video controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+<video autoplay muted playsinline controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/drone/main_demo.MP4" type="video/mp4">
 </video>
 

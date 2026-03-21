@@ -23,7 +23,7 @@ links:
 
 <div class="lang-zh">
 
-<video controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+<video autoplay muted playsinline controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/fer_domino/full_domino_video.mp4" type="video/mp4">
 </video>
 
@@ -200,7 +200,7 @@ links:
 
 <div class="lang-en">
 
-<video controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+<video autoplay muted playsinline controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/fer_domino/full_domino_video.mp4" type="video/mp4">
 </video>
 
