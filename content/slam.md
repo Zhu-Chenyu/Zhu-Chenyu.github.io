@@ -20,13 +20,15 @@ repoName: slam
 
 <div class="lang-zh">
 
-## 实机演示
-
-机器人沿环形路线行驶并返回起始位置。绿色机器人为 SLAM 估计，蓝色机器人为原始里程计。
-
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
   <iframe width="700" height="394" src="https://www.youtube.com/embed/vrTNOKXWeiI" title="NuSLAM 实机演示" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+---
+
+## 实机演示
+
+机器人沿环形路线行驶并返回起始位置。绿色机器人为 SLAM 估计，蓝色机器人为原始里程计。
 
 ---
 
@@ -180,17 +182,25 @@ ros2 launch nuslam pc_bringup.launch.xml
 | 数据关联 | 马氏距离 |
 | 可视化 | RViz2 |
 
+---
+
+## 致谢
+
+本项目为西北大学 ME495《机器人感知、导航与机器学习》课程的期末作业，由 Matthew Elwin 教授授课。课程提供了完成本项目所必需的理论基础与硬件平台支持。
+
 </div>
 
 <div class="lang-en">
 
-## Real Robot Demo
-
-The robot drives a circuit and returns to its starting position. The green robot is the SLAM estimate, the blue robot is raw odometry.
-
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
   <iframe width="700" height="394" src="https://www.youtube.com/embed/vrTNOKXWeiI" title="NuSLAM Real Robot Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+---
+
+## Real Robot Demo
+
+The robot drives a circuit and returns to its starting position. The green robot is the SLAM estimate, the blue robot is raw odometry.
 
 ---
 
@@ -343,5 +353,11 @@ ros2 launch nuslam pc_bringup.launch.xml
 | Landmark Detection | Umeyama circle fitting |
 | Data Association | Mahalanobis distance |
 | Visualization | RViz2 |
+
+---
+
+## Acknowledgement
+
+This project was completed as the final assignment for ME495 *Sensing, Navigation and Machine Learning for Robotics* at Northwestern University, under the instruction of Professor Matthew Elwin. The course provided the foundational framework and hardware infrastructure that made this work possible.
 
 </div>

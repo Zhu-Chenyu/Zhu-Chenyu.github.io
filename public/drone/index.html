@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="page-title-zh" content="力顺从交互四旋翼无人机（LiDAR 避障功能） | 朱宸宇的作品集">
+<meta name="page-title-en" content="Force-Compliant Quadrotor with LiDAR Obstacle Avoidance | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,25 +30,16 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/drone/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="力顺从交互四旋翼无人机（LiDAR 避障功能）">
-  <meta property="og:description" content="一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2026-02-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-02-01T00:00:00+00:00">
-    <meta property="article:tag" content="Robotics">
-    <meta property="article:tag" content="ROS 2">
-    <meta property="article:tag" content="Quadrotor">
-    <meta property="article:tag" content="Kalman Filter">
-    <meta property="article:tag" content="Obstacle Avoidance">
-    <meta property="article:tag" content="Control Systems">
+<meta property="og:title" content="力顺从交互四旋翼无人机（LiDAR 避障功能）" />
+<meta property="og:description" content="一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/drone/" /><meta property="article:section" content="" />
+<meta property="article:published_time" content="2026-03-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-03-15T00:00:00+00:00" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="力顺从交互四旋翼无人机（LiDAR 避障功能）">
-  <meta name="twitter:description" content="一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="力顺从交互四旋翼无人机（LiDAR 避障功能）"/>
+<meta name="twitter:description" content="一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -175,6 +168,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -390,7 +387,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 Chenyu Zhu
                 <small>|</small>
               
-              Feb 1, 2026
+              Mar 15, 2026
 
               
             </div>
@@ -398,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           <article class="page-content  p-2">
           <div class="lang-zh">
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+<video autoplay muted playsinline controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/drone/main_demo.MP4" type="video/mp4">
 </video>
 <hr>
@@ -432,6 +429,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <hr>
 <h2 id="工作原理">工作原理</h2>
 <p>无外力施加时，无人机保持静止。沿任意水平方向拖动它，它将沿该方向加速，速度与力的大小成正比。松开后，它减速至位置保持状态。启用避障功能时，飞行员持续沿期望方向施力，无人机则会自动绕过障碍物飞行。</p>
+<div style="display:flex; justify-content:center; margin: 1rem 0;">
+  <img src="/images/projects/drone/BlockDiagram.jpg" width="750" alt="系统框图" style="border-radius:8px;">
+</div>
+<p>上图展示了完整的系统架构：OptiTrack 位置观测输入卡尔曼滤波器以估计外力，估计的外力与 LiDAR 产生的避障斥力叠加后，转换为速度指令发送至 PX4。</p>
 <hr>
 <h2 id="数学模型">数学模型</h2>
 <h3 id="力分解">力分解</h3>
@@ -451,39 +452,39 @@ document.addEventListener('DOMContentLoaded', function() {
   <img src="/images/projects/drone/DroneFrames.jpg" width="700" alt="无人机坐标系" style="border-radius:8px;">
 </div>
 <table>
-  <thead>
-      <tr>
-          <th>坐标系</th>
-          <th>约定</th>
-          <th>作用</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Pixhawk</strong></td>
-          <td>NED（北-东-地） —— X=北, Y=东, Z=下</td>
-          <td>PX4 内部状态，轨迹设定值</td>
-      </tr>
-      <tr>
-          <td><strong>机体刚体</strong> (<code>imu_link</code>)</td>
-          <td>FLU（前-左-上） —— X=前, Y=左, Z=上</td>
-          <td>OptiTrack 跟踪坐标系；卡尔曼滤波器位置观测</td>
-      </tr>
-      <tr>
-          <td><strong>base_footprint</strong></td>
-          <td>FLU —— X=前, Y=左, Z=上</td>
-          <td>TF 树中地面投影的机体位姿</td>
-      </tr>
-      <tr>
-          <td><strong>LiDAR</strong> (<code>laser</code>)</td>
-          <td>FLU —— X=前, Y=左, Z=上</td>
-          <td>2D 扫描坐标系；与机体刚性对齐（无旋转）</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>坐标系</th>
+<th>约定</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pixhawk</strong></td>
+<td>NED（北-东-地） —— X=北, Y=东, Z=下</td>
+<td>PX4 内部状态，轨迹设定值</td>
+</tr>
+<tr>
+<td><strong>机体刚体</strong> (<code>imu_link</code>)</td>
+<td>FLU（前-左-上） —— X=前, Y=左, Z=上</td>
+<td>OptiTrack 跟踪坐标系；卡尔曼滤波器位置观测</td>
+</tr>
+<tr>
+<td><strong>base_footprint</strong></td>
+<td>FLU —— X=前, Y=左, Z=上</td>
+<td>TF 树中地面投影的机体位姿</td>
+</tr>
+<tr>
+<td><strong>LiDAR</strong> (<code>laser</code>)</td>
+<td>FLU —— X=前, Y=左, Z=上</td>
+<td>2D 扫描坐标系；与机体刚性对齐（无旋转）</td>
+</tr>
+</tbody>
 </table>
 <p>所有 ROS 坐标系使用 FLU。仅 Pixhawk 使用 NED。转换链（机体 FLU → NED），利用偏航角 $\psi$：</p>
-<p>$$x_{ned} = \cos(\psi) x_{frd} + \sin(\psi) y_{frd}$$
-$$y_{ned} = -\sin(\psi) x_{frd} + \cos(\psi) y_{frd}$$</p>
+$$x_{ned} = \cos(\psi) x_{frd} + \sin(\psi) y_{frd}$$
+$$y_{ned} = -\sin(\psi) x_{frd} + \cos(\psi) y_{frd}$$
 <p>其中 $x_{frd} = x_{flu}$, $y_{frd} = -y_{flu}$。</p>
 <h3 id="姿态编码水平力">姿态编码水平力</h3>
 <p>由于 PX4 通过倾斜无人机来产生水平运动，俯仰角和横滚角是水平力的直接观测量。这验证了模型的正确性，并为在卡尔曼滤波器的控制输入项中使用姿态角提供了依据。</p>
@@ -501,13 +502,13 @@ $$y_{ned} = -\sin(\psi) x_{frd} + \cos(\psi) y_{frd}$$</p>
 <h2 id="卡尔曼滤波力估计器">卡尔曼滤波力估计器</h2>
 <p>卡尔曼滤波器在 NED 世界坐标系中以 50 Hz 频率估计 $[p_x, v_x, p_y, v_y, F_x, F_y]$，仅使用 OptiTrack 位置观测。</p>
 <p><strong>状态转移：</strong></p>
-<p>$$p_x \leftarrow p_x + v_x \Delta t$$
+$$p_x \leftarrow p_x + v_x \Delta t$$
 $$v_x \leftarrow v_x + (F_x/m)\Delta t + Bu_x$$
-$$F_x \leftarrow F_x \quad \text{(建模为随机游走)}$$</p>
+$$F_x \leftarrow F_x \quad \text{(建模为随机游走)}$$
 <p>（$y$ 方向对称。）</p>
 <p><strong>控制输入 $Bu$</strong> —— 考虑完整横滚/俯仰/偏航旋转后，拉力产生的 NED 水平加速度：</p>
-<p>$$Bu_x = -(T/m)[\cos(\psi)\sin(\theta)\cos(\phi) + \sin(\psi)\sin(\phi)],\Delta t$$
-$$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)],\Delta t$$</p>
+$$Bu_x = -(T/m)[\cos(\psi)\sin(\theta)\cos(\phi) + \sin(\psi)\sin(\phi)]\,\Delta t$$
+$$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)]\,\Delta t$$
 <p>拉力大小：$T = mg / (\cos(\phi)\cos(\theta))$，因此无论倾斜角度如何，垂直分量始终等于重力。</p>
 <p><strong>观测量：</strong> OptiTrack 2D 位置 $[p_x, p_y]$。滤波器从悬停状态约 1 秒内收敛，并持续跟踪缓慢变化的外力。</p>
 <p>估计的 $[F_x, F_y]$ 驱动速度设定值。障碍物排斥力在估计<em>之后</em>叠加到 $F_{cmd}$ 上，不会反馈到卡尔曼滤波器中。</p>
@@ -515,7 +516,7 @@ $$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)],\Delta 
 <h2 id="避障">避障</h2>
 <p>RPLidar 扫描产生的斥力通过人工势场方法叠加在估计的外力上。</p>
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <img src="/images/projects/drone/PotentialField.jpg" width="550" alt="人工势场避障" style="border-radius:8px;">
+  <img src="/images/projects/drone/Potential_field.jpg" width="550" alt="人工势场避障" style="border-radius:8px;">
 </div>
 <p>上图展示了完整的力叠加关系：橙色弧线是面向 $F_{ext}$（红色）的半圆检测区域。区域内的障碍物产生避障力（青色和紫色箭头）将无人机推离。速度阻尼（粉色）在斥力激活时抵消当前速度。指令力（蓝色虚线）是所有分量的矢量和。</p>
 <h3 id="两遍扫描处理">两遍扫描处理</h3>
@@ -525,7 +526,7 @@ $$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)],\Delta 
 在固定近距半径（默认 0.5 m）内进行 360° 全方位扫描。当无人机为避开前方障碍物而侧移时，捕捉侧方和后方障碍物 —— 防止盲区碰撞。</p>
 <p>两遍扫描的结果累加到同一斥力向量中。在无人机附近的重叠区域产生更强的斥力，恰好在最需要的地方。</p>
 <h3 id="力的叠加">力的叠加</h3>
-<p>$$F_{cmd} = F_{ext} + F_{rep} + F_{damp}$$</p>
+$$F_{cmd} = F_{ext} + F_{rep} + F_{damp}$$
 <ul>
 <li>$F_{ext}$ —— 卡尔曼滤波器估计的外力</li>
 <li>$F_{rep} = \sum k/d^2$ 指向无人机方向，来自所有检测到的障碍物（限幅至 <code>max_repulsion_force</code>）</li>
@@ -534,86 +535,86 @@ $$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)],\Delta 
 <hr>
 <h2 id="硬件平台">硬件平台</h2>
 <table>
-  <thead>
-      <tr>
-          <th>组件</th>
-          <th>型号</th>
-          <th>作用</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>机架</td>
-          <td>Holybro X500 V2</td>
-          <td>四旋翼平台</td>
-      </tr>
-      <tr>
-          <td>飞行控制器</td>
-          <td>Pixhawk 6C</td>
-          <td>PX4 自动驾驶仪，姿态和速率控制</td>
-      </tr>
-      <tr>
-          <td>机载电脑</td>
-          <td>Raspberry Pi 5（树莓派 5）</td>
-          <td>uXRCE-DDS 桥接，通过 UART 通信</td>
-      </tr>
-      <tr>
-          <td>动作捕捉</td>
-          <td>OptiTrack</td>
-          <td>120 Hz 六自由度位置</td>
-      </tr>
-      <tr>
-          <td>LiDAR</td>
-          <td>SLAMTEC RPLidar（思岚激光雷达）</td>
-          <td>2D 扫描，360°，约 8 m 范围</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>组件</th>
+<th>型号</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机架</td>
+<td>Holybro X500 V2</td>
+<td>四旋翼平台</td>
+</tr>
+<tr>
+<td>飞行控制器</td>
+<td>Pixhawk 6C</td>
+<td>PX4 自动驾驶仪，姿态和速率控制</td>
+</tr>
+<tr>
+<td>机载电脑</td>
+<td>Raspberry Pi 5（树莓派 5）</td>
+<td>uXRCE-DDS 桥接，通过 UART 通信</td>
+</tr>
+<tr>
+<td>动作捕捉</td>
+<td>OptiTrack</td>
+<td>120 Hz 六自由度位置</td>
+</tr>
+<tr>
+<td>LiDAR</td>
+<td>SLAMTEC RPLidar（思岚激光雷达）</td>
+<td>2D 扫描，360°，约 8 m 范围</td>
+</tr>
+</tbody>
 </table>
 <p><strong>通信链路：</strong></p>
 <pre tabindex="0"><code>OptiTrack → 笔记本电脑 (ROS 2) ──WiFi──► 树莓派 ──UART (921600 波特率)──► Pixhawk (PX4)
 </code></pre><hr>
 <h2 id="软件技术栈">软件技术栈</h2>
 <table>
-  <thead>
-      <tr>
-          <th>层级</th>
-          <th>技术</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>操作系统</td>
-          <td>Ubuntu 24.04（树莓派）、Linux（笔记本电脑）</td>
-      </tr>
-      <tr>
-          <td>ROS 2</td>
-          <td>Jazzy（树莓派）、Kilted（笔记本电脑）</td>
-      </tr>
-      <tr>
-          <td>自动驾驶仪</td>
-          <td>PX4</td>
-      </tr>
-      <tr>
-          <td>DDS 桥接</td>
-          <td>uXRCE-DDS Agent</td>
-      </tr>
-      <tr>
-          <td>定位</td>
-          <td>OptiTrack Motive + TF2</td>
-      </tr>
-      <tr>
-          <td>力估计器</td>
-          <td>自定义卡尔曼滤波器（Eigen），ROS 2 节点</td>
-      </tr>
-      <tr>
-          <td>避障</td>
-          <td>基于 LaserScan 的人工势场</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>层级</th>
+<th>技术</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>操作系统</td>
+<td>Ubuntu 24.04（树莓派）、Linux（笔记本电脑）</td>
+</tr>
+<tr>
+<td>ROS 2</td>
+<td>Jazzy（树莓派）、Kilted（笔记本电脑）</td>
+</tr>
+<tr>
+<td>自动驾驶仪</td>
+<td>PX4</td>
+</tr>
+<tr>
+<td>DDS 桥接</td>
+<td>uXRCE-DDS Agent</td>
+</tr>
+<tr>
+<td>定位</td>
+<td>OptiTrack Motive + TF2</td>
+</tr>
+<tr>
+<td>力估计器</td>
+<td>自定义卡尔曼滤波器（Eigen），ROS 2 节点</td>
+</tr>
+<tr>
+<td>避障</td>
+<td>基于 LaserScan 的人工势场</td>
+</tr>
+</tbody>
 </table>
 </div>
 <div class="lang-en">
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+<video autoplay muted playsinline controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
   <source src="/images/projects/drone/main_demo.MP4" type="video/mp4">
 </video>
 <hr>
@@ -647,6 +648,10 @@ A Kalman filter estimates external force from position observations alone, while
 <hr>
 <h2 id="how-it-works">How It Works</h2>
 <p>With no external force, the quadrotor stays still. Pull it in any horizontal direction, and it accelerates that way at a speed proportional to the force magnitude. Release it, and it decelerates to a position hold. With obstacle avoidance enabled, the pilot applies sustained force in the desired direction, and the quadrotor automatically navigates around obstacles.</p>
+<div style="display:flex; justify-content:center; margin: 1rem 0;">
+  <img src="/images/projects/drone/BlockDiagram.jpg" width="750" alt="System block diagram" style="border-radius:8px;">
+</div>
+<p>The diagram above shows the full system architecture: OptiTrack position measurements feed into the Kalman filter to estimate external force, which is then combined with LiDAR-generated repulsive forces and converted into velocity setpoints sent to PX4.</p>
 <hr>
 <h2 id="mathematical-model">Mathematical Model</h2>
 <h3 id="force-decomposition">Force Decomposition</h3>
@@ -666,39 +671,39 @@ A Kalman filter estimates external force from position observations alone, while
   <img src="/images/projects/drone/DroneFrames.jpg" width="700" alt="Drone coordinate frames" style="border-radius:8px;">
 </div>
 <table>
-  <thead>
-      <tr>
-          <th>Frame</th>
-          <th>Convention</th>
-          <th>Purpose</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Pixhawk</strong></td>
-          <td>NED (North-East-Down) &ndash; X=North, Y=East, Z=Down</td>
-          <td>PX4 internal state, trajectory setpoints</td>
-      </tr>
-      <tr>
-          <td><strong>Body rigid</strong> (<code>imu_link</code>)</td>
-          <td>FLU (Forward-Left-Up) &ndash; X=Fwd, Y=Left, Z=Up</td>
-          <td>OptiTrack tracking frame; KF position observations</td>
-      </tr>
-      <tr>
-          <td><strong>base_footprint</strong></td>
-          <td>FLU &ndash; X=Fwd, Y=Left, Z=Up</td>
-          <td>Ground-projected body pose in TF tree</td>
-      </tr>
-      <tr>
-          <td><strong>LiDAR</strong> (<code>laser</code>)</td>
-          <td>FLU &ndash; X=Fwd, Y=Left, Z=Up</td>
-          <td>2D scan frame; rigidly aligned with body (no rotation)</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Frame</th>
+<th>Convention</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pixhawk</strong></td>
+<td>NED (North-East-Down) &ndash; X=North, Y=East, Z=Down</td>
+<td>PX4 internal state, trajectory setpoints</td>
+</tr>
+<tr>
+<td><strong>Body rigid</strong> (<code>imu_link</code>)</td>
+<td>FLU (Forward-Left-Up) &ndash; X=Fwd, Y=Left, Z=Up</td>
+<td>OptiTrack tracking frame; KF position observations</td>
+</tr>
+<tr>
+<td><strong>base_footprint</strong></td>
+<td>FLU &ndash; X=Fwd, Y=Left, Z=Up</td>
+<td>Ground-projected body pose in TF tree</td>
+</tr>
+<tr>
+<td><strong>LiDAR</strong> (<code>laser</code>)</td>
+<td>FLU &ndash; X=Fwd, Y=Left, Z=Up</td>
+<td>2D scan frame; rigidly aligned with body (no rotation)</td>
+</tr>
+</tbody>
 </table>
 <p>All ROS frames use FLU. Only Pixhawk uses NED. The conversion chain (body FLU → NED), using yaw angle $\psi$:</p>
-<p>$$x_{ned} = \cos(\psi) x_{frd} + \sin(\psi) y_{frd}$$
-$$y_{ned} = -\sin(\psi) x_{frd} + \cos(\psi) y_{frd}$$</p>
+$$x_{ned} = \cos(\psi) x_{frd} + \sin(\psi) y_{frd}$$
+$$y_{ned} = -\sin(\psi) x_{frd} + \cos(\psi) y_{frd}$$
 <p>where $x_{frd} = x_{flu}$, $y_{frd} = -y_{flu}$.</p>
 <h3 id="attitude-encodes-horizontal-force">Attitude Encodes Horizontal Force</h3>
 <p>Since PX4 tilts the quadrotor to produce horizontal motion, pitch and roll angles are direct observations of horizontal force. This validates the model and justifies using attitude angles in the Kalman filter&rsquo;s control input term.</p>
@@ -716,13 +721,13 @@ $$y_{ned} = -\sin(\psi) x_{frd} + \cos(\psi) y_{frd}$$</p>
 <h2 id="kalman-filter-force-estimator">Kalman Filter Force Estimator</h2>
 <p>The Kalman filter estimates $[p_x, v_x, p_y, v_y, F_x, F_y]$ in the NED world frame at 50 Hz, using only OptiTrack position observations.</p>
 <p><strong>State Transition:</strong></p>
-<p>$$p_x \leftarrow p_x + v_x \Delta t$$
+$$p_x \leftarrow p_x + v_x \Delta t$$
 $$v_x \leftarrow v_x + (F_x/m)\Delta t + Bu_x$$
-$$F_x \leftarrow F_x \quad \text{(modeled as random walk)}$$</p>
+$$F_x \leftarrow F_x \quad \text{(modeled as random walk)}$$
 <p>($y$-direction is symmetric.)</p>
 <p><strong>Control Input $Bu$</strong> &ndash; NED horizontal acceleration from thrust after full roll/pitch/yaw rotation:</p>
-<p>$$Bu_x = -(T/m)[\cos(\psi)\sin(\theta)\cos(\phi) + \sin(\psi)\sin(\phi)],\Delta t$$
-$$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)],\Delta t$$</p>
+$$Bu_x = -(T/m)[\cos(\psi)\sin(\theta)\cos(\phi) + \sin(\psi)\sin(\phi)]\,\Delta t$$
+$$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)]\,\Delta t$$
 <p>Thrust magnitude: $T = mg / (\cos(\phi)\cos(\theta))$, so the vertical component always equals gravity regardless of tilt.</p>
 <p><strong>Observations:</strong> OptiTrack 2D position $[p_x, p_y]$. The filter converges from hover in ~1 second and continuously tracks slowly varying external forces.</p>
 <p>The estimated $[F_x, F_y]$ drives velocity setpoints. Obstacle repulsive forces are added to $F_{cmd}$ <em>after</em> estimation and do not feed back into the Kalman filter.</p>
@@ -730,7 +735,7 @@ $$Bu_y = -(T/m)[\sin(\psi)\sin(\theta)\cos(\phi) - \cos(\psi)\sin(\phi)],\Delta 
 <h2 id="obstacle-avoidance">Obstacle Avoidance</h2>
 <p>Repulsive forces from RPLidar scans are superimposed on the estimated external force via the potential field method.</p>
 <div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <img src="/images/projects/drone/Potential field.jpg" width="550" alt="Potential field obstacle avoidance" style="border-radius:8px;">
+  <img src="/images/projects/drone/Potential_field.jpg" width="550" alt="Potential field obstacle avoidance" style="border-radius:8px;">
 </div>
 <p>The figure above shows the full force superposition: the orange arc is the hemicircle detection zone facing $F_{ext}$ (red). Obstacles within the zone generate avoidance forces (cyan and purple arrows) pushing the quadrotor away. Velocity damping (pink) counteracts current velocity when repulsive forces activate. The command force (blue dashed) is the vector sum of all components.</p>
 <h3 id="two-pass-scan-processing">Two-Pass Scan Processing</h3>
@@ -740,7 +745,7 @@ Scans within a ±90° cone in the direction of $F_{ext}$ (orange arc), with scan
 Performs a 360° scan within a fixed close-range radius (default 0.5 m). Catches side and rear obstacles when the quadrotor sidesteps to avoid frontal obstacles &ndash; prevents blind-spot collisions.</p>
 <p>Results from both passes accumulate into the same repulsive force vector. Overlapping zones near the quadrotor produce stronger repulsion, exactly where it&rsquo;s needed most.</p>
 <h3 id="force-superposition">Force Superposition</h3>
-<p>$$F_{cmd} = F_{ext} + F_{rep} + F_{damp}$$</p>
+$$F_{cmd} = F_{ext} + F_{rep} + F_{damp}$$
 <ul>
 <li>$F_{ext}$ &ndash; Kalman filter estimated external force</li>
 <li>$F_{rep} = \sum k/d^2$ pointing toward the quadrotor from all detected obstacles (clamped to <code>max_repulsion_force</code>)</li>
@@ -749,82 +754,82 @@ Performs a 360° scan within a fixed close-range radius (default 0.5 m). Catches
 <hr>
 <h2 id="hardware">Hardware</h2>
 <table>
-  <thead>
-      <tr>
-          <th>Component</th>
-          <th>Model</th>
-          <th>Purpose</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Frame</td>
-          <td>Holybro X500 V2</td>
-          <td>Quadrotor platform</td>
-      </tr>
-      <tr>
-          <td>Flight Controller</td>
-          <td>Pixhawk 6C</td>
-          <td>PX4 autopilot, attitude and rate control</td>
-      </tr>
-      <tr>
-          <td>Companion Computer</td>
-          <td>Raspberry Pi 5</td>
-          <td>uXRCE-DDS bridge, UART communication</td>
-      </tr>
-      <tr>
-          <td>Motion Capture</td>
-          <td>OptiTrack</td>
-          <td>120 Hz 6-DOF position</td>
-      </tr>
-      <tr>
-          <td>LiDAR</td>
-          <td>SLAMTEC RPLidar</td>
-          <td>2D scan, 360°, ~8 m range</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Component</th>
+<th>Model</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frame</td>
+<td>Holybro X500 V2</td>
+<td>Quadrotor platform</td>
+</tr>
+<tr>
+<td>Flight Controller</td>
+<td>Pixhawk 6C</td>
+<td>PX4 autopilot, attitude and rate control</td>
+</tr>
+<tr>
+<td>Companion Computer</td>
+<td>Raspberry Pi 5</td>
+<td>uXRCE-DDS bridge, UART communication</td>
+</tr>
+<tr>
+<td>Motion Capture</td>
+<td>OptiTrack</td>
+<td>120 Hz 6-DOF position</td>
+</tr>
+<tr>
+<td>LiDAR</td>
+<td>SLAMTEC RPLidar</td>
+<td>2D scan, 360°, ~8 m range</td>
+</tr>
+</tbody>
 </table>
 <p><strong>Communication Link:</strong></p>
 <pre tabindex="0"><code>OptiTrack → Laptop (ROS 2) ──WiFi──► Raspberry Pi ──UART (921600 baud)──► Pixhawk (PX4)
 </code></pre><hr>
 <h2 id="software-stack">Software Stack</h2>
 <table>
-  <thead>
-      <tr>
-          <th>Layer</th>
-          <th>Technology</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>OS</td>
-          <td>Ubuntu 24.04 (Raspberry Pi), Linux (Laptop)</td>
-      </tr>
-      <tr>
-          <td>ROS 2</td>
-          <td>Jazzy (Raspberry Pi), Kilted (Laptop)</td>
-      </tr>
-      <tr>
-          <td>Autopilot</td>
-          <td>PX4</td>
-      </tr>
-      <tr>
-          <td>DDS Bridge</td>
-          <td>uXRCE-DDS Agent</td>
-      </tr>
-      <tr>
-          <td>Localization</td>
-          <td>OptiTrack Motive + TF2</td>
-      </tr>
-      <tr>
-          <td>Force Estimator</td>
-          <td>Custom Kalman filter (Eigen), ROS 2 node</td>
-      </tr>
-      <tr>
-          <td>Obstacle Avoidance</td>
-          <td>LaserScan-based potential field</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Ubuntu 24.04 (Raspberry Pi), Linux (Laptop)</td>
+</tr>
+<tr>
+<td>ROS 2</td>
+<td>Jazzy (Raspberry Pi), Kilted (Laptop)</td>
+</tr>
+<tr>
+<td>Autopilot</td>
+<td>PX4</td>
+</tr>
+<tr>
+<td>DDS Bridge</td>
+<td>uXRCE-DDS Agent</td>
+</tr>
+<tr>
+<td>Localization</td>
+<td>OptiTrack Motive + TF2</td>
+</tr>
+<tr>
+<td>Force Estimator</td>
+<td>Custom Kalman filter (Eigen), ROS 2 node</td>
+</tr>
+<tr>
+<td>Obstacle Avoidance</td>
+<td>LaserScan-based potential field</td>
+</tr>
+</tbody>
 </table>
 </div>
 

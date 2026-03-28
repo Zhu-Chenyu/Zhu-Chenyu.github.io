@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="page-title-zh" content="EKF SLAM：TurtleBot3 实体机器人实现 | 朱宸宇的作品集">
+<meta name="page-title-en" content="EKF SLAM on a Real TurtleBot3 | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -166,6 +168,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -389,11 +395,12 @@ document.addEventListener('DOMContentLoaded', function() {
           
           <article class="page-content  p-2">
           <div class="lang-zh">
+<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+  <source src="/images/projects/slam/1xdemo.MP4" type="video/mp4">
+</video>
+<hr>
 <h2 id="实机演示">实机演示</h2>
 <p>机器人沿环形路线行驶并返回起始位置。绿色机器人为 SLAM 估计，蓝色机器人为原始里程计。</p>
-<div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <iframe width="700" height="394" src="https://www.youtube.com/embed/vrTNOKXWeiI" title="NuSLAM 实机演示" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
 <hr>
 <h2 id="概述">概述</h2>
 <p>本项目为西北大学 ME495《机器人感知、导航与机器学习》课程作业（2025年冬季学期），在真实 TurtleBot3 上实现了完整的 EKF SLAM 管线，包含路标检测、里程计与双机 ROS 2 通信架构。</p>
@@ -437,15 +444,15 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 id="扩展卡尔曼滤波器ekf">扩展卡尔曼滤波器（EKF）</h3>
 <p>EKF 维护联合状态向量 $\mathbf{x} = [q^T, m^T]^T$，其中 $q = (\theta, x, y)$ 为机器人位姿，$m$ 为路标坐标列表。</p>
 <p><strong>预测步骤</strong>（利用里程计）：</p>
-<p>$$\hat{x}<em>{t|t-1} = f(\hat{x}</em>{t-1|t-1}, u_t)$$
-$$\Sigma_{t|t-1} = F_t \Sigma_{t-1|t-1} F_t^T + Q_t$$</p>
+$$\hat{x}_{t|t-1} = f(\hat{x}_{t-1|t-1}, u_t)$$
+$$\Sigma_{t|t-1} = F_t \Sigma_{t-1|t-1} F_t^T + Q_t$$
 <p><strong>更新步骤</strong>（利用路标观测）：</p>
-<p>$$K_t = \Sigma_{t|t-1} H_t^T (H_t \Sigma_{t|t-1} H_t^T + R_t)^{-1}$$
-$$\hat{x}<em>{t|t} = \hat{x}</em>{t|t-1} + K_t (z_t - h(\hat{x}<em>{t|t-1}))$$
-$$\Sigma</em>{t|t} = (I - K_t H_t) \Sigma_{t|t-1}$$</p>
+$$K_t = \Sigma_{t|t-1} H_t^T (H_t \Sigma_{t|t-1} H_t^T + R_t)^{-1}$$
+$$\hat{x}_{t|t} = \hat{x}_{t|t-1} + K_t (z_t - h(\hat{x}_{t|t-1}))$$
+$$\Sigma_{t|t} = (I - K_t H_t) \Sigma_{t|t-1}$$
 <h3 id="未知数据关联">未知数据关联</h3>
 <p>每次观测到路标时，系统必须判断它是已知路标还是新路标。本项目使用<strong>马氏距离</strong>进行匹配：</p>
-<p>$$d_i = (z - \hat{z}_i)^T (H_i \Sigma H_i^T + R)^{-1} (z - \hat{z}_i)$$</p>
+$$d_i = (z - \hat{z}_i)^T (H_i \Sigma H_i^T + R)^{-1} (z - \hat{z}_i)$$
 <p>若最小马氏距离低于阈值，则将观测值与对应路标关联；否则，将其初始化为新路标加入地图。这使系统在无需预先知晓路标数量和位置的情况下正常运行。</p>
 <hr>
 <h2 id="仿真">仿真</h2>
@@ -588,13 +595,17 @@ $$\Sigma</em>{t|t} = (I - K_t H_t) \Sigma_{t|t-1}$$</p>
 </tr>
 </tbody>
 </table>
+<hr>
+<h2 id="致谢">致谢</h2>
+<p>本项目为西北大学 ME495《机器人感知、导航与机器学习》课程的期末作业，由 Matthew Elwin 教授授课。课程提供了完成本项目所必需的理论基础与硬件平台支持。</p>
 </div>
 <div class="lang-en">
+<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+  <source src="/images/projects/slam/1xdemo.MP4" type="video/mp4">
+</video>
+<hr>
 <h2 id="real-robot-demo">Real Robot Demo</h2>
 <p>The robot drives a circuit and returns to its starting position. The green robot is the SLAM estimate, the blue robot is raw odometry.</p>
-<div style="display:flex; justify-content:center; margin: 1rem 0;">
-  <iframe width="700" height="394" src="https://www.youtube.com/embed/vrTNOKXWeiI" title="NuSLAM Real Robot Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
 <hr>
 <h2 id="overview">Overview</h2>
 <p>This project, built for Northwestern University&rsquo;s ME495 <em>Sensing, Navigation and Machine Learning for Robotics</em> (Winter 2025), implements a full EKF SLAM pipeline on a real TurtleBot3 — including landmark detection, odometry, and a two-machine ROS 2 architecture.</p>
@@ -638,15 +649,15 @@ $$\Sigma</em>{t|t} = (I - K_t H_t) \Sigma_{t|t-1}$$</p>
 <h3 id="extended-kalman-filter-ekf">Extended Kalman Filter (EKF)</h3>
 <p>The EKF maintains a joint state vector $\mathbf{x} = [q^T, m^T]^T$, where $q = (\theta, x, y)$ is the robot pose and $m$ is the list of landmark coordinates.</p>
 <p><strong>Prediction step</strong> (using odometry):</p>
-<p>$$\hat{x}<em>{t|t-1} = f(\hat{x}</em>{t-1|t-1}, u_t)$$
-$$\Sigma_{t|t-1} = F_t \Sigma_{t-1|t-1} F_t^T + Q_t$$</p>
+$$\hat{x}_{t|t-1} = f(\hat{x}_{t-1|t-1}, u_t)$$
+$$\Sigma_{t|t-1} = F_t \Sigma_{t-1|t-1} F_t^T + Q_t$$
 <p><strong>Update step</strong> (using landmark observations):</p>
-<p>$$K_t = \Sigma_{t|t-1} H_t^T (H_t \Sigma_{t|t-1} H_t^T + R_t)^{-1}$$
-$$\hat{x}<em>{t|t} = \hat{x}</em>{t|t-1} + K_t (z_t - h(\hat{x}<em>{t|t-1}))$$
-$$\Sigma</em>{t|t} = (I - K_t H_t) \Sigma_{t|t-1}$$</p>
+$$K_t = \Sigma_{t|t-1} H_t^T (H_t \Sigma_{t|t-1} H_t^T + R_t)^{-1}$$
+$$\hat{x}_{t|t} = \hat{x}_{t|t-1} + K_t (z_t - h(\hat{x}_{t|t-1}))$$
+$$\Sigma_{t|t} = (I - K_t H_t) \Sigma_{t|t-1}$$
 <h3 id="unknown-data-association">Unknown Data Association</h3>
 <p>Every time a landmark is observed, the system must decide whether it matches a known landmark or is new. This project uses <strong>Mahalanobis distance</strong> for matching:</p>
-<p>$$d_i = (z - \hat{z}_i)^T (H_i \Sigma H_i^T + R)^{-1} (z - \hat{z}_i)$$</p>
+$$d_i = (z - \hat{z}_i)^T (H_i \Sigma H_i^T + R)^{-1} (z - \hat{z}_i)$$
 <p>If the minimum Mahalanobis distance falls below a threshold, the observation is associated with that landmark. Otherwise, it is initialized as a new landmark and added to the map. This allows the system to operate without knowing the number or positions of landmarks in advance.</p>
 <hr>
 <h2 id="simulation">Simulation</h2>
@@ -789,6 +800,9 @@ $$\Sigma</em>{t|t} = (I - K_t H_t) \Sigma_{t|t-1}$$</p>
 </tr>
 </tbody>
 </table>
+<hr>
+<h2 id="acknowledgement">Acknowledgement</h2>
+<p>This project was completed as the final assignment for ME495 <em>Sensing, Navigation and Machine Learning for Robotics</em> at Northwestern University, under the instruction of Professor Matthew Elwin. The course provided the foundational framework and hardware infrastructure that made this work possible.</p>
 </div>
 
           </article>
@@ -796,6 +810,8 @@ $$\Sigma</em>{t|t} = (I - K_t H_t) \Sigma_{t|t-1}$$</p>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-3">
         <div id="stickySideBar" class="sticky-sidebar">
+          
+
           
           <aside class="toc">
               <h5>
@@ -828,6 +844,7 @@ $$\Sigma</em>{t|t} = (I - K_t H_t) \Sigma_{t|t-1}$$</p>
     </li>
     <li><a href="#硬件">硬件</a></li>
     <li><a href="#软件技术栈">软件技术栈</a></li>
+    <li><a href="#致谢">致谢</a></li>
     <li><a href="#real-robot-demo">Real Robot Demo</a></li>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#how-it-works">How It Works</a>
@@ -852,6 +869,7 @@ $$\Sigma</em>{t|t} = (I - K_t H_t) \Sigma_{t|t-1}$$</p>
     </li>
     <li><a href="#hardware">Hardware</a></li>
     <li><a href="#software-stack">Software Stack</a></li>
+    <li><a href="#acknowledgement">Acknowledgement</a></li>
   </ul>
 </nav>
               </div>

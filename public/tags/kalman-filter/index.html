@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="page-title-zh" content="Kalman Filter | 朱宸宇的作品集">
+<meta name="page-title-en" content="Kalman Filter | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,17 +30,14 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/tags/kalman-filter/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="Kalman Filter">
-  <meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="Kalman Filter" />
+<meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/tags/kalman-filter/" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Kalman Filter">
-  <meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Kalman Filter"/>
+<meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -164,6 +163,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -380,26 +383,40 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h5 class="card-title bg-transparent" title="力顺从交互四旋翼无人机（LiDAR 避障功能）">力顺从交互四旋翼无人机（LiDAR 避障功能）</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p><div class="lang-zh">
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/drone/main_demo.MP4" type="video/mp4">
-</video>
-<hr>
-<h2 id="灵感来源">灵感来源</h2>
-<p>记得五岁那年第一次看《机器人总动员》。在一个场景中，伊娃处于休眠模式，但她依然悬停着。瓦力用绳子拖着她到处走，她就那样丝滑地跟随着。完全顺应外力，显得很轻松。</p>
-<video autoplay loop muted playsinline style="width:60%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/drone/walle_eve.MP4" type="video/mp4">
-</video>
-<p>那个画面给当时的我留下了深刻的印象。于是这个项目我就试图打造出同样特质的东西：一架能感知施加在它身上的力并与你同行的无人机。当然这样还不够有趣，我要让它可以不是简单地跟随，而是以一种聪明的方式———遇到障碍的时候要抵抗，或者丝滑地绕过去。</p>
-<hr>
-<h2 id="概述">概述</h2>
-<p>一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。
-卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防 …</p></div></p>
+                            <p>灵感来源 记得五岁那年第一次看《机器人总动员》。在一个场景中，伊娃处于休眠模式，但她依然悬停着。瓦力用绳子拖着她到处走，她就那样丝滑地跟随着。完全顺应外力，显得很轻松。
+那个画面给当时的我留下了深刻的印象。于是这个项目我就试图打造出同样特质的东西：一架能感知施加在它身上的力并与你同行的无人机。当然这样还不够有趣，我要让它可以不是简单地跟随，而是以一种聪明的方式———遇到障碍的时候要抵抗，或者丝滑地绕过去。
+概述 一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。 卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。
+行为模式：
+无输 …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Feb 1, 2026</span>
+                        <span class="float-start bg-transparent">Mar 15, 2026</span>
                         <a href="/drone/" class="float-end btn btn-outline-info btn-sm">阅读</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card-columns">
+                <div class="card h-100">
+                    
+                    <div class="card-body bg-transparent p-4 shadow-sm">
+                        <a href="/slam/" class="primary-font card-title">
+                            <h5 class="card-title bg-transparent" title="EKF SLAM：TurtleBot3 实体机器人实现">EKF SLAM：TurtleBot3 实体机器人 …</h5>
+                        </a>
+                        <div class="card-text secondary-font">
+                            <p>实机演示 机器人沿环形路线行驶并返回起始位置。绿色机器人为 SLAM 估计，蓝色机器人为原始里程计。
+概述 本项目为西北大学 ME495《机器人感知、导航与机器学习》课程作业（2025年冬季学期），在真实 TurtleBot3 上实现了完整的 EKF SLAM 管线，包含路标检测、里程计与双机 ROS 2 通信架构。
+核心成果：
+对比 x 误差 (m) y 误差 (m) 总误差 (m) 真实值 vs 里程计 0.633 0.176 0.657 真实值 vs SLAM 0.001 0.000 0.001 SLAM 将位置误差从里程计的 65.7 cm 降低至 1 mm，提升幅度达 657 倍。
+ …</p>
+                        </div>
+                    </div>
+                    <div class="mt-auto post-footer bg-transparent py-3">
+                        <span class="float-start bg-transparent">Mar 15, 2025</span>
+                        <a href="/slam/" class="float-end btn btn-outline-info btn-sm">阅读</a>
                     </div>
                 </div>
             </div>

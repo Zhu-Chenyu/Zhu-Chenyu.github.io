@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="page-title-zh" content="谁偷了我的笔？—— 视觉引导机械臂抓取 | 朱宸宇的作品集">
+<meta name="page-title-en" content="Who Stole My Pen? -- Vision-Guided Robot Pen Grasping | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,25 +30,16 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/grab_pen/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="谁偷了我的笔？—— 视觉引导机械臂抓取">
-  <meta property="og:description" content="一个完整的机器人视觉与控制流水线，使用 Interbotix PX100 机械臂和 RealSense 深度相机检测、定位并抓取笔。">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2025-10-11T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-11T00:00:00+00:00">
-    <meta property="article:tag" content="Computer Vision">
-    <meta property="article:tag" content="Robotics">
-    <meta property="article:tag" content="Calibration">
-    <meta property="article:tag" content="RealSense">
-    <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="Path Planning">
+<meta property="og:title" content="谁偷了我的笔？—— 视觉引导机械臂抓取" />
+<meta property="og:description" content="一个完整的机器人视觉与控制流水线，使用 Interbotix PX100 机械臂和 RealSense 深度相机检测、定位并抓取笔。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/grab_pen/" /><meta property="article:section" content="" />
+<meta property="article:published_time" content="2025-10-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-10-11T00:00:00+00:00" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="谁偷了我的笔？—— 视觉引导机械臂抓取">
-  <meta name="twitter:description" content="一个完整的机器人视觉与控制流水线，使用 Interbotix PX100 机械臂和 RealSense 深度相机检测、定位并抓取笔。">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="谁偷了我的笔？—— 视觉引导机械臂抓取"/>
+<meta name="twitter:description" content="一个完整的机器人视觉与控制流水线，使用 Interbotix PX100 机械臂和 RealSense 深度相机检测、定位并抓取笔。"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -175,6 +168,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -410,30 +407,30 @@ document.addEventListener('DOMContentLoaded', function() {
 <hr>
 <h2 id="系统组成">系统组成</h2>
 <table>
-  <thead>
-      <tr>
-          <th>组件</th>
-          <th>描述</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>机械臂</strong></td>
-          <td><a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html">Interbotix PX100</a>，5 自由度，通过 ROS Python API 控制</td>
-      </tr>
-      <tr>
-          <td><strong>相机</strong></td>
-          <td><a href="https://www.intel.com/content/www/us/en/architecture-and-technology/realsense-overview.html">Intel RealSense</a>，提供同步 RGB 和深度数据流</td>
-      </tr>
-      <tr>
-          <td><strong>环境</strong></td>
-          <td>Ubuntu 24.04 / ROS Kilted / Python 3.12</td>
-      </tr>
-      <tr>
-          <td><strong>控制接口</strong></td>
-          <td>Interbotix Python API、OpenCV、NumPy</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>组件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>机械臂</strong></td>
+<td><a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html">Interbotix PX100</a>，5 自由度，通过 ROS Python API 控制</td>
+</tr>
+<tr>
+<td><strong>相机</strong></td>
+<td><a href="https://www.intel.com/content/www/us/en/architecture-and-technology/realsense-overview.html">Intel RealSense</a>，提供同步 RGB 和深度数据流</td>
+</tr>
+<tr>
+<td><strong>环境</strong></td>
+<td>Ubuntu 24.04 / ROS Kilted / Python 3.12</td>
+</tr>
+<tr>
+<td><strong>控制接口</strong></td>
+<td>Interbotix Python API、OpenCV、NumPy</td>
+</tr>
+</tbody>
 </table>
 <hr>
 <h2 id="工作流程">工作流程</h2>
@@ -491,54 +488,54 @@ document.addEventListener('DOMContentLoaded', function() {
 <hr>
 <h2 id="文件结构">文件结构</h2>
 <table>
-  <thead>
-      <tr>
-          <th>文件</th>
-          <th>描述</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>main.py</code></td>
-          <td>运行实时检测与控制流程</td>
-      </tr>
-      <tr>
-          <td><code>calibration.py</code></td>
-          <td>计算相机-机器人变换矩阵</td>
-      </tr>
-      <tr>
-          <td><code>vision.py</code></td>
-          <td>管理 RealSense 数据流和对齐</td>
-      </tr>
-      <tr>
-          <td><code>colorspace.py</code></td>
-          <td>实现 HSV 阈值分割和掩模创建</td>
-      </tr>
-      <tr>
-          <td><code>contour.py</code></td>
-          <td>检测轮廓和质心</td>
-      </tr>
-      <tr>
-          <td><code>position.py</code></td>
-          <td>将 2D 像素位置转换为 3D 相机坐标</td>
-      </tr>
-      <tr>
-          <td><code>grab_pen.py</code></td>
-          <td>根据变换结果执行抓取动作</td>
-      </tr>
-      <tr>
-          <td><code>thread.py</code></td>
-          <td>演示多线程标定与控制</td>
-      </tr>
-      <tr>
-          <td><code>Rotation_mat.txt</code>、<code>Translation_mat.txt</code></td>
-          <td>保存的变换矩阵</td>
-      </tr>
-      <tr>
-          <td><code>citation.txt</code></td>
-          <td>参考文献与算法引用</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>文件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>main.py</code></td>
+<td>运行实时检测与控制流程</td>
+</tr>
+<tr>
+<td><code>calibration.py</code></td>
+<td>计算相机-机器人变换矩阵</td>
+</tr>
+<tr>
+<td><code>vision.py</code></td>
+<td>管理 RealSense 数据流和对齐</td>
+</tr>
+<tr>
+<td><code>colorspace.py</code></td>
+<td>实现 HSV 阈值分割和掩模创建</td>
+</tr>
+<tr>
+<td><code>contour.py</code></td>
+<td>检测轮廓和质心</td>
+</tr>
+<tr>
+<td><code>position.py</code></td>
+<td>将 2D 像素位置转换为 3D 相机坐标</td>
+</tr>
+<tr>
+<td><code>grab_pen.py</code></td>
+<td>根据变换结果执行抓取动作</td>
+</tr>
+<tr>
+<td><code>thread.py</code></td>
+<td>演示多线程标定与控制</td>
+</tr>
+<tr>
+<td><code>Rotation_mat.txt</code>、<code>Translation_mat.txt</code></td>
+<td>保存的变换矩阵</td>
+</tr>
+<tr>
+<td><code>citation.txt</code></td>
+<td>参考文献与算法引用</td>
+</tr>
+</tbody>
 </table>
 <h2 id="致谢">致谢</h2>
 <p>本项目作为<strong>美国西北大学黑客马拉松</strong>的一部分，在 <strong>Matthew Elwin 教授</strong>的指导和框架设计下开发完成。
@@ -554,30 +551,30 @@ The pen was right here a moment ago, and now it&rsquo;s gone. Nobody is around &
 <hr>
 <h2 id="system-components">System Components</h2>
 <table>
-  <thead>
-      <tr>
-          <th>Component</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Robot Arm</strong></td>
-          <td><a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html">Interbotix PX100</a>, 5-DOF, controlled via ROS Python API</td>
-      </tr>
-      <tr>
-          <td><strong>Camera</strong></td>
-          <td><a href="https://www.intel.com/content/www/us/en/architecture-and-technology/realsense-overview.html">Intel RealSense</a>, providing synchronized RGB and depth streams</td>
-      </tr>
-      <tr>
-          <td><strong>Environment</strong></td>
-          <td>Ubuntu 24.04 / ROS Kilted / Python 3.12</td>
-      </tr>
-      <tr>
-          <td><strong>Control Interface</strong></td>
-          <td>Interbotix Python API, OpenCV, NumPy</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Robot Arm</strong></td>
+<td><a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html">Interbotix PX100</a>, 5-DOF, controlled via ROS Python API</td>
+</tr>
+<tr>
+<td><strong>Camera</strong></td>
+<td><a href="https://www.intel.com/content/www/us/en/architecture-and-technology/realsense-overview.html">Intel RealSense</a>, providing synchronized RGB and depth streams</td>
+</tr>
+<tr>
+<td><strong>Environment</strong></td>
+<td>Ubuntu 24.04 / ROS Kilted / Python 3.12</td>
+</tr>
+<tr>
+<td><strong>Control Interface</strong></td>
+<td>Interbotix Python API, OpenCV, NumPy</td>
+</tr>
+</tbody>
 </table>
 <hr>
 <h2 id="workflow">Workflow</h2>
@@ -635,54 +632,54 @@ The pen was right here a moment ago, and now it&rsquo;s gone. Nobody is around &
 <hr>
 <h2 id="file-structure">File Structure</h2>
 <table>
-  <thead>
-      <tr>
-          <th>File</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>main.py</code></td>
-          <td>Runs the real-time detection and control pipeline</td>
-      </tr>
-      <tr>
-          <td><code>calibration.py</code></td>
-          <td>Computes camera-robot transformation matrix</td>
-      </tr>
-      <tr>
-          <td><code>vision.py</code></td>
-          <td>Manages RealSense data streams and alignment</td>
-      </tr>
-      <tr>
-          <td><code>colorspace.py</code></td>
-          <td>Implements HSV thresholding and mask creation</td>
-      </tr>
-      <tr>
-          <td><code>contour.py</code></td>
-          <td>Detects contours and centroids</td>
-      </tr>
-      <tr>
-          <td><code>position.py</code></td>
-          <td>Converts 2D pixel positions to 3D camera coordinates</td>
-      </tr>
-      <tr>
-          <td><code>grab_pen.py</code></td>
-          <td>Executes grasping based on transformation results</td>
-      </tr>
-      <tr>
-          <td><code>thread.py</code></td>
-          <td>Demonstrates multi-threaded calibration and control</td>
-      </tr>
-      <tr>
-          <td><code>Rotation_mat.txt</code>, <code>Translation_mat.txt</code></td>
-          <td>Saved transformation matrices</td>
-      </tr>
-      <tr>
-          <td><code>citation.txt</code></td>
-          <td>References and algorithm citations</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>main.py</code></td>
+<td>Runs the real-time detection and control pipeline</td>
+</tr>
+<tr>
+<td><code>calibration.py</code></td>
+<td>Computes camera-robot transformation matrix</td>
+</tr>
+<tr>
+<td><code>vision.py</code></td>
+<td>Manages RealSense data streams and alignment</td>
+</tr>
+<tr>
+<td><code>colorspace.py</code></td>
+<td>Implements HSV thresholding and mask creation</td>
+</tr>
+<tr>
+<td><code>contour.py</code></td>
+<td>Detects contours and centroids</td>
+</tr>
+<tr>
+<td><code>position.py</code></td>
+<td>Converts 2D pixel positions to 3D camera coordinates</td>
+</tr>
+<tr>
+<td><code>grab_pen.py</code></td>
+<td>Executes grasping based on transformation results</td>
+</tr>
+<tr>
+<td><code>thread.py</code></td>
+<td>Demonstrates multi-threaded calibration and control</td>
+</tr>
+<tr>
+<td><code>Rotation_mat.txt</code>, <code>Translation_mat.txt</code></td>
+<td>Saved transformation matrices</td>
+</tr>
+<tr>
+<td><code>citation.txt</code></td>
+<td>References and algorithm citations</td>
+</tr>
+</tbody>
 </table>
 <h2 id="acknowledgments">Acknowledgments</h2>
 <p>This project was developed as part of the <strong>Northwestern University Hackathon</strong>, under the guidance and framework design of <strong>Prof. Matthew Elwin</strong>.

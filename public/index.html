@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.158.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+	<meta name="generator" content="Hugo 0.123.7"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="page-title-zh" content="朱宸宇的作品集">
+<meta name="page-title-en" content="Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -29,17 +31,14 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="朱宸宇的作品集">
-  <meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="朱宸宇的作品集" />
+<meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="朱宸宇的作品集">
-  <meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="朱宸宇的作品集"/>
+<meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -169,6 +168,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -462,6 +465,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 </div>
                 
+                <div class="col-lg-4 col-md-6 my-3"><div class="card my-3 h-100 position-relative" title="EKF SLAM：TurtleBot3 实体机器人实现">
+                    <div class="card-head overflow-hidden"><video class="card-img-top" autoplay loop muted playsinline preload="metadata"
+                              style="width:100%; height:auto; display:block; object-fit:cover;"><source src="/images/projects/slam/8xdemo.MP4" type="video/mp4"></video></div>
+                    <div class="card-body bg-transparent p-3">
+                    <div class="pb-2 bg-transparent">
+                        <span class="badge bg-secondary me-1">ROS 2</span><span class="badge bg-secondary me-1">C&#43;&#43;</span><span class="badge bg-secondary me-1">EKF SLAM</span><span class="badge bg-secondary me-1">LiDAR</span><span class="badge bg-secondary me-1">Localization</span>
+                    </div>
+                    <h5 class="card-title bg-transparent mt-1"><span class="lang-zh">EKF SLAM：TurtleBot3 实体机器人实现</span><span class="lang-en">EKF SLAM on a Real TurtleBot3</span></h5>
+                    <div class="card-text bg-transparent secondary-font"><span class="lang-zh">在真实 TurtleBot3 上运行的扩展卡尔曼滤波器 SLAM 管线，通过 LiDAR 扫描聚类与圆拟合检测圆柱形路标，使用马氏距离进行未知数据关联，位姿误差从里程计的 0.657 m 降至 SLAM 的 0.001 m。</span><span class="lang-en">A full EKF SLAM pipeline running on a real TurtleBot3 — cylindrical landmark detection via LiDAR clustering and circle fitting, unknown data association with Mahalanobis distance, reducing pose error from 0.657 m (odometry) to 0.001 m.</span></div>
+                    </div>
+
+                    
+                    <a href="/slam"
+                    
+                    class="stretched-link" aria-label="EKF SLAM：TurtleBot3 实体机器人实现"></a>
+
+                    
+                    <div class="card-footer py-3">
+                    
+                    <a href="https://github.com/Zhu-Chenyu/slam"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="icon-link m-1">
+                      <i class="fab fa-github"></i>
+                      <span>Github</span>
+                    </a>
+                    
+                    </div>
+                    
+                </div>
+                </div>
+                
                 <div class="col-lg-4 col-md-6 my-3"><div class="card my-3 h-100 position-relative" title="基于视觉引导的 Franka 机械臂多米诺骨牌摆放">
                     <div class="card-head overflow-hidden"><video class="card-img-top" autoplay loop muted playsinline preload="metadata"
                               style="width:100%; height:auto; display:block; object-fit:cover;"><source src="/images/projects/fer_domino/squigle_domino.mp4" type="video/mp4"></video></div>
@@ -487,38 +522,6 @@ document.addEventListener('DOMContentLoaded', function() {
                       class="icon-link m-1">
                       <i class="fab fa-github"></i>
                       <span>Github</span>
-                    </a>
-                    
-                    </div>
-                    
-                </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 my-3"><div class="card my-3 h-100 position-relative" title="碰撞感知动力学仿真（Box-Jack 系统）">
-                    <div class="card-head overflow-hidden"><video class="card-img-top" autoplay loop muted playsinline preload="metadata"
-                              style="width:100%; height:auto; display:block; object-fit:cover;"><source src="/images/projects/box_jack_impact/inelastic_impact.mp4" type="video/mp4"></video></div>
-                    <div class="card-body bg-transparent p-3">
-                    <div class="pb-2 bg-transparent">
-                        <span class="badge bg-secondary me-1">Python</span><span class="badge bg-secondary me-1">SymPy</span><span class="badge bg-secondary me-1">Dynamics</span><span class="badge bg-secondary me-1">Impact Modeling</span><span class="badge bg-secondary me-1">Hybrid Systems</span>
-                    </div>
-                    <h5 class="card-title bg-transparent mt-1"><span class="lang-zh">碰撞感知动力学仿真（Box-Jack 系统）</span><span class="lang-en">Impact-Aware Dynamics Simulation: SymPy-Based Box-Jack System</span></h5>
-                    <div class="card-text bg-transparent secondary-font"><span class="lang-zh">基于 SymPy 符号推导的混杂动力学仿真器，包含单面接触约束和非弹性碰撞速度修正，通过 Plotly 动画和时间序列分析进行验证。</span><span class="lang-en">A hybrid dynamics simulator built with SymPy symbolic derivation, featuring unilateral contact constraints and inelastic impact velocity updates, validated through Plotly animations and time-series analysis.</span></div>
-                    </div>
-
-                    
-                    <a href="/box_jack_impact"
-                    
-                    class="stretched-link" aria-label="碰撞感知动力学仿真（Box-Jack 系统）"></a>
-
-                    
-                    <div class="card-footer py-3">
-                    
-                    <a href="https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=1mpudsGeVxwh"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="icon-link m-1">
-                      <i class="fas fa-external-link-alt"></i>
-                      <span>Colab Notebook</span>
                     </a>
                     
                     </div>
@@ -595,6 +598,47 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="https://github.com/Zhu-Chenyu/Who-stole-my-pen" target="_blank" rel="noopener noreferrer" class="icon-link m-1">
                         <i class="fab fa-github"></i>
                         <span>Github</span>
+                    </a>
+                    
+                    </div>
+                    
+                </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 my-3"><div class="card my-3 h-100 position-relative" title="碰撞感知动力学仿真（Box-Jack 系统）">
+                    <div class="card-head"><video
+                            class="card-img-top"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            style="object-fit: cover;"
+                            >
+                            <source src="/images/projects/box_jack_impact/inelastic_impact.mp4" type="video/mp4">
+                            </video></div>
+                    <div class="card-body bg-transparent p-3">
+                    <div class="pb-2 bg-transparent">
+                        <span class="badge badge-secondary">Python</span><span class="badge badge-secondary">SymPy</span><span class="badge badge-secondary">Dynamics</span><span class="badge badge-secondary">Impact Modeling</span><span class="badge badge-secondary">Hybrid Systems</span>
+                    </div>
+                    <h5 class="card-title bg-transparent mt-1"><span class="lang-zh">碰撞感知动力学仿真（Box-Jack 系统）</span><span class="lang-en">Impact-Aware Dynamics Simulation: SymPy-Based Box-Jack System</span></h5>
+                    <div class="card-text bg-transparent secondary-font">
+                        <span class="lang-zh">基于 SymPy 符号推导的混杂动力学仿真器，包含单面接触约束和非弹性碰撞速度修正，通过 Plotly 动画和时间序列分析进行验证。</span><span class="lang-en">A hybrid dynamics simulator built with SymPy symbolic derivation, featuring unilateral contact constraints and inelastic impact velocity updates, validated through Plotly animations and time-series analysis.</span>
+                    </div>
+                    </div>
+
+                    
+                    
+                    <a href="/box_jack_impact"
+                        
+                        class="stretched-link" aria-label="碰撞感知动力学仿真（Box-Jack 系统）"></a>
+                    
+
+                    
+                    <div class="card-footer py-3">
+                    
+                    <a href="https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=1mpudsGeVxwh" target="_blank" rel="noopener noreferrer" class="icon-link m-1">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Colab Notebook</span>
                     </a>
                     
                     </div>
@@ -706,7 +750,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <h5 class="card-title bg-transparent mt-1"><span class="lang-zh">基于强化学习的基站优化</span><span class="lang-en">Reinforcement Learning for Base Station Optimization</span></h5>
                     <div class="card-text bg-transparent secondary-font">
-                        <span class="lang-zh">对比多种强化学习算法，联合优化蜂窝基站网络的吞吐量与能耗。</span><span class="lang-en">Comparing multiple reinforcement learning algorithms to jointly optimize throughput and energy consumption for cellular base station networks.</span>
+                        <span class="lang-zh">对比多种强化学习算法(DQN, DDPG, TD3, MADDPG, Greedy, Conservative)，联合优化蜂窝基站网络的吞吐量与能耗。</span><span class="lang-en">Comparing multiple reinforcement learning algorithms(DQN, DDPG, TD3, MADDPG, Greedy, Conservative) to jointly optimize throughput and energy consumption for cellular base station networks.</span>
                     </div>
                     </div>
 

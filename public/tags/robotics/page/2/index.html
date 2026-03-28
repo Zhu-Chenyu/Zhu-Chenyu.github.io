@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="page-title-zh" content="Robotics | 朱宸宇的作品集">
+<meta name="page-title-en" content="Robotics | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -161,6 +163,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -380,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p>概述 本项目实现了一个使用 Franka Emika Panda 机械臂的视觉引导多米诺骨牌操作系统。 机器人检测桌面上的多米诺骨牌，通过 RGB-D 视觉估计其位姿，自主将骨牌重新排列为预设几何图案，最后推倒它们。
 与纯运动学演示不同，本系统应对真实世界的不确定性，包括：
 桌面高度变化 视觉标定误差 小物体尺寸导致的抓取约束 为应对这些挑战，系统集成了相机-机器人外参标定、分阶段操作策略和力控放置，构建了一个鲁棒且可重复的操作流水线。
-系统组成 组件 描述 机器人 Franka Emika Panda（7 自由度力矩控制机械臂） 相机 Intel RealSense RGB-D 深度相机（眼 …</p>
+系统组成 组件 描述 机器人 Franka Emika Panda（7 自由度力矩控制机械臂） 相机 Intel RealSense RGB-D 深度相机（固 …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">

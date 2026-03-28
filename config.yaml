@@ -21,6 +21,16 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - $$
+              - $$
+          inline:
+            - - $
+              - $
 
 Menus:
   main:
@@ -303,6 +313,26 @@ params:
           name: "Github"
           url: https://github.com/Zhu-Chenyu/Interaction-Guided-Aerial-Navigation
 
+    - title: EKF SLAM：TurtleBot3 实体机器人实现
+      title_en: "EKF SLAM on a Real TurtleBot3"
+      content: 在真实 TurtleBot3 上运行的扩展卡尔曼滤波器 SLAM 管线，通过 LiDAR 扫描聚类与圆拟合检测圆柱形路标，使用马氏距离进行未知数据关联，位姿误差从里程计的 0.657 m 降至 SLAM 的 0.001 m。
+      content_en: "A full EKF SLAM pipeline running on a real TurtleBot3 — cylindrical landmark detection via LiDAR clustering and circle fitting, unknown data association with Mahalanobis distance, reducing pose error from 0.657 m (odometry) to 0.001 m."
+      image: /images/projects/slam/8xdemo.MP4
+      featured:
+        name: 查看详情
+        name_en: "View Details"
+        link: /slam
+      badges:
+        - "ROS 2"
+        - "C++"
+        - "EKF SLAM"
+        - "LiDAR"
+        - "Localization"
+      links:
+        - icon: fab fa-github
+          name: "Github"
+          url: https://github.com/Zhu-Chenyu/slam
+
     - title: 基于视觉引导的 Franka 机械臂多米诺骨牌摆放
       title_en: "Vision-Guided Domino Placement with Franka Emika Robot"
       content: 基于视觉的机器人操作系统，可在 ROS 2 环境下使用 Franka Emika 机械臂检测多米诺骨牌位置、规划碰撞感知轨迹并自主完成骨牌摆放。
@@ -324,26 +354,6 @@ params:
           url: https://github.com/Zhu-Chenyu/Franka-Domino-Project
 
 
-    - title: 碰撞感知动力学仿真（Box-Jack 系统）
-      title_en: "Impact-Aware Dynamics Simulation: SymPy-Based Box-Jack System"
-      content: 基于 SymPy 符号推导的混杂动力学仿真器，包含单面接触约束和非弹性碰撞速度修正，通过 Plotly 动画和时间序列分析进行验证。
-      content_en: "A hybrid dynamics simulator built with SymPy symbolic derivation, featuring unilateral contact constraints and inelastic impact velocity updates, validated through Plotly animations and time-series analysis."
-      image: /images/projects/box_jack_impact/inelastic_impact.mp4
-      featured:
-        name: 查看详情
-        name_en: "View Details"
-        link: /box_jack_impact
-      badges:
-        - "Python"
-        - "SymPy"
-        - "Dynamics"
-        - "Impact Modeling"
-        - "Hybrid Systems"
-      links:
-        - icon: fas fa-external-link-alt
-          name: "Colab Notebook"
-          url: https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=1mpudsGeVxwh
-
 
 
 
@@ -353,7 +363,6 @@ params:
     title: "其他项目"
     title_en: "Other Projects"
     items:
-
 
       - title: 谁偷了我的笔？—— 视觉引导机械臂抓取
         title_en: "Who Stole My Pen? -- Vision-Guided Robot Pen Grasping"
@@ -373,6 +382,28 @@ params:
           - icon: fab fa-github
             name: "Github"
             url: https://github.com/Zhu-Chenyu/Who-stole-my-pen
+
+
+      - title: 碰撞感知动力学仿真（Box-Jack 系统）
+        title_en: "Impact-Aware Dynamics Simulation: SymPy-Based Box-Jack System"
+        content: 基于 SymPy 符号推导的混杂动力学仿真器，包含单面接触约束和非弹性碰撞速度修正，通过 Plotly 动画和时间序列分析进行验证。
+        content_en: "A hybrid dynamics simulator built with SymPy symbolic derivation, featuring unilateral contact constraints and inelastic impact velocity updates, validated through Plotly animations and time-series analysis."
+        image: /images/projects/box_jack_impact/inelastic_impact.mp4
+        featured:
+          name: 查看详情
+          name_en: "View Details"
+          link: /box_jack_impact
+        badges:
+          - "Python"
+          - "SymPy"
+          - "Dynamics"
+          - "Impact Modeling"
+          - "Hybrid Systems"
+        links:
+          - icon: fas fa-external-link-alt
+            name: "Colab Notebook"
+            url: https://colab.research.google.com/drive/1A_hauOwYlPGEzfWMQ_YFyIN-RMTYe0G8?authuser=2#scrollTo=1mpudsGeVxwh
+
 
 
       - title: 蚂蚁大战蜜蜂（塔防策略游戏）

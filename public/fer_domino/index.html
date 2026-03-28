@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="page-title-zh" content="基于视觉引导的 Franka 机械臂多米诺骨牌摆放 | 朱宸宇的作品集">
+<meta name="page-title-en" content="Vision-Guided Domino Placement with Franka Emika Robot | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,25 +30,16 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/fer_domino/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="基于视觉引导的 Franka 机械臂多米诺骨牌摆放">
-  <meta property="og:description" content="使用 Franka Emika Panda 机械臂的视觉引导机器人操作系统，实现多米诺骨牌的检测、重定向、力控放置及推倒，排列成预设图案。">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2025-03-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-18T00:00:00+00:00">
-    <meta property="article:tag" content="Robotics">
-    <meta property="article:tag" content="ROS 2">
-    <meta property="article:tag" content="Computer Vision">
-    <meta property="article:tag" content="Manipulation">
-    <meta property="article:tag" content="Force Control">
-    <meta property="article:tag" content="Motion Planning">
+<meta property="og:title" content="基于视觉引导的 Franka 机械臂多米诺骨牌摆放" />
+<meta property="og:description" content="使用 Franka Emika Panda 机械臂的视觉引导机器人操作系统，实现多米诺骨牌的检测、重定向、力控放置及推倒，排列成预设图案。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/fer_domino/" /><meta property="article:section" content="" />
+<meta property="article:published_time" content="2025-03-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-03-18T00:00:00+00:00" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="基于视觉引导的 Franka 机械臂多米诺骨牌摆放">
-  <meta name="twitter:description" content="使用 Franka Emika Panda 机械臂的视觉引导机器人操作系统，实现多米诺骨牌的检测、重定向、力控放置及推倒，排列成预设图案。">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="基于视觉引导的 Franka 机械臂多米诺骨牌摆放"/>
+<meta name="twitter:description" content="使用 Franka Emika Panda 机械臂的视觉引导机器人操作系统，实现多米诺骨牌的检测、重定向、力控放置及推倒，排列成预设图案。"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -175,6 +168,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -398,8 +395,8 @@ document.addEventListener('DOMContentLoaded', function() {
           
           <article class="page-content  p-2">
           <div class="lang-zh">
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/fer_domino/squigle_domino.mp4" type="video/mp4">
+<video autoplay muted playsinline controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+  <source src="/images/projects/fer_domino/full_domino_video.mp4" type="video/mp4">
 </video>
 <hr>
 <h2 id="概述">概述</h2>
@@ -415,42 +412,42 @@ document.addEventListener('DOMContentLoaded', function() {
 <hr>
 <h2 id="系统组成">系统组成</h2>
 <table>
-  <thead>
-      <tr>
-          <th>组件</th>
-          <th>描述</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>机器人</strong></td>
-          <td>Franka Emika Panda（7 自由度力矩控制机械臂）</td>
-      </tr>
-      <tr>
-          <td><strong>相机</strong></td>
-          <td>Intel RealSense RGB-D 深度相机（固定在夹爪上）</td>
-      </tr>
-      <tr>
-          <td><strong>系统</strong></td>
-          <td>ROS 2</td>
-      </tr>
-      <tr>
-          <td><strong>运动规划</strong></td>
-          <td>基于 MoveIt 的笛卡尔空间和关节空间规划</td>
-      </tr>
-      <tr>
-          <td><strong>视觉</strong></td>
-          <td>OpenCV + 基于深度的 3D 位姿估计</td>
-      </tr>
-      <tr>
-          <td><strong>标定</strong></td>
-          <td><code>easy_handeye2</code> 外参标定</td>
-      </tr>
-      <tr>
-          <td><strong>控制</strong></td>
-          <td>位置控制 + 关节力矩反馈</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>组件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>机器人</strong></td>
+<td>Franka Emika Panda（7 自由度力矩控制机械臂）</td>
+</tr>
+<tr>
+<td><strong>相机</strong></td>
+<td>Intel RealSense RGB-D 深度相机（固定在夹爪上）</td>
+</tr>
+<tr>
+<td><strong>系统</strong></td>
+<td>ROS 2</td>
+</tr>
+<tr>
+<td><strong>运动规划</strong></td>
+<td>基于 MoveIt 的笛卡尔空间和关节空间规划</td>
+</tr>
+<tr>
+<td><strong>视觉</strong></td>
+<td>OpenCV + 基于深度的 3D 位姿估计</td>
+</tr>
+<tr>
+<td><strong>标定</strong></td>
+<td><code>easy_handeye2</code> 外参标定</td>
+</tr>
+<tr>
+<td><strong>控制</strong></td>
+<td>位置控制 + 关节力矩反馈</td>
+</tr>
+</tbody>
 </table>
 <hr>
 <h2 id="总体流程">总体流程</h2>
@@ -547,30 +544,30 @@ document.addEventListener('DOMContentLoaded', function() {
 <hr>
 <h2 id="软件架构">软件架构</h2>
 <table>
-  <thead>
-      <tr>
-          <th>节点</th>
-          <th>职责</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>find_dominoes</code></td>
-          <td>视觉处理与位姿估计</td>
-      </tr>
-      <tr>
-          <td><code>place_dominoes</code></td>
-          <td>高层操作逻辑</td>
-      </tr>
-      <tr>
-          <td><code>handeye_publisher</code></td>
-          <td>发布相机-机器人标定结果</td>
-      </tr>
-      <tr>
-          <td><code>apriltag_node</code></td>
-          <td>辅助标定工作流</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>节点</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>find_dominoes</code></td>
+<td>视觉处理与位姿估计</td>
+</tr>
+<tr>
+<td><code>place_dominoes</code></td>
+<td>高层操作逻辑</td>
+</tr>
+<tr>
+<td><code>handeye_publisher</code></td>
+<td>发布相机-机器人标定结果</td>
+</tr>
+<tr>
+<td><code>apriltag_node</code></td>
+<td>辅助标定工作流</td>
+</tr>
+</tbody>
 </table>
 <p>系统采用模块化设计，感知、规划和执行可独立测试。</p>
 <hr>
@@ -589,8 +586,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>本项目强调真实世界机器人系统设计，凸显了理想化仿真与物理执行之间的差距。</p>
 </div>
 <div class="lang-en">
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/fer_domino/squigle_domino.mp4" type="video/mp4">
+<video autoplay muted playsinline controls style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
+  <source src="/images/projects/fer_domino/full_domino_video.mp4" type="video/mp4">
 </video>
 <hr>
 <h2 id="overview">Overview</h2>
@@ -606,42 +603,42 @@ The robot detects dominoes on the table, estimates their poses via RGB-D vision,
 <hr>
 <h2 id="system-components">System Components</h2>
 <table>
-  <thead>
-      <tr>
-          <th>Component</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Robot</strong></td>
-          <td>Franka Emika Panda (7-DOF torque-controlled robot arm)</td>
-      </tr>
-      <tr>
-          <td><strong>Camera</strong></td>
-          <td>Intel RealSense RGB-D depth camera (eye-in-hand configuration)</td>
-      </tr>
-      <tr>
-          <td><strong>Middleware</strong></td>
-          <td>ROS 2</td>
-      </tr>
-      <tr>
-          <td><strong>Motion Planning</strong></td>
-          <td>MoveIt-based Cartesian and joint-space planning</td>
-      </tr>
-      <tr>
-          <td><strong>Vision</strong></td>
-          <td>OpenCV + depth-based 3D pose estimation</td>
-      </tr>
-      <tr>
-          <td><strong>Calibration</strong></td>
-          <td><code>easy_handeye2</code> extrinsic calibration</td>
-      </tr>
-      <tr>
-          <td><strong>Control</strong></td>
-          <td>Position control + joint torque feedback</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Robot</strong></td>
+<td>Franka Emika Panda (7-DOF torque-controlled robot arm)</td>
+</tr>
+<tr>
+<td><strong>Camera</strong></td>
+<td>Intel RealSense RGB-D depth camera (eye-in-hand configuration)</td>
+</tr>
+<tr>
+<td><strong>Middleware</strong></td>
+<td>ROS 2</td>
+</tr>
+<tr>
+<td><strong>Motion Planning</strong></td>
+<td>MoveIt-based Cartesian and joint-space planning</td>
+</tr>
+<tr>
+<td><strong>Vision</strong></td>
+<td>OpenCV + depth-based 3D pose estimation</td>
+</tr>
+<tr>
+<td><strong>Calibration</strong></td>
+<td><code>easy_handeye2</code> extrinsic calibration</td>
+</tr>
+<tr>
+<td><strong>Control</strong></td>
+<td>Position control + joint torque feedback</td>
+</tr>
+</tbody>
 </table>
 <hr>
 <h2 id="high-level-pipeline">High-Level Pipeline</h2>
@@ -738,30 +735,30 @@ The robot detects dominoes on the table, estimates their poses via RGB-D vision,
 <hr>
 <h2 id="software-architecture">Software Architecture</h2>
 <table>
-  <thead>
-      <tr>
-          <th>Node</th>
-          <th>Responsibility</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>find_dominoes</code></td>
-          <td>Vision processing and pose estimation</td>
-      </tr>
-      <tr>
-          <td><code>place_dominoes</code></td>
-          <td>High-level manipulation logic</td>
-      </tr>
-      <tr>
-          <td><code>handeye_publisher</code></td>
-          <td>Publishes camera-robot calibration</td>
-      </tr>
-      <tr>
-          <td><code>apriltag_node</code></td>
-          <td>Assists calibration workflow</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Node</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>find_dominoes</code></td>
+<td>Vision processing and pose estimation</td>
+</tr>
+<tr>
+<td><code>place_dominoes</code></td>
+<td>High-level manipulation logic</td>
+</tr>
+<tr>
+<td><code>handeye_publisher</code></td>
+<td>Publishes camera-robot calibration</td>
+</tr>
+<tr>
+<td><code>apriltag_node</code></td>
+<td>Assists calibration workflow</td>
+</tr>
+</tbody>
 </table>
 <p>The system follows a modular design, with perception, planning, and execution independently testable.</p>
 <hr>

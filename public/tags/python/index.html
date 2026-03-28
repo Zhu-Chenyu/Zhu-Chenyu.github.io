@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="page-title-zh" content="Python | 朱宸宇的作品集">
+<meta name="page-title-en" content="Python | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,17 +30,14 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/tags/python/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="Python">
-  <meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="Python" />
+<meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/tags/python/" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Python">
-  <meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Python"/>
+<meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -164,6 +163,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -386,22 +389,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h5 class="card-title bg-transparent" title="蚂蚁大战蜜蜂（塔防策略游戏）">蚂蚁大战蜜蜂（塔防策略游戏）</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p><div class="lang-zh">
-<h2 id="概述">概述</h2>
-<p><strong>蚂蚁大战蜜蜂</strong>是一款用 Python 开发的<strong>策略回合制塔防游戏</strong>，灵感来源于加州大学伯克利分校 <strong>CS61A 课程的课程项目</strong>。
-玩家需要利用有限的食物资源部署各种蚂蚁来保护蚁巢，保卫<strong>蚁后</strong>免受入侵蜜蜂的攻击。</p>
-<p>本项目展示了扎实的<strong>面向对象设计</strong>、<strong>事件驱动编程</strong>和<strong>游戏逻辑架构</strong> —— 全部从零实现。</p>
-<hr>
-<h2 id="玩法概述">玩法概述</h2>
-<ul>
-<li><strong>目标：</strong> 通过在隧道中策略性地部署蚂蚁来阻止蜜蜂到达蚁后。</li>
-<li><strong>资源：</strong> 每只蚂蚁的部署都消耗食物，食物由采集蚁每回合再生。</li>
-<li><strong>回合：</strong> 每一轮，蚂蚁先行动（攻击、采集或防御），随后蜜蜂行动（移动或蜇刺）。</li>
-<li><strong>地形：</strong> 水域格子会立即杀死非防水蚂蚁。</li>
-<li><strong>胜利：</strong> 在任何蜜蜂到达蚁巢前消灭所有蜜蜂。</li>
-</ul>
-<hr>
-<h2 id="蚂蚁属性与技能">蚂蚁属性与 …</h2></div></p>
+                            <p>概述 蚂蚁大战蜜蜂是一款用 Python 开发的策略回合制塔防游戏，灵感来源于加州大学伯克利分校 CS61A 课程的课程项目。 玩家需要利用有限的食物资源部署各种蚂蚁来保护蚁巢，保卫蚁后免受入侵蜜蜂的攻击。
+本项目展示了扎实的面向对象设计、事件驱动编程和游戏逻辑架构 —— 全部从零实现。
+玩法概述 目标： 通过在隧道中策略性地部署蚂蚁来阻止蜜蜂到达蚁后。 资源： 每只蚂蚁的部署都消耗食物，食物由采集蚁每回合再生。 回合： 每一轮，蚂蚁先行动（攻击、采集或防御），随后蜜蜂行动（移动或蜇刺）。 地形： 水域格子会立即杀死非防水蚂蚁。 胜利： 在任何蜜蜂到达蚁巢前消灭所有蜜蜂。 …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
@@ -427,24 +417,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h5 class="card-title bg-transparent" title="谁偷了我的笔？—— 视觉引导机械臂抓取">谁偷了我的笔？—— 视觉引导机械臂抓取</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p><div class="lang-zh">
-<h2 id="概述">概述</h2>
-<p><strong>谁偷了我的笔？</strong>
-我的笔刚才还在这里，但是现在不见了。周围没有人 —— 只有这个机械臂。不可能是它拿走的……吧？</p>
-<p>本项目展示了一个<strong>视觉引导机器人抓取系统</strong>，使用 <strong>RealSense 深度相机</strong>检测笔，通过<strong>相机-机器人标定</strong>计算其位置，并控制 <strong>Interbotix PX100 机械臂</strong>实时拾取 —— 全部自动完成。</p>
-<p>项目集成了 <strong>RGB-D 感知、坐标变换和运动控制</strong>，作为视觉伺服（Visual Servoing）和机器人抓取操作的小型演示。</p>
-<hr>
-<h2 id="系统组成">系统组成</h2>
-<table>
-  <thead>
-      <tr>
-          <th>组件</th>
-          <th>描述</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>机械臂 …</strong></td></tr></tbody></table></div></p>
+                            <p>概述 谁偷了我的笔？ 我的笔刚才还在这里，但是现在不见了。周围没有人 —— 只有这个机械臂。不可能是它拿走的……吧？
+本项目展示了一个视觉引导机器人抓取系统，使用 RealSense 深度相机检测笔，通过相机-机器人标定计算其位置，并控制 Interbotix PX100 机械臂实时拾取 —— 全部自动完成。
+项目集成了 RGB-D 感知、坐标变换和运动控制，作为视觉伺服（Visual Servoing）和机器人抓取操作的小型演示。
+系统组成 组件 描述 机械臂 Interbotix PX100，5 自由度，通过 ROS Python API 控制 相机 Intel RealSense，提供同 …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">

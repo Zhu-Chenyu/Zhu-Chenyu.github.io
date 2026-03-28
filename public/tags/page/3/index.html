@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="page-title-zh" content="Tags | 朱宸宇的作品集">
+<meta name="page-title-en" content="Tags | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,17 +30,14 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/tags/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="Tags">
-  <meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="Tags" />
+<meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/tags/" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Tags">
-  <meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Tags"/>
+<meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -164,6 +163,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -376,16 +379,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="card h-100">
                     
                     <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/tags/impact-modeling/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Impact Modeling">Impact Modeling</h5>
+                        <a href="/tags/calibration/" class="primary-font card-title">
+                            <h5 class="card-title bg-transparent" title="Calibration">Calibration</h5>
                         </a>
                         <div class="card-text secondary-font">
                             <p></p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Mar 20, 2025</span>
-                        <a href="/tags/impact-modeling/" class="float-end btn btn-outline-info btn-sm">阅读</a>
+                        <span class="float-start bg-transparent">Oct 11, 2025</span>
+                        <a href="/tags/calibration/" class="float-end btn btn-outline-info btn-sm">阅读</a>
                     </div>
                 </div>
             </div>
@@ -396,16 +399,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="card h-100">
                     
                     <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/tags/lagrangian-mechanics/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Lagrangian Mechanics">Lagrangian Mechanics</h5>
+                        <a href="/tags/computer-vision/" class="primary-font card-title">
+                            <h5 class="card-title bg-transparent" title="Computer Vision">Computer Vision</h5>
                         </a>
                         <div class="card-text secondary-font">
                             <p></p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Mar 20, 2025</span>
-                        <a href="/tags/lagrangian-mechanics/" class="float-end btn btn-outline-info btn-sm">阅读</a>
+                        <span class="float-start bg-transparent">Oct 11, 2025</span>
+                        <a href="/tags/computer-vision/" class="float-end btn btn-outline-info btn-sm">阅读</a>
                     </div>
                 </div>
             </div>
@@ -416,96 +419,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="card h-100">
                     
                     <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/tags/simulation/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Simulation">Simulation</h5>
+                        <a href="/tags/game-development/" class="primary-font card-title">
+                            <h5 class="card-title bg-transparent" title="Game Development">Game Development</h5>
                         </a>
                         <div class="card-text secondary-font">
                             <p></p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Mar 20, 2025</span>
-                        <a href="/tags/simulation/" class="float-end btn btn-outline-info btn-sm">阅读</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/tags/sympy/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="SymPy">SymPy</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Mar 20, 2025</span>
-                        <a href="/tags/sympy/" class="float-end btn btn-outline-info btn-sm">阅读</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/tags/force-control/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Force Control">Force Control</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Mar 18, 2025</span>
-                        <a href="/tags/force-control/" class="float-end btn btn-outline-info btn-sm">阅读</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/tags/manipulation/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Manipulation">Manipulation</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Mar 18, 2025</span>
-                        <a href="/tags/manipulation/" class="float-end btn btn-outline-info btn-sm">阅读</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/tags/motion-planning/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Motion Planning">Motion Planning</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Mar 18, 2025</span>
-                        <a href="/tags/motion-planning/" class="float-end btn btn-outline-info btn-sm">阅读</a>
+                        <span class="float-start bg-transparent">Oct 11, 2025</span>
+                        <a href="/tags/game-development/" class="float-end btn btn-outline-info btn-sm">阅读</a>
                     </div>
                 </div>
             </div>
@@ -530,11 +453,17 @@ document.addEventListener('DOMContentLoaded', function() {
       <li class="page-item active">
         <a aria-current="page" aria-label="Page 3" class="page-link" role="button">3</a>
       </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
+      <li class="page-item">
+        <a href="/tags/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
       </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      <li class="page-item">
+        <a href="/tags/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+      </li>
+      <li class="page-item">
+        <a href="/tags/page/4/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/tags/page/10/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
             </div>

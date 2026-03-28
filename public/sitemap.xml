@@ -3,31 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/control-systems/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/kalman-filter/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/obstacle-avoidance/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/quadrotor/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/robotics/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ros-2/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/drone/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/calibration/</loc>
     <lastmod>2025-10-11T00:00:00+00:00</lastmod>
@@ -56,9 +56,6 @@
     <loc>http://localhost:1313/grab_pen/</loc>
     <lastmod>2025-10-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/resume/</loc>
-    <lastmod>2025-10-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2025-10-09T00:00:00+00:00</lastmod>
   </url><url>
@@ -79,6 +76,9 @@
   </url><url>
     <loc>http://localhost:1313/tags/thermal-analysis/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/resume/</loc>
+    <lastmod>2025-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/dynamics/</loc>
     <lastmod>2025-03-20T00:00:00+00:00</lastmod>
@@ -112,6 +112,18 @@
   </url><url>
     <loc>http://localhost:1313/fer_domino/</loc>
     <lastmod>2025-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/slam/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/lidar/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/localization/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/slam/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url>
