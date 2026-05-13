@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Game Development on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/tags/game-development/</link>
+    <link>https://Zhu-Chenyu.github.io/tags/game-development/</link>
     <description>Recent content in Game Development on 朱宸宇的作品集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/game-development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Zhu-Chenyu.github.io/tags/game-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>蚂蚁大战蜜蜂（塔防策略游戏）</title>
-      <link>http://localhost:1313/ants_vs_bees/</link>
+      <link>https://Zhu-Chenyu.github.io/ants_vs_bees/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ants_vs_bees/</guid>
+      <guid>https://Zhu-Chenyu.github.io/ants_vs_bees/</guid>
       <description>概述 蚂蚁大战蜜蜂是一款用 Python 开发的策略回合制塔防游戏，灵感来源于加州大学伯克利分校 CS61A 课程的课程项目。 玩家需要利用有限的食物资源部署各种蚂蚁来保护蚁巢，保卫蚁后免受入侵蜜蜂的攻击。&#xA;本项目展示了扎实的面向对象设计、事件驱动编程和游戏逻辑架构 —— 全部从零实现。&#xA;玩法概述 目标： 通过在隧道中策略性地部署蚂蚁来阻止蜜蜂到达蚁后。 资源： 每只蚂蚁的部署都消耗食物，食物由采集蚁每回合再生。 回合： 每一轮，蚂蚁先行动（攻击、采集或防御），随后蜜蜂行动（移动或蜇刺）。 地形： 水域格子会立即杀死非防水蚂蚁。 胜利： 在任何蜜蜂到达蚁巢前消灭所有蜜蜂。 蚂蚁属性与技能 蚂蚁 预览 食物消耗 生命值 特殊能力 采集蚁 2 1 每回合产出食物 投掷蚁 4 1 攻击前方蜜蜂 短程投掷蚁 3 1 攻击距离超过 2 格的蜜蜂 远程投掷蚁 3 1 攻击 2 格以内的蜜蜂 火蚁 5 1 死亡时爆炸，伤害附近蜜蜂 墙蚁 4 4 高耐久的肉盾 饥饿蚁 4 1 每隔几回合吞噬一只蜜蜂 保镖蚁 4 2 保护另一只蚂蚁免受伤害 坦克蚁 6 3 攻击其面前的所有蜜蜂 潜水投掷蚁 6 1 防水远程攻击者 蚁后 7 1 增强其他蚂蚁，被击杀则游戏结束 战斗逻辑 蚂蚁先行动： 攻击、采集或防御。 蜜蜂后行动： 向蚁后移动或蜇刺最近的蚂蚁。 生命值检查： 生命值 ≤ 0 的蚂蚁或蜜蜂被移除。 循环继续 直到所有蜜蜂被消灭（胜利）或蚁后被触及（失败）。 这一简单序列在与不同蚂蚁类型组合时，能产生出人意料的复杂策略。</description>
     </item>
   </channel>

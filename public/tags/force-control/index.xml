@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Force Control on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/tags/force-control/</link>
+    <link>https://Zhu-Chenyu.github.io/tags/force-control/</link>
     <description>Recent content in Force Control on 朱宸宇的作品集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/force-control/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Zhu-Chenyu.github.io/tags/force-control/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>基于视觉引导的 Franka 机械臂多米诺骨牌摆放</title>
-      <link>http://localhost:1313/fer_domino/</link>
+      <link>https://Zhu-Chenyu.github.io/fer_domino/</link>
       <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fer_domino/</guid>
+      <guid>https://Zhu-Chenyu.github.io/fer_domino/</guid>
       <description>概述 本项目实现了一个使用 Franka Emika Panda 机械臂的视觉引导多米诺骨牌操作系统。 机器人检测桌面上的多米诺骨牌，通过 RGB-D 视觉估计其位姿，自主将骨牌重新排列为预设几何图案，最后推倒它们。&#xA;与纯运动学演示不同，本系统应对真实世界的不确定性，包括：&#xA;桌面高度变化 视觉标定误差 小物体尺寸导致的抓取约束 为应对这些挑战，系统集成了相机-机器人外参标定、分阶段操作策略和力控放置，构建了一个鲁棒且可重复的操作流水线。&#xA;系统组成 组件 描述 机器人 Franka Emika Panda（7 自由度力矩控制机械臂） 相机 Intel RealSense RGB-D 深度相机（固定在夹爪上） 系统 ROS 2 运动规划 基于 MoveIt 的笛卡尔空间和关节空间规划 视觉 OpenCV + 基于深度的 3D 位姿估计 标定 easy_handeye2 外参标定 控制 位置控制 + 关节力矩反馈 总体流程 使用 RGB-D 视觉检测多米诺骨牌位姿 将相机坐标系下的检测结果变换到机器人坐标系 迭代拾取、重定向、放置骨牌至目标图案 利用力反馈确保在不平整表面上精确放置 推倒已完成的图案作为最终执行步骤 多米诺骨牌操作策略 分阶段放置算法 直接从平放状态抓取并放置多米诺骨牌被证明不够可靠，原因包括：&#xA;夹爪间隙有限 与邻近骨牌碰撞的风险 最终方向不精确 为此，系统采用三阶段操作策略：&#xA;初始拾取： 机器人从检测到的桌面位姿抓取骨牌。 中转（重定向）： 骨牌在中间位姿处被旋转为竖立方向。这一重定向步骤使得放置时无需担心夹爪干涉。 最终放置： 骨牌被放置到目标图案中的目标位置。 该方法显著提高了可靠性，避免了密集布局中的碰撞。</description>
     </item>
   </channel>

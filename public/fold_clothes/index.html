@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<head><meta charset="UTF-8">
 <meta name="page-title-zh" content="LeHome 挑战：基于 VLA 的双臂衣物折叠 | 朱宸宇的作品集">
 <meta name="page-title-en" content="LeHome Challenge: Bimanual Garment Folding with VLA Policies | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@
 <meta property="og:title" content="LeHome 挑战：基于 VLA 的双臂衣物折叠" />
 <meta property="og:description" content="面向 LeHome Challenge 2026 的双臂衣物折叠策略。我们比较了 SmolVLA、xVLA、Lingbot、ACT 和 Diffusion Policy，最终 SmolVLA 在自行评估中取得最高成功率。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/fold_clothes/" /><meta property="article:section" content="" />
+<meta property="og:url" content="https://Zhu-Chenyu.github.io/fold_clothes/" /><meta property="article:section" content="" />
 <meta property="article:published_time" content="2026-05-13T00:00:00+00:00" />
 <meta property="article:modified_time" content="2026-05-13T00:00:00+00:00" /><meta property="og:site_name" content="朱宸宇" />
 
@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <hr>
 <h2 id="概述">概述</h2>
 <p>本项目面向 <strong>LeHome Challenge 2026</strong>：在仿真环境中训练双臂机器人折叠不同类别的衣物。衣物属于典型的可变形物体，状态空间高、接触动力学复杂，且不同服装之间形状差异很大，因此很难用固定轨迹或规则控制解决。</p>
-<p>我们的目标不是为单件衣服写一个专用流程，而是训练一个能跨类别泛化的策略。最终提交团队为 <strong>LaundryNauts</strong>，官方评测排名 <strong>第 54 名</strong>，官方分数 <strong>40.00%</strong>。在我们自己的评估设置中，最佳模型达到 <strong>53.25%</strong>。</p>
+<p>我们的目标不是为单件衣服写一个专用流程，而是训练一个能跨类别泛化的策略。最终提交团队为 <strong>LaundryNauts</strong>，官方评测排名 <strong>第 54 名</strong>，官方分数 <strong>40.00%</strong>。在我们自己的评估设置中，最佳模型达到 <strong>55.2%</strong>。</p>
 <hr>
 <h2 id="团队">团队</h2>
 <table>
@@ -497,23 +497,23 @@ document.addEventListener('DOMContentLoaded', function() {
 <tbody>
 <tr>
 <td>长袖上衣</td>
-<td style="text-align:right">67%</td>
+<td style="text-align:right">16/24 = 66.7%</td>
 </tr>
 <tr>
 <td>短袖上衣</td>
-<td style="text-align:right">30%</td>
+<td style="text-align:right">6/24 = 25.0%</td>
 </tr>
 <tr>
 <td>长裤</td>
-<td style="text-align:right">41%</td>
+<td style="text-align:right">13/24 = 54.2%</td>
 </tr>
 <tr>
 <td>短裤</td>
-<td style="text-align:right">75%</td>
+<td style="text-align:right">18/24 = 75.0%</td>
 </tr>
 <tr>
 <td><strong>综合</strong></td>
-<td style="text-align:right"><strong>53.25%</strong></td>
+<td style="text-align:right"><strong>53/96 = 55.2%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -576,7 +576,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <hr>
 <h2 id="overview">Overview</h2>
 <p>This project targets the <strong>LeHome Challenge 2026</strong>: training a bimanual robot policy to fold garments in simulation. Garments are deformable objects with high-dimensional state, complex contact dynamics, and large shape variation across clothing categories, making the task difficult to solve with fixed trajectories or rule-based control.</p>
-<p>Our goal was not to script a special case for one garment, but to train a policy that generalizes across categories. Our submission team, <strong>LaundryNauts</strong>, ranked <strong>54th</strong> on the official evaluation with an official score of <strong>40.00%</strong>. In our internal evaluation setup, the best model reached <strong>53.25%</strong>.</p>
+<p>Our goal was not to script a special case for one garment, but to train a policy that generalizes across categories. Our submission team, <strong>LaundryNauts</strong>, ranked <strong>54th</strong> on the official evaluation with an official score of <strong>40.00%</strong>. In our internal evaluation setup, the best model reached <strong>55.2%</strong>.</p>
 <hr>
 <h2 id="team">Team</h2>
 <table>
@@ -672,23 +672,23 @@ document.addEventListener('DOMContentLoaded', function() {
 <tbody>
 <tr>
 <td>Long-sleeved tops</td>
-<td style="text-align:right">67%</td>
+<td style="text-align:right">16/24 = 66.7%</td>
 </tr>
 <tr>
 <td>Short-sleeved tops</td>
-<td style="text-align:right">30%</td>
+<td style="text-align:right">6/24 = 25.0%</td>
 </tr>
 <tr>
 <td>Long pants</td>
-<td style="text-align:right">41%</td>
+<td style="text-align:right">13/24 = 54.2%</td>
 </tr>
 <tr>
 <td>Shorts</td>
-<td style="text-align:right">75%</td>
+<td style="text-align:right">18/24 = 75.0%</td>
 </tr>
 <tr>
 <td><strong>Overall</strong></td>
-<td style="text-align:right"><strong>53.25%</strong></td>
+<td style="text-align:right"><strong>53/96 = 55.2%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -802,23 +802,23 @@ document.addEventListener('DOMContentLoaded', function() {
             <h5>Tags</h5>
             <ul class="tags-ul list-unstyled list-inline">
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/robotics"
+              <li class="list-inline-item"><a href="https://Zhu-Chenyu.github.io/tags/robotics"
                 
               >Robotics</a></li>
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/manipulation"
+              <li class="list-inline-item"><a href="https://Zhu-Chenyu.github.io/tags/manipulation"
                 
               >Manipulation</a></li>
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/imitation-learning"
+              <li class="list-inline-item"><a href="https://Zhu-Chenyu.github.io/tags/imitation-learning"
                 
               >Imitation Learning</a></li>
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/vision-language-action"
+              <li class="list-inline-item"><a href="https://Zhu-Chenyu.github.io/tags/vision-language-action"
                 
               >Vision-Language-Action</a></li>
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/deformable-objects"
+              <li class="list-inline-item"><a href="https://Zhu-Chenyu.github.io/tags/deformable-objects"
                 
               >Deformable Objects</a></li>
               
@@ -936,7 +936,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="http://localhost:1313/" title="朱宸宇的作品集">
+                    <a href="https://Zhu-Chenyu.github.io/" title="朱宸宇的作品集">
                         <img alt="Footer logo" src="/IMG_6321.png"
                             height="40px" width="40px">
                     </a>

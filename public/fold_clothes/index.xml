@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LeHome 挑战：基于 VLA 的双臂衣物折叠 on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/fold_clothes/</link>
+    <link>https://Zhu-Chenyu.github.io/fold_clothes/</link>
     <description>Recent content in LeHome 挑战：基于 VLA 的双臂衣物折叠 on 朱宸宇的作品集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/fold_clothes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Zhu-Chenyu.github.io/fold_clothes/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

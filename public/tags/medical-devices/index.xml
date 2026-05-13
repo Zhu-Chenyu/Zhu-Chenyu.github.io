@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Medical Devices on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/tags/medical-devices/</link>
+    <link>https://Zhu-Chenyu.github.io/tags/medical-devices/</link>
     <description>Recent content in Medical Devices on 朱宸宇的作品集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 12 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/medical-devices/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Zhu-Chenyu.github.io/tags/medical-devices/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intuitive Surgical（直觉外科）实习：机器人手术器械热性能实验研究</title>
-      <link>http://localhost:1313/intuitive/</link>
+      <link>https://Zhu-Chenyu.github.io/intuitive/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/intuitive/</guid>
+      <guid>https://Zhu-Chenyu.github.io/intuitive/</guid>
       <description>概述 在 Intuitive Surgical 的实习期间，我参与了一项使用达芬奇手术系统进行的超声刀冷却性能实验研究。 目标是开发一套可重复、数据驱动的框架，评估超声刀在激活后的散热表现。&#xA;我负责设计和自动化机器人辅助测试流程，集成热成像数据采集和曲线拟合模型来分析手术器械的冷却特性。 本项目综合运用了机器人学、热分析和实验数据建模技能，应用于医疗器械研发环境。&#xA;系统组成 组件 描述 机器人系统 达芬奇手术系统，编程执行精确运动序列 器械 不同材料和涂层的超声刀 传感器 热成像系统，用于表面温度监测 软件工具 Python、OpenCV、NumPy 和曲线拟合库 工作环境 可控实验室条件，确保机器人实验的可重复性 实验工作流程 1. 机器人操作设置 编程控制达芬奇机器人以固定速度、路径和力执行可重复的切割与冷却序列。 确保接触时间、角度和运动轨迹的一致性。 每次试验前通过多次标定循环验证机器人精度。 2. 热成像与数据采集 使用热像仪连续记录手术器械激活后的温度衰减。 定义观察区域以聚焦分析关键接触区域。 提取时间-温度数据序列供后续处理。 3. 数据建模与分析 使用 Python 处理记录的温度数据。 应用曲线拟合技术建模随时间变化的冷却特性。 实现指数衰减拟合以估计不同配置下的冷却参数。 通过多次重复实验对比模型精度以验证实验可靠性。 4. 器械处理与检查 协助每次试验的器械准备与固定。 每轮试验后进行显微检查，检测表面或涂层的潜在变化。 技能与贡献 机器人操作： 操作达芬奇手术机器人以完成实验。 实验设计： 规划可重复的测试条件，确保准确性和可重复性。 热数据分析： 使用 Python 处理和建模时间-温度数据。 团队协作： 在受管控的跨学科实验室环境中与研发工程师协作。 文档记录： 记录实验流程、设备配置和数据工作流以供内部报告。 收获 这次实习加深了我对机器人学与数据建模在医疗器械研发中交叉应用的理解。 我学会了在高风险的真实环境中运用工程原则 —— 精度、可重复性和安全性 —— 在手术机器人领域架起软件、硬件与人因工程的桥梁。&#xA;致谢 感谢 Intuitive Surgical 研发团队在实习期间的指导与帮助。 他们在机器人器械、数据验证和安全测试方面的见解极大地塑造了我的学习体验。</description>
     </item>
   </channel>

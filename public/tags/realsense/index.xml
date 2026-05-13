@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RealSense on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/tags/realsense/</link>
+    <link>https://Zhu-Chenyu.github.io/tags/realsense/</link>
     <description>Recent content in RealSense on 朱宸宇的作品集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/realsense/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Zhu-Chenyu.github.io/tags/realsense/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谁偷了我的笔？—— 视觉引导机械臂抓取</title>
-      <link>http://localhost:1313/grab_pen/</link>
+      <link>https://Zhu-Chenyu.github.io/grab_pen/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/grab_pen/</guid>
+      <guid>https://Zhu-Chenyu.github.io/grab_pen/</guid>
       <description>概述 谁偷了我的笔？ 我的笔刚才还在这里，但是现在不见了。周围没有人 —— 只有这个机械臂。不可能是它拿走的……吧？&#xA;本项目展示了一个视觉引导机器人抓取系统，使用 RealSense 深度相机检测笔，通过相机-机器人标定计算其位置，并控制 Interbotix PX100 机械臂实时拾取 —— 全部自动完成。&#xA;项目集成了 RGB-D 感知、坐标变换和运动控制，作为视觉伺服（Visual Servoing）和机器人抓取操作的小型演示。&#xA;系统组成 组件 描述 机械臂 Interbotix PX100，5 自由度，通过 ROS Python API 控制 相机 Intel RealSense，提供同步 RGB 和深度数据流 环境 Ubuntu 24.04 / ROS Kilted / Python 3.12 控制接口 Interbotix Python API、OpenCV、NumPy 工作流程 1. RGB-D 数据采集 从 RealSense 相机采集 RGB 和深度图像。 对齐两帧以确保像素级深度对应。 滤除距离超过 1 米的区域以减少背景干扰。 2. 基于 HSV 阈值分割的颜色检测 将 RGB 帧转换为 HSV 色彩空间。 使用 OpenCV 滑动条界面动态调整色相、饱和度和明度阈值。 应用高斯模糊使分割更平滑。 生成二值掩模以隔离笔的颜色特征。 3.</description>
     </item>
   </channel>

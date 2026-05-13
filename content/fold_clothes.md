@@ -32,7 +32,7 @@ links:
 
 本项目面向 **LeHome Challenge 2026**：在仿真环境中训练双臂机器人折叠不同类别的衣物。衣物属于典型的可变形物体，状态空间高、接触动力学复杂，且不同服装之间形状差异很大，因此很难用固定轨迹或规则控制解决。
 
-我们的目标不是为单件衣服写一个专用流程，而是训练一个能跨类别泛化的策略。最终提交团队为 **LaundryNauts**，官方评测排名 **第 54 名**，官方分数 **40.00%**。在我们自己的评估设置中，最佳模型达到 **53.25%**。
+我们的目标不是为单件衣服写一个专用流程，而是训练一个能跨类别泛化的策略。最终提交团队为 **LaundryNauts**，官方评测排名 **第 54 名**，官方分数 **40.00%**。在我们自己的评估设置中，最佳模型达到 **55.2%**。
 
 ---
 
@@ -86,11 +86,11 @@ LeHome Challenge 将衣物分为四类：
 
 | 类别 | 成功率 |
 |------|-------:|
-| 长袖上衣 | 67% |
-| 短袖上衣 | 30% |
-| 长裤 | 41% |
-| 短裤 | 75% |
-| **综合** | **53.25%** |
+| 长袖上衣 | 16/24 = 66.7% |
+| 短袖上衣 | 6/24 = 25.0% |
+| 长裤 | 13/24 = 54.2% |
+| 短裤 | 18/24 = 75.0% |
+| **综合** | **53/96 = 55.2%** |
 
 短裤和长袖上衣相对容易形成稳定抓取与折叠轨迹；短袖上衣更容易因为布料局部折叠、袖口朝向和抓取点偏差导致失败。长裤结果介于两者之间，主要瓶颈是裤腿的对齐和中后段折叠的一致性。
 
@@ -145,7 +145,7 @@ LeHome Challenge 将衣物分为四类：
 
 This project targets the **LeHome Challenge 2026**: training a bimanual robot policy to fold garments in simulation. Garments are deformable objects with high-dimensional state, complex contact dynamics, and large shape variation across clothing categories, making the task difficult to solve with fixed trajectories or rule-based control.
 
-Our goal was not to script a special case for one garment, but to train a policy that generalizes across categories. Our submission team, **LaundryNauts**, ranked **54th** on the official evaluation with an official score of **40.00%**. In our internal evaluation setup, the best model reached **53.25%**.
+Our goal was not to script a special case for one garment, but to train a policy that generalizes across categories. Our submission team, **LaundryNauts**, ranked **54th** on the official evaluation with an official score of **40.00%**. In our internal evaluation setup, the best model reached **55.2%**.
 
 ---
 
@@ -199,11 +199,11 @@ We selected **SmolVLA** as the primary submission policy. It produced the most b
 
 | Category | Success Rate |
 |----------|-------------:|
-| Long-sleeved tops | 67% |
-| Short-sleeved tops | 30% |
-| Long pants | 41% |
-| Shorts | 75% |
-| **Overall** | **53.25%** |
+| Long-sleeved tops | 16/24 = 66.7% |
+| Short-sleeved tops | 6/24 = 25.0% |
+| Long pants | 13/24 = 54.2% |
+| Shorts | 18/24 = 75.0% |
+| **Overall** | **53/96 = 55.2%** |
 
 Shorts and long-sleeved tops were easier to stabilize into repeatable grasp-and-fold trajectories. Short-sleeved tops failed more often due to local cloth folds, sleeve orientation, and grasp-point drift. Long pants were in the middle, with the main bottleneck being pant-leg alignment and late-stage fold consistency.
 

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Localization on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/tags/localization/</link>
+    <link>https://Zhu-Chenyu.github.io/tags/localization/</link>
     <description>Recent content in Localization on 朱宸宇的作品集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/localization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Zhu-Chenyu.github.io/tags/localization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EKF SLAM：TurtleBot3 实体机器人实现</title>
-      <link>http://localhost:1313/slam/</link>
+      <link>https://Zhu-Chenyu.github.io/slam/</link>
       <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/slam/</guid>
+      <guid>https://Zhu-Chenyu.github.io/slam/</guid>
       <description>实机演示 机器人沿环形路线行驶并返回起始位置。绿色机器人为 SLAM 估计，蓝色机器人为原始里程计。&#xA;概述 本项目为西北大学 ME495《机器人感知、导航与机器学习》课程作业（2025年冬季学期），在真实 TurtleBot3 上实现了完整的 EKF SLAM 管线，包含路标检测、里程计与双机 ROS 2 通信架构。&#xA;核心成果：&#xA;对比 x 误差 (m) y 误差 (m) 总误差 (m) 真实值 vs 里程计 0.633 0.176 0.657 真实值 vs SLAM 0.001 0.000 0.001 SLAM 将位置误差从里程计的 65.7 cm 降低至 1 mm，提升幅度达 657 倍。&#xA;工作原理 系统将里程计与 LiDAR 路标观测融合，在机器人运动过程中同时估计机器人位姿和路标位置。&#xA;路标检测：LiDAR 点云聚类与圆拟合 LiDAR 扫描数据经过处理，识别出场景中的圆柱形路标：&#xA;聚类：将角度间距超过阈值的相邻扫描点分入不同的聚类 圆拟合：对每个聚类应用 Umeyama 圆拟合算法，估计圆心坐标 $(x_c, y_c)$ 和半径 $r$ 过滤：根据半径范围和聚类大小剔除误检（如墙面反射） 经过拟合的圆心坐标即为路标的相对位置，直接输入 EKF 更新步骤。&#xA;扩展卡尔曼滤波器（EKF） EKF 维护联合状态向量 $\mathbf{x} = [q^T, m^T]^T$，其中 $q = (\theta, x, y)$ 为机器人位姿，$m$ 为路标坐标列表。</description>
     </item>
   </channel>

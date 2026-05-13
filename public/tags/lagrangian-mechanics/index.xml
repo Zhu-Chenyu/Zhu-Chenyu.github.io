@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lagrangian Mechanics on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/tags/lagrangian-mechanics/</link>
+    <link>https://Zhu-Chenyu.github.io/tags/lagrangian-mechanics/</link>
     <description>Recent content in Lagrangian Mechanics on 朱宸宇的作品集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/lagrangian-mechanics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Zhu-Chenyu.github.io/tags/lagrangian-mechanics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>碰撞感知动力学仿真：基于 SymPy 的 Box-Jack 系统</title>
-      <link>http://localhost:1313/box_jack_impact/</link>
+      <link>https://Zhu-Chenyu.github.io/box_jack_impact/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/box_jack_impact/</guid>
+      <guid>https://Zhu-Chenyu.github.io/box_jack_impact/</guid>
       <description>概述 本项目构建了一个双刚体系统的平面刚体动力学仿真器：一个空心方形盒子和一个内部的方形骰子。 仿真器捕获连续运动（通过欧拉-拉格朗日动力学）和离散事件（通过单面接触约束和基于冲量的速度修正），构成一个混杂系统。&#xA;主要特性：&#xA;使用 SymPy 进行运动方程的符号推导 壁面接触和地面接触的单面间隙约束 基于约束值和接近方向的碰撞检测 弹性和非弹性碰撞更新律的对比 使用 Matplotlib 时间序列和 Plotly 刚体动画进行可视化 系统模型 广义坐标 状态使用 6 个广义坐标：&#xA;盒子位姿：$(x_{box}, y_{box}, \theta_{box})$ 骰子位姿：$(x_{jack}, y_{jack}, \theta_{jack}) $ 及其速度和加速度的时间导数。&#xA;几何与惯量 盒子建模为薄壁方形框架，可配置壁厚和内部尺寸。 质量和转动惯量由壁面段计算，加上平行轴定理的偏移修正。 骰子建模为均匀方形板，具有质量和平面转动惯量。 动力学推导 拉格朗日公式 为两个刚体定义动能和势能：&#xA;$T $: 平动 + 转动动能 $V $: 重力势能 拉格朗日量为： $ L = T - V $&#xA;使用 SymPy 符号计算欧拉-拉格朗日方程： $ \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial q} = F $&#xA;得到的 $\ddot{q} $表达式经符号求解后数值化（Lambdify）为高速数值函数，用于时间积分。&#xA;接触约束 盒子-骰子壁面接触 仿真器定义了以下接触的单面间隙约束：</description>
     </item>
   </channel>

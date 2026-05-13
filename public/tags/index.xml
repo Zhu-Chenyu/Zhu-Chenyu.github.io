@@ -2,241 +2,241 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://Zhu-Chenyu.github.io/tags/</link>
     <description>Recent content in Tags on 朱宸宇的作品集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 13 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Zhu-Chenyu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deformable Objects</title>
-      <link>http://localhost:1313/tags/deformable-objects/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/deformable-objects/</link>
       <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/deformable-objects/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/deformable-objects/</guid>
       <description></description>
     </item>
     <item>
       <title>Imitation Learning</title>
-      <link>http://localhost:1313/tags/imitation-learning/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/imitation-learning/</link>
       <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/imitation-learning/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/imitation-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Manipulation</title>
-      <link>http://localhost:1313/tags/manipulation/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/manipulation/</link>
       <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/manipulation/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/manipulation/</guid>
       <description></description>
     </item>
     <item>
       <title>Robotics</title>
-      <link>http://localhost:1313/tags/robotics/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/robotics/</link>
       <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/robotics/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/robotics/</guid>
       <description></description>
     </item>
     <item>
       <title>Vision-Language-Action</title>
-      <link>http://localhost:1313/tags/vision-language-action/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/vision-language-action/</link>
       <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vision-language-action/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/vision-language-action/</guid>
       <description></description>
     </item>
     <item>
       <title>Control Systems</title>
-      <link>http://localhost:1313/tags/control-systems/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/control-systems/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/control-systems/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/control-systems/</guid>
       <description></description>
     </item>
     <item>
       <title>Kalman Filter</title>
-      <link>http://localhost:1313/tags/kalman-filter/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/kalman-filter/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kalman-filter/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/kalman-filter/</guid>
       <description></description>
     </item>
     <item>
       <title>Obstacle Avoidance</title>
-      <link>http://localhost:1313/tags/obstacle-avoidance/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/obstacle-avoidance/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/obstacle-avoidance/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/obstacle-avoidance/</guid>
       <description></description>
     </item>
     <item>
       <title>Quadrotor</title>
-      <link>http://localhost:1313/tags/quadrotor/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/quadrotor/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/quadrotor/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/quadrotor/</guid>
       <description></description>
     </item>
     <item>
       <title>ROS 2</title>
-      <link>http://localhost:1313/tags/ros-2/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/ros-2/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ros-2/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/ros-2/</guid>
       <description></description>
     </item>
     <item>
       <title>Calibration</title>
-      <link>http://localhost:1313/tags/calibration/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/calibration/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/calibration/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/calibration/</guid>
       <description></description>
     </item>
     <item>
       <title>Computer Vision</title>
-      <link>http://localhost:1313/tags/computer-vision/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/computer-vision/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/computer-vision/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/computer-vision/</guid>
       <description></description>
     </item>
     <item>
       <title>Game Development</title>
-      <link>http://localhost:1313/tags/game-development/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/game-development/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/game-development/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/game-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Object-Oriented Programming</title>
-      <link>http://localhost:1313/tags/object-oriented-programming/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/object-oriented-programming/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/object-oriented-programming/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/object-oriented-programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Path Planning</title>
-      <link>http://localhost:1313/tags/path-planning/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/path-planning/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/path-planning/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/path-planning/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/python/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>RealSense</title>
-      <link>http://localhost:1313/tags/realsense/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/realsense/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/realsense/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/realsense/</guid>
       <description></description>
     </item>
     <item>
       <title>Da Vinci Surgical System</title>
-      <link>http://localhost:1313/tags/da-vinci-surgical-system/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/da-vinci-surgical-system/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/da-vinci-surgical-system/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/da-vinci-surgical-system/</guid>
       <description></description>
     </item>
     <item>
       <title>Data Modeling</title>
-      <link>http://localhost:1313/tags/data-modeling/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/data-modeling/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data-modeling/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/data-modeling/</guid>
       <description></description>
     </item>
     <item>
       <title>Experiment Design</title>
-      <link>http://localhost:1313/tags/experiment-design/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/experiment-design/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/experiment-design/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/experiment-design/</guid>
       <description></description>
     </item>
     <item>
       <title>Medical Devices</title>
-      <link>http://localhost:1313/tags/medical-devices/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/medical-devices/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/medical-devices/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/medical-devices/</guid>
       <description></description>
     </item>
     <item>
       <title>Thermal Analysis</title>
-      <link>http://localhost:1313/tags/thermal-analysis/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/thermal-analysis/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/thermal-analysis/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/thermal-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Dynamics</title>
-      <link>http://localhost:1313/tags/dynamics/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/dynamics/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dynamics/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/dynamics/</guid>
       <description></description>
     </item>
     <item>
       <title>Hybrid Systems</title>
-      <link>http://localhost:1313/tags/hybrid-systems/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/hybrid-systems/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hybrid-systems/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/hybrid-systems/</guid>
       <description></description>
     </item>
     <item>
       <title>Impact Modeling</title>
-      <link>http://localhost:1313/tags/impact-modeling/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/impact-modeling/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/impact-modeling/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/impact-modeling/</guid>
       <description></description>
     </item>
     <item>
       <title>Lagrangian Mechanics</title>
-      <link>http://localhost:1313/tags/lagrangian-mechanics/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/lagrangian-mechanics/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lagrangian-mechanics/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/lagrangian-mechanics/</guid>
       <description></description>
     </item>
     <item>
       <title>Simulation</title>
-      <link>http://localhost:1313/tags/simulation/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/simulation/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/simulation/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/simulation/</guid>
       <description></description>
     </item>
     <item>
       <title>SymPy</title>
-      <link>http://localhost:1313/tags/sympy/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/sympy/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sympy/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/sympy/</guid>
       <description></description>
     </item>
     <item>
       <title>Force Control</title>
-      <link>http://localhost:1313/tags/force-control/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/force-control/</link>
       <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/force-control/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/force-control/</guid>
       <description></description>
     </item>
     <item>
       <title>Motion Planning</title>
-      <link>http://localhost:1313/tags/motion-planning/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/motion-planning/</link>
       <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/motion-planning/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/motion-planning/</guid>
       <description></description>
     </item>
     <item>
       <title>LiDAR</title>
-      <link>http://localhost:1313/tags/lidar/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/lidar/</link>
       <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lidar/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/lidar/</guid>
       <description></description>
     </item>
     <item>
       <title>Localization</title>
-      <link>http://localhost:1313/tags/localization/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/localization/</link>
       <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/localization/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/localization/</guid>
       <description></description>
     </item>
     <item>
       <title>SLAM</title>
-      <link>http://localhost:1313/tags/slam/</link>
+      <link>https://Zhu-Chenyu.github.io/tags/slam/</link>
       <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/slam/</guid>
+      <guid>https://Zhu-Chenyu.github.io/tags/slam/</guid>
       <description></description>
     </item>
   </channel>

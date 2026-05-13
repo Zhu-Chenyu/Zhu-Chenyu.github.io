@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vision-Language-Action on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/tags/vision-language-action/</link>
+    <link>https://Zhu-Chenyu.github.io/tags/vision-language-action/</link>
     <description>Recent content in Vision-Language-Action on 朱宸宇的作品集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 13 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/vision-language-action/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Zhu-Chenyu.github.io/tags/vision-language-action/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeHome 挑战：基于 VLA 的双臂衣物折叠</title>
-      <link>http://localhost:1313/fold_clothes/</link>
+      <link>https://Zhu-Chenyu.github.io/fold_clothes/</link>
       <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fold_clothes/</guid>
-      <description>概述 本项目面向 LeHome Challenge 2026：在仿真环境中训练双臂机器人折叠不同类别的衣物。衣物属于典型的可变形物体，状态空间高、接触动力学复杂，且不同服装之间形状差异很大，因此很难用固定轨迹或规则控制解决。&#xA;我们的目标不是为单件衣服写一个专用流程，而是训练一个能跨类别泛化的策略。最终提交团队为 LaundryNauts，官方评测排名 第 54 名，官方分数 40.00%。在我们自己的评估设置中，最佳模型达到 53.25%。&#xA;团队 成员 贡献方向 Md Saif Ahmad Diffusion Policy 训练；关键点函数；硬件测试 Andnet DeBoer 提交系统；xVLA 训练；SmolVLA 测试；硬件搭建；数据随机化 Conor Hayes Lingbot 训练；状态机；硬件搭建 Jyothi Swaroop Kasina Diffusion Policy 训练；CuRobo 集成；关键点函数；录制流水线；硬件搭建 Chenyu Zhu SmolVLA 训练；ACT 训练；Lingbot 测试；CuRobo 集成；数据采集；数据随机化 Robert Zhu 数据采集；评测流水线 任务设置 LeHome Challenge 将衣物分为四类：&#xA;长袖上衣 短袖上衣 长裤 短裤 每个类别都需要机器人从展开、扭曲或偏移的初始状态出发，通过双臂操作将衣物折叠到目标形态。评测不仅关注最终形状是否接近目标，也考验策略在不同初始状态和不同服装几何上的泛化能力。参考任务说明中，挑战提供四类衣物的遥操作演示用于训练策略。&#xA;模型对比 我们尝试了五类策略：&#xA;方法 观察 SmolVLA 最稳定，最终自行评估成功率最高 xVLA 泛化有潜力，但训练稳定性不足 Lingbot 对语言条件有优势，但在当前数据和动作空间下不够稳定 ACT 动作 chunking 有帮助，但对初始状态扰动较敏感 Diffusion Policy 轨迹质量好，但需要更细的训练和采样调参 最终我们选择 SmolVLA 作为主要提交策略。它在四类衣物中的表现最均衡，尤其是在短裤折叠上明显优于其他尝试。</description>
+      <guid>https://Zhu-Chenyu.github.io/fold_clothes/</guid>
+      <description>概述 本项目面向 LeHome Challenge 2026：在仿真环境中训练双臂机器人折叠不同类别的衣物。衣物属于典型的可变形物体，状态空间高、接触动力学复杂，且不同服装之间形状差异很大，因此很难用固定轨迹或规则控制解决。&#xA;我们的目标不是为单件衣服写一个专用流程，而是训练一个能跨类别泛化的策略。最终提交团队为 LaundryNauts，官方评测排名 第 54 名，官方分数 40.00%。在我们自己的评估设置中，最佳模型达到 55.2%。&#xA;团队 成员 贡献方向 Md Saif Ahmad Diffusion Policy 训练；关键点函数；硬件测试 Andnet DeBoer 提交系统；xVLA 训练；SmolVLA 测试；硬件搭建；数据随机化 Conor Hayes Lingbot 训练；状态机；硬件搭建 Jyothi Swaroop Kasina Diffusion Policy 训练；CuRobo 集成；关键点函数；录制流水线；硬件搭建 Chenyu Zhu SmolVLA 训练；ACT 训练；Lingbot 测试；CuRobo 集成；数据采集；数据随机化 Robert Zhu 数据采集；评测流水线 任务设置 LeHome Challenge 将衣物分为四类：&#xA;长袖上衣 短袖上衣 长裤 短裤 每个类别都需要机器人从展开、扭曲或偏移的初始状态出发，通过双臂操作将衣物折叠到目标形态。评测不仅关注最终形状是否接近目标，也考验策略在不同初始状态和不同服装几何上的泛化能力。参考任务说明中，挑战提供四类衣物的遥操作演示用于训练策略。&#xA;模型对比 我们尝试了五类策略：&#xA;方法 观察 SmolVLA 最稳定，最终自行评估成功率最高 xVLA 泛化有潜力，但训练稳定性不足 Lingbot 对语言条件有优势，但在当前数据和动作空间下不够稳定 ACT 动作 chunking 有帮助，但对初始状态扰动较敏感 Diffusion Policy 轨迹质量好，但需要更细的训练和采样调参 最终我们选择 SmolVLA 作为主要提交策略。它在四类衣物中的表现最均衡，尤其是在短裤折叠上明显优于其他尝试。</description>
     </item>
   </channel>
 </rss>
