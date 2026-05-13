@@ -31,15 +31,19 @@
   };
 
   var body = JSON.stringify(payload);
+  var script = document.currentScript;
+  var endpoint = script && script.getAttribute("data-endpoint")
+    ? script.getAttribute("data-endpoint")
+    : "/api/analytics";
 
   if (navigator.sendBeacon) {
-    navigator.sendBeacon("/api/analytics", new Blob([body], { type: "application/json" }));
+    navigator.sendBeacon(endpoint, new Blob([body], { type: "text/plain" }));
     return;
   }
 
-  fetch("/api/analytics", {
+  fetch(endpoint, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "text/plain" },
     body: body,
     keepalive: true
   }).catch(function () {});

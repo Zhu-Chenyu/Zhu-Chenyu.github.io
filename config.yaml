@@ -91,6 +91,10 @@ params:
   description_en: "MS in Robotics, Northwestern University '26"
   # staticPath: ""  # The path to serve the static files from
   favicon: "/IMG_6321.png"
+  analytics:
+    # Set this to your deployed backend URL after deployment, for example:
+    # endpoint: "https://your-backend.example.com/api/analytics"
+    endpoint: ""
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
   # serving both, only t/images/headshot-modified.pnghe css, or only the js files through the CDN. Any other value will make so that CDN is not used.
   # Note the lack of "" in true, it should be of boolean type.

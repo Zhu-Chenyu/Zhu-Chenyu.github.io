@@ -6,7 +6,7 @@ const { URL } = require("url");
 
 const ROOT_DIR = __dirname;
 const PUBLIC_DIR = path.join(ROOT_DIR, "public");
-const DATA_DIR = path.join(ROOT_DIR, "analytics-data");
+const DATA_DIR = process.env.ANALYTICS_DATA_DIR || path.join(ROOT_DIR, "analytics-data");
 const EVENTS_FILE = path.join(DATA_DIR, "events.jsonl");
 const SALT_FILE = path.join(DATA_DIR, "salt");
 
@@ -14,6 +14,12 @@ const PORT = Number(process.env.PORT || 3000);
 const ADMIN_USER = process.env.ADMIN_USER || "admin";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "change-me";
 const TRUST_PROXY = process.env.TRUST_PROXY === "1";
+const ALLOWED_ORIGINS = new Set(
+  (process.env.ANALYTICS_ALLOWED_ORIGINS || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean)
+);
 
 const MIME_TYPES = {
   ".css": "text/css; charset=utf-8",
@@ -61,10 +67,45 @@ function send(res, status, body, contentType = "text/plain; charset=utf-8", extr
   res.end(body);
 }
 
-function sendJson(res, status, payload) {
+function sendJson(res, status, payload, extraHeaders = {}) {
   send(res, status, JSON.stringify(payload), "application/json; charset=utf-8", {
     "Cache-Control": "no-store",
+    ...extraHeaders,
   });
+}
+
+function corsHeaders(req) {
+  const origin = req.headers.origin;
+  if (!origin) return {};
+  if (!ALLOWED_ORIGINS.has("*") && !ALLOWED_ORIGINS.has(origin)) return {};
+
+  return {
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Max-Age": "86400",
+    "Vary": "Origin",
+  };
+}
+
+function isSameOrigin(req) {
+  const origin = req.headers.origin;
+  if (!origin) return true;
+
+  const forwardedProto = TRUST_PROXY && req.headers["x-forwarded-proto"]
+    ? String(req.headers["x-forwarded-proto"]).split(",")[0].trim()
+    : "";
+  const protocol = forwardedProto || "http";
+  return origin === `${protocol}://${req.headers.host}`;
+}
+
+function handleAnalyticsOptions(req, res) {
+  const headers = corsHeaders(req);
+  if (!headers["Access-Control-Allow-Origin"]) {
+    send(res, 403, "Origin not allowed");
+    return;
+  }
+  send(res, 204, "", "text/plain; charset=utf-8", headers);
 }
 
 function readBody(req, maxBytes = 8192) {
@@ -194,8 +235,19 @@ function appendEvent(event) {
 }
 
 async function handleAnalytics(req, res) {
+  const headers = corsHeaders(req);
+  if (req.headers.origin && !headers["Access-Control-Allow-Origin"] && !isSameOrigin(req)) {
+    sendJson(res, 403, { error: "Origin not allowed" });
+    return;
+  }
+
+  if (req.method === "OPTIONS") {
+    handleAnalyticsOptions(req, res);
+    return;
+  }
+
   if (req.method !== "POST") {
-    sendJson(res, 405, { error: "Method not allowed" });
+    sendJson(res, 405, { error: "Method not allowed" }, headers);
     return;
   }
 
@@ -203,9 +255,9 @@ async function handleAnalytics(req, res) {
     const body = await readBody(req);
     const payload = JSON.parse(body || "{}");
     appendEvent(createEvent(req, payload));
-    sendJson(res, 204, {});
+    sendJson(res, 204, {}, headers);
   } catch (error) {
-    sendJson(res, 400, { error: "Invalid analytics payload" });
+    sendJson(res, 400, { error: "Invalid analytics payload" }, headers);
   }
 }
 
@@ -417,6 +469,11 @@ function handleStatic(req, res, url) {
 
 const server = http.createServer((req, res) => {
   const url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
+
+  if (url.pathname === "/healthz") {
+    sendJson(res, 200, { ok: true });
+    return;
+  }
 
   if (url.pathname === "/api/analytics") {
     handleAnalytics(req, res);
