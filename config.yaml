@@ -293,6 +293,25 @@ params:
     title_en: "Featured Projects"
     items:
 
+    - title: LeHome 挑战：基于 VLA 的双臂衣物折叠
+      title_en: "LeHome Challenge: Bimanual Garment Folding with VLA Policies"
+      content: 比较 SmolVLA、xVLA、Lingbot、ACT 与 Diffusion Policy 的衣物折叠策略，最终 SmolVLA 在自行评估中取得最高成功率。
+      content_en: "A bimanual garment-folding project comparing SmolVLA, xVLA, Lingbot, ACT, and Diffusion Policy, with SmolVLA achieving the best internal success rate."
+      image: /images/projects/fold_clothes/smolvla_shirt.mp4
+      featured:
+        name: 查看详情
+        name_en: "View Details"
+        link: /fold_clothes
+      badges:
+        - "VLA"
+        - "Imitation Learning"
+        - "Bimanual Manipulation"
+        - "Deformable Objects"
+      links:
+        - icon: fa-regular fa-face-smile
+          name: "Hugging Face"
+          url: https://huggingface.co/LaundryNauts
+
     - title: 力顺从交互四旋翼无人机（LiDAR 避障功能）
       title_en: "Force-Compliant Quadrotor with LiDAR Obstacle Avoidance"
       content: 一架可沿施加外力方向移动的四旋翼无人机。通过卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。
@@ -312,26 +331,6 @@ params:
         - icon: fab fa-github
           name: "Github"
           url: https://github.com/Zhu-Chenyu/Interaction-Guided-Aerial-Navigation
-
-    - title: EKF SLAM：TurtleBot3 实体机器人实现
-      title_en: "EKF SLAM on a Real TurtleBot3"
-      content: 在真实 TurtleBot3 上运行的扩展卡尔曼滤波器 SLAM 管线，通过 LiDAR 扫描聚类与圆拟合检测圆柱形路标，使用马氏距离进行未知数据关联，位姿误差从里程计的 0.657 m 降至 SLAM 的 0.001 m。
-      content_en: "A full EKF SLAM pipeline running on a real TurtleBot3 — cylindrical landmark detection via LiDAR clustering and circle fitting, unknown data association with Mahalanobis distance, reducing pose error from 0.657 m (odometry) to 0.001 m."
-      image: /images/projects/slam/8xdemo.MP4
-      featured:
-        name: 查看详情
-        name_en: "View Details"
-        link: /slam
-      badges:
-        - "ROS 2"
-        - "C++"
-        - "EKF SLAM"
-        - "LiDAR"
-        - "Localization"
-      links:
-        - icon: fab fa-github
-          name: "Github"
-          url: https://github.com/Zhu-Chenyu/slam
 
     - title: 基于视觉引导的 Franka 机械臂多米诺骨牌摆放
       title_en: "Vision-Guided Domino Placement with Franka Emika Robot"
@@ -363,6 +362,26 @@ params:
     title: "其他项目"
     title_en: "Other Projects"
     items:
+
+      - title: EKF SLAM：TurtleBot3 实体机器人实现
+        title_en: "EKF SLAM on a Real TurtleBot3"
+        content: 在真实 TurtleBot3 上运行的扩展卡尔曼滤波器 SLAM 管线，通过 LiDAR 扫描聚类与圆拟合检测圆柱形路标，使用马氏距离进行未知数据关联，位姿误差从里程计的 0.657 m 降至 SLAM 的 0.001 m。
+        content_en: "A full EKF SLAM pipeline running on a real TurtleBot3 — cylindrical landmark detection via LiDAR clustering and circle fitting, unknown data association with Mahalanobis distance, reducing pose error from 0.657 m (odometry) to 0.001 m."
+        image: /images/projects/slam/8xdemo.MP4
+        featured:
+          name: 查看详情
+          name_en: "View Details"
+          link: /slam
+        badges:
+          - "ROS 2"
+          - "C++"
+          - "EKF SLAM"
+          - "LiDAR"
+          - "Localization"
+        links:
+          - icon: fab fa-github
+            name: "Github"
+            url: https://github.com/Zhu-Chenyu/slam
 
       - title: 谁偷了我的笔？—— 视觉引导机械臂抓取
         title_en: "Who Stole My Pen? -- Vision-Guided Robot Pen Grasping"
