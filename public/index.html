@@ -433,6 +433,38 @@ document.addEventListener('DOMContentLoaded', function() {
         <h3 class="text-center"><span class="lang-zh">精选项目</span><span class="lang-en">Featured Projects</span></h3>
         <div class="row justify-content-center px-3 px-md-5">
             
+                <div class="col-lg-4 col-md-6 my-3"><div class="card my-3 h-100 position-relative" title="LeHome 挑战：基于 VLA 的双臂衣物折叠">
+                    <div class="card-head overflow-hidden"><video class="card-img-top" autoplay loop muted playsinline preload="metadata"
+                              style="width:100%; height:auto; display:block; object-fit:cover;"><source src="/images/projects/fold_clothes/smolvla_shirt.mp4" type="video/mp4"></video></div>
+                    <div class="card-body bg-transparent p-3">
+                    <div class="pb-2 bg-transparent">
+                        <span class="badge bg-secondary me-1">VLA</span><span class="badge bg-secondary me-1">Imitation Learning</span><span class="badge bg-secondary me-1">Bimanual Manipulation</span><span class="badge bg-secondary me-1">Deformable Objects</span>
+                    </div>
+                    <h5 class="card-title bg-transparent mt-1"><span class="lang-zh">LeHome 挑战：基于 VLA 的双臂衣物折叠</span><span class="lang-en">LeHome Challenge: Bimanual Garment Folding with VLA Policies</span></h5>
+                    <div class="card-text bg-transparent secondary-font"><span class="lang-zh">比较 SmolVLA、xVLA、Lingbot、ACT 与 Diffusion Policy 的衣物折叠策略，最终 SmolVLA 在自行评估中取得最高成功率。</span><span class="lang-en">A bimanual garment-folding project comparing SmolVLA, xVLA, Lingbot, ACT, and Diffusion Policy, with SmolVLA achieving the best internal success rate.</span></div>
+                    </div>
+
+                    
+                    <a href="/fold_clothes"
+                    
+                    class="stretched-link" aria-label="LeHome 挑战：基于 VLA 的双臂衣物折叠"></a>
+
+                    
+                    <div class="card-footer py-3">
+                    
+                    <a href="https://huggingface.co/LaundryNauts"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="icon-link m-1">
+                      <i class="fa-regular fa-face-smile"></i>
+                      <span>Hugging Face</span>
+                    </a>
+                    
+                    </div>
+                    
+                </div>
+                </div>
+                
                 <div class="col-lg-4 col-md-6 my-3"><div class="card my-3 h-100 position-relative" title="力顺从交互四旋翼无人机（LiDAR 避障功能）">
                     <div class="card-head overflow-hidden"><video class="card-img-top" autoplay loop muted playsinline preload="metadata"
                               style="width:100%; height:auto; display:block; object-fit:cover;"><source src="/images/projects/drone/2x_demo.MP4" type="video/mp4"></video></div>
@@ -453,38 +485,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="card-footer py-3">
                     
                     <a href="https://github.com/Zhu-Chenyu/Interaction-Guided-Aerial-Navigation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="icon-link m-1">
-                      <i class="fab fa-github"></i>
-                      <span>Github</span>
-                    </a>
-                    
-                    </div>
-                    
-                </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 my-3"><div class="card my-3 h-100 position-relative" title="EKF SLAM：TurtleBot3 实体机器人实现">
-                    <div class="card-head overflow-hidden"><video class="card-img-top" autoplay loop muted playsinline preload="metadata"
-                              style="width:100%; height:auto; display:block; object-fit:cover;"><source src="/images/projects/slam/8xdemo.MP4" type="video/mp4"></video></div>
-                    <div class="card-body bg-transparent p-3">
-                    <div class="pb-2 bg-transparent">
-                        <span class="badge bg-secondary me-1">ROS 2</span><span class="badge bg-secondary me-1">C&#43;&#43;</span><span class="badge bg-secondary me-1">EKF SLAM</span><span class="badge bg-secondary me-1">LiDAR</span><span class="badge bg-secondary me-1">Localization</span>
-                    </div>
-                    <h5 class="card-title bg-transparent mt-1"><span class="lang-zh">EKF SLAM：TurtleBot3 实体机器人实现</span><span class="lang-en">EKF SLAM on a Real TurtleBot3</span></h5>
-                    <div class="card-text bg-transparent secondary-font"><span class="lang-zh">在真实 TurtleBot3 上运行的扩展卡尔曼滤波器 SLAM 管线，通过 LiDAR 扫描聚类与圆拟合检测圆柱形路标，使用马氏距离进行未知数据关联，位姿误差从里程计的 0.657 m 降至 SLAM 的 0.001 m。</span><span class="lang-en">A full EKF SLAM pipeline running on a real TurtleBot3 — cylindrical landmark detection via LiDAR clustering and circle fitting, unknown data association with Mahalanobis distance, reducing pose error from 0.657 m (odometry) to 0.001 m.</span></div>
-                    </div>
-
-                    
-                    <a href="/slam"
-                    
-                    class="stretched-link" aria-label="EKF SLAM：TurtleBot3 实体机器人实现"></a>
-
-                    
-                    <div class="card-footer py-3">
-                    
-                    <a href="https://github.com/Zhu-Chenyu/slam"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="icon-link m-1">
@@ -573,6 +573,47 @@ document.addEventListener('DOMContentLoaded', function() {
         <h3 class="text-center"><span class="lang-zh">其他项目</span><span class="lang-en">Other Projects</span></h3>
         <div class="row justify-content-center px-3 px-md-5">
             
+                <div class="col-lg-4 col-md-6 my-3"><div class="card my-3 h-100 position-relative" title="EKF SLAM：TurtleBot3 实体机器人实现">
+                    <div class="card-head"><video
+                            class="card-img-top"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            style="object-fit: cover;"
+                            >
+                            <source src="/images/projects/slam/8xdemo.MP4" type="video/mp4">
+                            </video></div>
+                    <div class="card-body bg-transparent p-3">
+                    <div class="pb-2 bg-transparent">
+                        <span class="badge badge-secondary">ROS 2</span><span class="badge badge-secondary">C&#43;&#43;</span><span class="badge badge-secondary">EKF SLAM</span><span class="badge badge-secondary">LiDAR</span><span class="badge badge-secondary">Localization</span>
+                    </div>
+                    <h5 class="card-title bg-transparent mt-1"><span class="lang-zh">EKF SLAM：TurtleBot3 实体机器人实现</span><span class="lang-en">EKF SLAM on a Real TurtleBot3</span></h5>
+                    <div class="card-text bg-transparent secondary-font">
+                        <span class="lang-zh">在真实 TurtleBot3 上运行的扩展卡尔曼滤波器 SLAM 管线，通过 LiDAR 扫描聚类与圆拟合检测圆柱形路标，使用马氏距离进行未知数据关联，位姿误差从里程计的 0.657 m 降至 SLAM 的 0.001 m。</span><span class="lang-en">A full EKF SLAM pipeline running on a real TurtleBot3 — cylindrical landmark detection via LiDAR clustering and circle fitting, unknown data association with Mahalanobis distance, reducing pose error from 0.657 m (odometry) to 0.001 m.</span>
+                    </div>
+                    </div>
+
+                    
+                    
+                    <a href="/slam"
+                        
+                        class="stretched-link" aria-label="EKF SLAM：TurtleBot3 实体机器人实现"></a>
+                    
+
+                    
+                    <div class="card-footer py-3">
+                    
+                    <a href="https://github.com/Zhu-Chenyu/slam" target="_blank" rel="noopener noreferrer" class="icon-link m-1">
+                        <i class="fab fa-github"></i>
+                        <span>Github</span>
+                    </a>
+                    
+                    </div>
+                    
+                </div>
+                </div>
+                
                 <div class="col-lg-4 col-md-6 my-3"><div class="card my-3 h-100 position-relative" title="谁偷了我的笔？—— 视觉引导机械臂抓取">
                     <div class="card-head"><img class="card-img-top" src="/images/projects/robot-pen-grasping/pen_grasping.gif" alt="谁偷了我的笔？—— 视觉引导机械臂抓取"></div>
                     <div class="card-body bg-transparent p-3">
@@ -907,6 +948,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+<script src="/js/analytics.js" defer></script>
 
 
 

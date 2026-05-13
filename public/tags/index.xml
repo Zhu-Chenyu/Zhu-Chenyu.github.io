@@ -6,8 +6,43 @@
     <description>Recent content in Tags on 朱宸宇的作品集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deformable Objects</title>
+      <link>http://localhost:1313/tags/deformable-objects/</link>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/deformable-objects/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Imitation Learning</title>
+      <link>http://localhost:1313/tags/imitation-learning/</link>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/imitation-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Manipulation</title>
+      <link>http://localhost:1313/tags/manipulation/</link>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/manipulation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Robotics</title>
+      <link>http://localhost:1313/tags/robotics/</link>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/robotics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vision-Language-Action</title>
+      <link>http://localhost:1313/tags/vision-language-action/</link>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/vision-language-action/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Control Systems</title>
       <link>http://localhost:1313/tags/control-systems/</link>
@@ -34,13 +69,6 @@
       <link>http://localhost:1313/tags/quadrotor/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/quadrotor/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Robotics</title>
-      <link>http://localhost:1313/tags/robotics/</link>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/robotics/</guid>
       <description></description>
     </item>
     <item>
@@ -181,13 +209,6 @@
       <link>http://localhost:1313/tags/force-control/</link>
       <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/force-control/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Manipulation</title>
-      <link>http://localhost:1313/tags/manipulation/</link>
-      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/manipulation/</guid>
       <description></description>
     </item>
     <item>
