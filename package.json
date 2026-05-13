@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "build": "hugo --gc",
+    "dev": "hugo --gc && node server.js",
+    "start": "node server.js"
+  }
+}

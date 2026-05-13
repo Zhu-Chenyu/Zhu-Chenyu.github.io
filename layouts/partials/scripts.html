@@ -96,6 +96,8 @@
 <script src="{{ .Site.Params.staticPath }}/js/contact.js"></script>
 {{ end }}
 
+<script src="{{ .Site.Params.staticPath }}/js/analytics.js" defer></script>
+
 {{ if (.Site.Params.customScripts | default false) }}
 {{ .Site.Params.customScripts | safeHTML }}
 {{ end }}
