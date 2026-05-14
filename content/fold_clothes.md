@@ -13,7 +13,7 @@ tags:
 description: "面向 LeHome Challenge 2026 的双臂衣物折叠策略。我们比较了 SmolVLA、xVLA、Lingbot、ACT 和 Diffusion Policy，最终 SmolVLA 在自行评估中取得最高成功率。"
 toc: true
 repoName: fold_clothes
-video: /images/projects/fold_clothes/smolvla_shirt.mp4
+video: /images/projects/fold_clothes/smolvla_shirt_1x.mp4
 links:
   - icon: fa-regular fa-face-smile
     name: "Hugging Face"
@@ -23,7 +23,7 @@ links:
 <div class="lang-zh">
 
 <video autoplay muted playsinline controls style="width:72%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/fold_clothes/smolvla_shirt.mp4" type="video/mp4">
+  <source src="/images/projects/fold_clothes/smolvla_shirt_1x.mp4" type="video/mp4">
 </video>
 
 ---
@@ -136,7 +136,7 @@ LeHome Challenge 将衣物分为四类：
 <div class="lang-en">
 
 <video autoplay muted playsinline controls style="width:72%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/fold_clothes/smolvla_shirt.mp4" type="video/mp4">
+  <source src="/images/projects/fold_clothes/smolvla_shirt_1x.mp4" type="video/mp4">
 </video>
 
 ---

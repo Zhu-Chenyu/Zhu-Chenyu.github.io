@@ -301,7 +301,7 @@ params:
       title_en: "LeHome Challenge: Bimanual Garment Folding with VLA Policies"
       content: 比较 SmolVLA、xVLA、Lingbot、ACT 与 Diffusion Policy 的衣物折叠策略，最终 SmolVLA 在自行评估中取得最高成功率。
       content_en: "A bimanual garment-folding project comparing SmolVLA, xVLA, Lingbot, ACT, and Diffusion Policy, with SmolVLA achieving the best internal success rate."
-      image: /images/projects/fold_clothes/smolvla_shirt.mp4
+      image: /images/projects/fold_clothes/smolvla_shirt_5x.mp4
       featured:
         name: 查看详情
         name_en: "View Details"
