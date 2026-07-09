@@ -283,6 +283,29 @@ params:
     title_en: "Featured Projects"
     items:
 
+    - title: 双臂人形机器人货架拣选 · WBCD 2026 季军 · 最佳创意末端执行器奖
+      title_en: "Bimanual Humanoid Shelf-Picking · WBCD 2026 2nd Place · Best Creative End-Effector Award"
+      content: 为 Unitree G1 人形机器人设计非对称双夹爪与全身遥操作栈，融合 SONIC 全身控制、TWIST2 主动云台与力矩感知夹爪保持模式，荣获 WBCD 2026 竞赛第二名及最佳创意末端执行器奖。
+      content_en: "Asymmetric dual-gripper and whole-body teleoperation system for the Unitree G1 humanoid, integrating SONIC whole-body control, TWIST2-inspired active head, and a torque-aware hold gripper server. Achieved 2nd place overall and Best Creative End-Effector Design Award at WBCD 2026."
+      image: /images/projects/wbcd_humanoid/final_robot.jpeg
+      featured:
+        name: 查看详情
+        name_en: "View Details"
+        link: /wbcd_humanoid
+      badges:
+        - "ROS 2"
+        - "Teleoperation"
+        - "Manipulation"
+        - "Humanoid"
+        - "End-Effector Design"
+      links:
+        - icon: fas fa-trophy
+          name: "Competition"
+          url: https://wbcdcompetition.github.io
+        - icon: fas fa-file-alt
+          name: "Paper"
+          url: https://wbcdcompetition.github.io
+
     - title: 力顺从交互四旋翼无人机（LiDAR 避障功能）
       title_en: "Force-Compliant Quadrotor with LiDAR Obstacle Avoidance"
       content: 一架可沿施加外力方向移动的四旋翼无人机。通过卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。
