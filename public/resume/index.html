@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<head><meta charset="UTF-8">
+<meta name="page-title-zh" content="我的简历 | 朱宸宇的作品集">
+<meta name="page-title-en" content="Chenyu Zhu&#39;s Resume | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,17 +30,16 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/resume/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="我的简历">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2025-10-09T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-09T00:00:00+00:00">
+<meta property="og:title" content="我的简历" />
+<meta property="og:description" content=" " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Zhu-Chenyu.github.io/resume/" /><meta property="article:section" content="" />
+<meta property="article:published_time" content="2025-03-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-03-27T00:00:00+00:00" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="我的简历">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="我的简历"/>
+<meta name="twitter:description" content=" "/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -167,6 +168,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -382,14 +387,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 Chenyu Zhu
                 <small>|</small>
               
-              Oct 9, 2025
+              Mar 27, 2025
 
               
             </div>
           </div>
           
           <article class="page-content  p-2">
-          <iframe src="/Chenyu_Zhu_resume.pdf" width="100%" height="800px"></iframe>
+          <iframe src="/ChenyuZhu_resume_r.pdf" width="100%" height="800px"></iframe>
 
           </article>
         </div>
@@ -521,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="http://localhost:1313/" title="朱宸宇的作品集">
+                    <a href="https://Zhu-Chenyu.github.io/" title="朱宸宇的作品集">
                         <img alt="Footer logo" src="/IMG_6321.png"
                             height="40px" width="40px">
                     </a>
@@ -579,6 +584,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+<script src="/js/analytics.js" defer data-endpoint="https://chenyu-analytics.onrender.com/api/analytics"></script>
 
 
 

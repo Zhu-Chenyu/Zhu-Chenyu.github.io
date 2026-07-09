@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<head><meta charset="UTF-8">
+<meta name="page-title-zh" content="蚂蚁大战蜜蜂（塔防策略游戏） | 朱宸宇的作品集">
+<meta name="page-title-en" content="Ants vs SomeBees (Tower Defense Simulation) | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,22 +30,16 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/ants_vs_bees/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="蚂蚁大战蜜蜂（塔防策略游戏）">
-  <meta property="og:description" content="一款策略回合制塔防游戏，玩家使用有限资源和多样化技能的蚂蚁保卫蚁巢，抵御入侵蜜蜂。">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2025-10-11T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-11T00:00:00+00:00">
-    <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="Game Development">
-    <meta property="article:tag" content="Object-Oriented Programming">
+<meta property="og:title" content="蚂蚁大战蜜蜂（塔防策略游戏）" />
+<meta property="og:description" content="一款策略回合制塔防游戏，玩家使用有限资源和多样化技能的蚂蚁保卫蚁巢，抵御入侵蜜蜂。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Zhu-Chenyu.github.io/ants_vs_bees/" /><meta property="article:section" content="" />
+<meta property="article:published_time" content="2025-10-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-10-11T00:00:00+00:00" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="蚂蚁大战蜜蜂（塔防策略游戏）">
-  <meta name="twitter:description" content="一款策略回合制塔防游戏，玩家使用有限资源和多样化技能的蚂蚁保卫蚁巢，抵御入侵蜜蜂。">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="蚂蚁大战蜜蜂（塔防策略游戏）"/>
+<meta name="twitter:description" content="一款策略回合制塔防游戏，玩家使用有限资源和多样化技能的蚂蚁保卫蚁巢，抵御入侵蜜蜂。"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -172,6 +168,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -415,94 +415,94 @@ document.addEventListener('DOMContentLoaded', function() {
 <hr>
 <h2 id="蚂蚁属性与技能">蚂蚁属性与技能</h2>
 <table>
-  <thead>
-      <tr>
-          <th>蚂蚁</th>
-          <th>预览</th>
-          <th style="text-align: right">食物消耗</th>
-          <th style="text-align: right">生命值</th>
-          <th>特殊能力</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>采集蚁</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Harvester.gif" width="100" alt="采集蚁"></td>
-          <td style="text-align: right">2</td>
-          <td style="text-align: right">1</td>
-          <td>每回合产出食物</td>
-      </tr>
-      <tr>
-          <td><strong>投掷蚁</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Thrower.gif" width="100" alt="投掷蚁"></td>
-          <td style="text-align: right">4</td>
-          <td style="text-align: right">1</td>
-          <td>攻击前方蜜蜂</td>
-      </tr>
-      <tr>
-          <td><strong>短程投掷蚁</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Short.gif" width="100" alt="短程投掷蚁"></td>
-          <td style="text-align: right">3</td>
-          <td style="text-align: right">1</td>
-          <td>攻击距离超过 2 格的蜜蜂</td>
-      </tr>
-      <tr>
-          <td><strong>远程投掷蚁</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Long.gif" width="100" alt="远程投掷蚁"></td>
-          <td style="text-align: right">3</td>
-          <td style="text-align: right">1</td>
-          <td>攻击 2 格以内的蜜蜂</td>
-      </tr>
-      <tr>
-          <td><strong>火蚁</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Fire.gif" width="100" alt="火蚁"></td>
-          <td style="text-align: right">5</td>
-          <td style="text-align: right">1</td>
-          <td>死亡时爆炸，伤害附近蜜蜂</td>
-      </tr>
-      <tr>
-          <td><strong>墙蚁</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Wall.gif" width="100" alt="墙蚁"></td>
-          <td style="text-align: right">4</td>
-          <td style="text-align: right">4</td>
-          <td>高耐久的肉盾</td>
-      </tr>
-      <tr>
-          <td><strong>饥饿蚁</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Hungry.gif" width="100" alt="饥饿蚁"></td>
-          <td style="text-align: right">4</td>
-          <td style="text-align: right">1</td>
-          <td>每隔几回合吞噬一只蜜蜂</td>
-      </tr>
-      <tr>
-          <td><strong>保镖蚁</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Bodyguard.gif" width="100" alt="保镖蚁"></td>
-          <td style="text-align: right">4</td>
-          <td style="text-align: right">2</td>
-          <td>保护另一只蚂蚁免受伤害</td>
-      </tr>
-      <tr>
-          <td><strong>坦克蚁</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Tank.gif" width="100" alt="坦克蚁"></td>
-          <td style="text-align: right">6</td>
-          <td style="text-align: right">3</td>
-          <td>攻击其面前的所有蜜蜂</td>
-      </tr>
-      <tr>
-          <td><strong>潜水投掷蚁</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Scuba.gif" width="100" alt="潜水投掷蚁"></td>
-          <td style="text-align: right">6</td>
-          <td style="text-align: right">1</td>
-          <td>防水远程攻击者</td>
-      </tr>
-      <tr>
-          <td><strong>蚁后</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Queen.gif" width="100" alt="蚁后"></td>
-          <td style="text-align: right">7</td>
-          <td style="text-align: right">1</td>
-          <td>增强其他蚂蚁，被击杀则游戏结束</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>蚂蚁</th>
+<th>预览</th>
+<th style="text-align:right">食物消耗</th>
+<th style="text-align:right">生命值</th>
+<th>特殊能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>采集蚁</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Harvester.gif" width="100" alt="采集蚁"></td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">1</td>
+<td>每回合产出食物</td>
+</tr>
+<tr>
+<td><strong>投掷蚁</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Thrower.gif" width="100" alt="投掷蚁"></td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">1</td>
+<td>攻击前方蜜蜂</td>
+</tr>
+<tr>
+<td><strong>短程投掷蚁</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Short.gif" width="100" alt="短程投掷蚁"></td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">1</td>
+<td>攻击距离超过 2 格的蜜蜂</td>
+</tr>
+<tr>
+<td><strong>远程投掷蚁</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Long.gif" width="100" alt="远程投掷蚁"></td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">1</td>
+<td>攻击 2 格以内的蜜蜂</td>
+</tr>
+<tr>
+<td><strong>火蚁</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Fire.gif" width="100" alt="火蚁"></td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">1</td>
+<td>死亡时爆炸，伤害附近蜜蜂</td>
+</tr>
+<tr>
+<td><strong>墙蚁</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Wall.gif" width="100" alt="墙蚁"></td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td>高耐久的肉盾</td>
+</tr>
+<tr>
+<td><strong>饥饿蚁</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Hungry.gif" width="100" alt="饥饿蚁"></td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">1</td>
+<td>每隔几回合吞噬一只蜜蜂</td>
+</tr>
+<tr>
+<td><strong>保镖蚁</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Bodyguard.gif" width="100" alt="保镖蚁"></td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">2</td>
+<td>保护另一只蚂蚁免受伤害</td>
+</tr>
+<tr>
+<td><strong>坦克蚁</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Tank.gif" width="100" alt="坦克蚁"></td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">3</td>
+<td>攻击其面前的所有蜜蜂</td>
+</tr>
+<tr>
+<td><strong>潜水投掷蚁</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Scuba.gif" width="100" alt="潜水投掷蚁"></td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">1</td>
+<td>防水远程攻击者</td>
+</tr>
+<tr>
+<td><strong>蚁后</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Queen.gif" width="100" alt="蚁后"></td>
+<td style="text-align:right">7</td>
+<td style="text-align:right">1</td>
+<td>增强其他蚂蚁，被击杀则游戏结束</td>
+</tr>
+</tbody>
 </table>
 <hr>
 <h2 id="战斗逻辑">战斗逻辑</h2>
@@ -551,94 +551,94 @@ Players deploy various ants using limited food resources to protect the hive, de
 <hr>
 <h2 id="ant-stats-and-abilities">Ant Stats and Abilities</h2>
 <table>
-  <thead>
-      <tr>
-          <th>Ant</th>
-          <th>Preview</th>
-          <th style="text-align: right">Food Cost</th>
-          <th style="text-align: right">HP</th>
-          <th>Special Ability</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Harvester</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Harvester.gif" width="100" alt="Harvester"></td>
-          <td style="text-align: right">2</td>
-          <td style="text-align: right">1</td>
-          <td>Produces food each turn</td>
-      </tr>
-      <tr>
-          <td><strong>Thrower</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Thrower.gif" width="100" alt="Thrower"></td>
-          <td style="text-align: right">4</td>
-          <td style="text-align: right">1</td>
-          <td>Attacks bees ahead</td>
-      </tr>
-      <tr>
-          <td><strong>Short Thrower</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Short.gif" width="100" alt="Short Thrower"></td>
-          <td style="text-align: right">3</td>
-          <td style="text-align: right">1</td>
-          <td>Attacks bees beyond 2 tiles</td>
-      </tr>
-      <tr>
-          <td><strong>Long Thrower</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Long.gif" width="100" alt="Long Thrower"></td>
-          <td style="text-align: right">3</td>
-          <td style="text-align: right">1</td>
-          <td>Attacks bees within 2 tiles</td>
-      </tr>
-      <tr>
-          <td><strong>Fire Ant</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Fire.gif" width="100" alt="Fire Ant"></td>
-          <td style="text-align: right">5</td>
-          <td style="text-align: right">1</td>
-          <td>Explodes on death, damaging nearby bees</td>
-      </tr>
-      <tr>
-          <td><strong>Wall Ant</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Wall.gif" width="100" alt="Wall Ant"></td>
-          <td style="text-align: right">4</td>
-          <td style="text-align: right">4</td>
-          <td>High-durability tank</td>
-      </tr>
-      <tr>
-          <td><strong>Hungry Ant</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Hungry.gif" width="100" alt="Hungry Ant"></td>
-          <td style="text-align: right">4</td>
-          <td style="text-align: right">1</td>
-          <td>Devours one bee every few turns</td>
-      </tr>
-      <tr>
-          <td><strong>Bodyguard</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Bodyguard.gif" width="100" alt="Bodyguard"></td>
-          <td style="text-align: right">4</td>
-          <td style="text-align: right">2</td>
-          <td>Protects another ant from damage</td>
-      </tr>
-      <tr>
-          <td><strong>Tank</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Tank.gif" width="100" alt="Tank"></td>
-          <td style="text-align: right">6</td>
-          <td style="text-align: right">3</td>
-          <td>Attacks all bees in its tunnel</td>
-      </tr>
-      <tr>
-          <td><strong>Scuba Thrower</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Scuba.gif" width="100" alt="Scuba Thrower"></td>
-          <td style="text-align: right">6</td>
-          <td style="text-align: right">1</td>
-          <td>Waterproof ranged attacker</td>
-      </tr>
-      <tr>
-          <td><strong>Queen</strong></td>
-          <td><img src="/images/projects/ants-vs-bees/Queen.gif" width="100" alt="Queen"></td>
-          <td style="text-align: right">7</td>
-          <td style="text-align: right">1</td>
-          <td>Buffs other ants; game over if killed</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Ant</th>
+<th>Preview</th>
+<th style="text-align:right">Food Cost</th>
+<th style="text-align:right">HP</th>
+<th>Special Ability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Harvester</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Harvester.gif" width="100" alt="Harvester"></td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">1</td>
+<td>Produces food each turn</td>
+</tr>
+<tr>
+<td><strong>Thrower</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Thrower.gif" width="100" alt="Thrower"></td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">1</td>
+<td>Attacks bees ahead</td>
+</tr>
+<tr>
+<td><strong>Short Thrower</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Short.gif" width="100" alt="Short Thrower"></td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">1</td>
+<td>Attacks bees beyond 2 tiles</td>
+</tr>
+<tr>
+<td><strong>Long Thrower</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Long.gif" width="100" alt="Long Thrower"></td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">1</td>
+<td>Attacks bees within 2 tiles</td>
+</tr>
+<tr>
+<td><strong>Fire Ant</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Fire.gif" width="100" alt="Fire Ant"></td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">1</td>
+<td>Explodes on death, damaging nearby bees</td>
+</tr>
+<tr>
+<td><strong>Wall Ant</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Wall.gif" width="100" alt="Wall Ant"></td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td>High-durability tank</td>
+</tr>
+<tr>
+<td><strong>Hungry Ant</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Hungry.gif" width="100" alt="Hungry Ant"></td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">1</td>
+<td>Devours one bee every few turns</td>
+</tr>
+<tr>
+<td><strong>Bodyguard</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Bodyguard.gif" width="100" alt="Bodyguard"></td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">2</td>
+<td>Protects another ant from damage</td>
+</tr>
+<tr>
+<td><strong>Tank</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Tank.gif" width="100" alt="Tank"></td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">3</td>
+<td>Attacks all bees in its tunnel</td>
+</tr>
+<tr>
+<td><strong>Scuba Thrower</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Scuba.gif" width="100" alt="Scuba Thrower"></td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">1</td>
+<td>Waterproof ranged attacker</td>
+</tr>
+<tr>
+<td><strong>Queen</strong></td>
+<td><img src="/images/projects/ants-vs-bees/Queen.gif" width="100" alt="Queen"></td>
+<td style="text-align:right">7</td>
+<td style="text-align:right">1</td>
+<td>Buffs other ants; game over if killed</td>
+</tr>
+</tbody>
 </table>
 <hr>
 <h2 id="combat-logic">Combat Logic</h2>
@@ -724,15 +724,15 @@ Art was created by Alana Tran, Andrew Huang, Emilee Chen, Jessie Salas, Jingyi L
             <h5>Tags</h5>
             <ul class="tags-ul list-unstyled list-inline">
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/python"
+              <li class="list-inline-item"><a href="https://Zhu-Chenyu.github.io/tags/python"
                 
               >Python</a></li>
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/game-development"
+              <li class="list-inline-item"><a href="https://Zhu-Chenyu.github.io/tags/game-development"
                 
               >Game Development</a></li>
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/object-oriented-programming"
+              <li class="list-inline-item"><a href="https://Zhu-Chenyu.github.io/tags/object-oriented-programming"
                 
               >Object-Oriented Programming</a></li>
               
@@ -850,7 +850,7 @@ Art was created by Alana Tran, Andrew Huang, Emilee Chen, Jessie Salas, Jingyi L
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="http://localhost:1313/" title="朱宸宇的作品集">
+                    <a href="https://Zhu-Chenyu.github.io/" title="朱宸宇的作品集">
                         <img alt="Footer logo" src="/IMG_6321.png"
                             height="40px" width="40px">
                     </a>
@@ -908,6 +908,8 @@ Art was created by Alana Tran, Andrew Huang, Emilee Chen, Jessie Salas, Jingyi L
 
 
 
+
+<script src="/js/analytics.js" defer data-endpoint="https://chenyu-analytics.onrender.com/api/analytics"></script>
 
 
 

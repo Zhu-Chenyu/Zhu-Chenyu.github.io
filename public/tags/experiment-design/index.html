@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<head><meta charset="UTF-8">
+<meta name="page-title-zh" content="Experiment Design | 朱宸宇的作品集">
+<meta name="page-title-en" content="Experiment Design | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,17 +30,14 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/tags/experiment-design/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="Experiment Design">
-  <meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="Experiment Design" />
+<meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://Zhu-Chenyu.github.io/tags/experiment-design/" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Experiment Design">
-  <meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Experiment Design"/>
+<meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -164,6 +163,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -380,25 +383,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h5 class="card-title bg-transparent" title="Intuitive Surgical（直觉外科）实习：机器人手术器械热性能实验研究">Intuitive Surgical（直觉外科）实 …</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p><div class="lang-zh">
-<h2 id="概述">概述</h2>
-<p>在 <strong>Intuitive Surgical</strong> 的实习期间，我参与了一项使用<strong>达芬奇手术系统</strong>进行的<strong>超声刀冷却性能实验研究</strong>。
-目标是开发一套可重复、数据驱动的框架，评估超声刀在激活后的散热表现。</p>
-<p>我负责设计和自动化<strong>机器人辅助测试流程</strong>，集成<strong>热成像数据采集</strong>和<strong>曲线拟合模型</strong>来分析手术器械的冷却特性。
-本项目综合运用了<strong>机器人学、热分析和实验数据建模</strong>技能，应用于医疗器械研发环境。</p>
-<hr>
-<h2 id="系统组成">系统组成</h2>
-<table>
-  <thead>
-      <tr>
-          <th>组件</th>
-          <th>描述</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>机器人系统</strong></td>
-          <td>达芬奇手术系统，编程执行精确运动序列 …</td></tr></tbody></table></div></p>
+                            <p>概述 在 Intuitive Surgical 的实习期间，我参与了一项使用达芬奇手术系统进行的超声刀冷却性能实验研究。 目标是开发一套可重复、数据驱动的框架，评估超声刀在激活后的散热表现。
+我负责设计和自动化机器人辅助测试流程，集成热成像数据采集和曲线拟合模型来分析手术器械的冷却特性。 本项目综合运用了机器人学、热分析和实验数据建模技能，应用于医疗器械研发环境。
+系统组成 组件 描述 机器人系统 达芬奇手术系统，编程执行精确运动序列 器械 不同材料和涂层的超声刀 传感器 热成像系统，用于表面温度监测 软件工具 Python、OpenCV、NumPy 和曲线拟合库 工作环境 可控实验室条件，确 …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
@@ -473,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="http://localhost:1313/" title="朱宸宇的作品集">
+                    <a href="https://Zhu-Chenyu.github.io/" title="朱宸宇的作品集">
                         <img alt="Footer logo" src="/IMG_6321.png"
                             height="40px" width="40px">
                     </a>
@@ -531,6 +518,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+<script src="/js/analytics.js" defer data-endpoint="https://chenyu-analytics.onrender.com/api/analytics"></script>
 
 
 

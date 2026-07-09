@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Manipulation on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/tags/manipulation/</link>
+    <link>https://Zhu-Chenyu.github.io/tags/manipulation/</link>
     <description>Recent content in Manipulation on 朱宸宇的作品集</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/manipulation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://Zhu-Chenyu.github.io/tags/manipulation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeHome 挑战：基于 VLA 的双臂衣物折叠</title>
+      <link>https://Zhu-Chenyu.github.io/fold_clothes/</link>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://Zhu-Chenyu.github.io/fold_clothes/</guid>
+      <description>概述 本项目面向 LeHome Challenge 2026：在仿真环境中训练双臂机器人折叠不同类别的衣物。衣物属于典型的可变形物体，状态空间高、接触动力学复杂，且不同服装之间形状差异很大，因此很难用固定轨迹或规则控制解决。&#xA;我们的目标不是为单件衣服写一个专用流程，而是训练一个能跨类别泛化的策略。最终提交团队为 LaundryNauts，官方评测排名 第 54 名，官方分数 40.00%。在我们自己的评估设置中，最佳模型达到 55.2%。&#xA;团队 成员 贡献方向 Md Saif Ahmad Diffusion Policy 训练；关键点函数；硬件测试 Andnet DeBoer 提交系统；xVLA 训练；SmolVLA 测试；硬件搭建；数据随机化 Conor Hayes Lingbot 训练；状态机；硬件搭建 Jyothi Swaroop Kasina Diffusion Policy 训练；CuRobo 集成；关键点函数；录制流水线；硬件搭建 Chenyu Zhu SmolVLA 训练；ACT 训练；Lingbot 测试；CuRobo 集成；数据采集；数据随机化 Robert Zhu 数据采集；评测流水线 任务设置 LeHome Challenge 将衣物分为四类：&#xA;长袖上衣 短袖上衣 长裤 短裤 每个类别都需要机器人从展开、扭曲或偏移的初始状态出发，通过双臂操作将衣物折叠到目标形态。评测不仅关注最终形状是否接近目标，也考验策略在不同初始状态和不同服装几何上的泛化能力。参考任务说明中，挑战提供四类衣物的遥操作演示用于训练策略。&#xA;模型对比 我们尝试了五类策略：&#xA;方法 观察 SmolVLA 最稳定，最终自行评估成功率最高 xVLA 泛化有潜力，但训练稳定性不足 Lingbot 对语言条件有优势，但在当前数据和动作空间下不够稳定 ACT 动作 chunking 有帮助，但对初始状态扰动较敏感 Diffusion Policy 轨迹质量好，但需要更细的训练和采样调参 最终我们选择 SmolVLA 作为主要提交策略。它在四类衣物中的表现最均衡，尤其是在短裤折叠上明显优于其他尝试。</description>
+    </item>
     <item>
       <title>基于视觉引导的 Franka 机械臂多米诺骨牌摆放</title>
-      <link>http://localhost:1313/fer_domino/</link>
+      <link>https://Zhu-Chenyu.github.io/fer_domino/</link>
       <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fer_domino/</guid>
-      <description>&lt;div class=&#34;lang-zh&#34;&gt;&#xA;&lt;video autoplay loop muted playsinline style=&#34;width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;&#34;&gt;&#xA;  &lt;source src=&#34;http://localhost:1313/images/projects/fer_domino/squigle_domino.mp4&#34; type=&#34;video/mp4&#34;&gt;&#xA;&lt;/video&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;&#xA;&lt;p&gt;本项目实现了一个使用 &lt;strong&gt;Franka Emika Panda 机械臂&lt;/strong&gt;的&lt;strong&gt;视觉引导多米诺骨牌操作系统&lt;/strong&gt;。&#xA;机器人检测桌面上的多米诺骨牌，通过 RGB-D 视觉估计其位姿，自主将骨牌重新排列为预设几何图案，最后推倒它们。&lt;/p&gt;&#xA;&lt;p&gt;与纯运动学演示不同，本系统应对&lt;strong&gt;真实世界的不确定性&lt;/strong&gt;，包括：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;桌面高度变化&lt;/li&gt;&#xA;&lt;li&gt;视觉标定误差&lt;/li&gt;&#xA;&lt;li&gt;小物体尺寸导致的抓取约束&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;为应对这些挑战，系统集成了&lt;strong&gt;相机-机器人外参标定&lt;/strong&gt;、&lt;strong&gt;分阶段操作策略&lt;/strong&gt;和&lt;strong&gt;力控放置&lt;/strong&gt;，构建了一个鲁棒且可重复的操作流水线。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;系统组成&#34;&gt;系统组成&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;组件&lt;/th&gt;&#xA;          &lt;th&gt;描述&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;机器人&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Franka Emika Panda（7 自由度力矩控制机械臂）&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;相机&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Intel RealSense RGB-D 深度相机（固定在夹爪上）&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;系统&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;ROS 2&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;运动规划&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;基于 MoveIt 的笛卡尔空间和关节空间规划&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;视觉&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;OpenCV + 基于深度的 3D 位姿估计&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;标定&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;easy_handeye2&lt;/code&gt; 外参标定&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;控制&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;位置控制 + 关节力矩反馈&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;总体流程&#34;&gt;总体流程&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;使用 RGB-D 视觉检测多米诺骨牌位姿&lt;/li&gt;&#xA;&lt;li&gt;将相机坐标系下的检测结果变换到机器人坐标系&lt;/li&gt;&#xA;&lt;li&gt;迭代拾取、重定向、放置骨牌至目标图案&lt;/li&gt;&#xA;&lt;li&gt;利用力反馈确保在不平整表面上精确放置&lt;/li&gt;&#xA;&lt;li&gt;推倒已完成的图案作为最终执行步骤&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;多米诺骨牌操作策略&#34;&gt;多米诺骨牌操作策略&lt;/h2&gt;&#xA;&lt;h3 id=&#34;分阶段放置算法&#34;&gt;分阶段放置算法&lt;/h3&gt;&#xA;&lt;p&gt;直接从平放状态抓取并放置多米诺骨牌被证明不够可靠，原因包括：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;夹爪间隙有限&lt;/li&gt;&#xA;&lt;li&gt;与邻近骨牌碰撞的风险&lt;/li&gt;&#xA;&lt;li&gt;最终方向不精确&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;为此，系统采用&lt;strong&gt;三阶段操作策略&lt;/strong&gt;：&lt;/p&gt;</description>
+      <guid>https://Zhu-Chenyu.github.io/fer_domino/</guid>
+      <description>概述 本项目实现了一个使用 Franka Emika Panda 机械臂的视觉引导多米诺骨牌操作系统。 机器人检测桌面上的多米诺骨牌，通过 RGB-D 视觉估计其位姿，自主将骨牌重新排列为预设几何图案，最后推倒它们。&#xA;与纯运动学演示不同，本系统应对真实世界的不确定性，包括：&#xA;桌面高度变化 视觉标定误差 小物体尺寸导致的抓取约束 为应对这些挑战，系统集成了相机-机器人外参标定、分阶段操作策略和力控放置，构建了一个鲁棒且可重复的操作流水线。&#xA;系统组成 组件 描述 机器人 Franka Emika Panda（7 自由度力矩控制机械臂） 相机 Intel RealSense RGB-D 深度相机（固定在夹爪上） 系统 ROS 2 运动规划 基于 MoveIt 的笛卡尔空间和关节空间规划 视觉 OpenCV + 基于深度的 3D 位姿估计 标定 easy_handeye2 外参标定 控制 位置控制 + 关节力矩反馈 总体流程 使用 RGB-D 视觉检测多米诺骨牌位姿 将相机坐标系下的检测结果变换到机器人坐标系 迭代拾取、重定向、放置骨牌至目标图案 利用力反馈确保在不平整表面上精确放置 推倒已完成的图案作为最终执行步骤 多米诺骨牌操作策略 分阶段放置算法 直接从平放状态抓取并放置多米诺骨牌被证明不够可靠，原因包括：&#xA;夹爪间隙有限 与邻近骨牌碰撞的风险 最终方向不精确 为此，系统采用三阶段操作策略：&#xA;初始拾取： 机器人从检测到的桌面位姿抓取骨牌。 中转（重定向）： 骨牌在中间位姿处被旋转为竖立方向。这一重定向步骤使得放置时无需担心夹爪干涉。 最终放置： 骨牌被放置到目标图案中的目标位置。 该方法显著提高了可靠性，避免了密集布局中的碰撞。</description>
     </item>
   </channel>
 </rss>

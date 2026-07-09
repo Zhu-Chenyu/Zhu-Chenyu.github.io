@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>碰撞感知动力学仿真：基于 SymPy 的 Box-Jack 系统 on 朱宸宇的作品集</title>
-    <link>http://localhost:1313/box_jack_impact/</link>
+    <link>https://Zhu-Chenyu.github.io/box_jack_impact/</link>
     <description>Recent content in 碰撞感知动力学仿真：基于 SymPy 的 Box-Jack 系统 on 朱宸宇的作品集</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/box_jack_impact/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Zhu-Chenyu.github.io/box_jack_impact/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

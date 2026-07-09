@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<head><meta charset="UTF-8">
+<meta name="page-title-zh" content="Impact Modeling | 朱宸宇的作品集">
+<meta name="page-title-en" content="Impact Modeling | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,17 +30,14 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/tags/impact-modeling/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="Impact Modeling">
-  <meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="Impact Modeling" />
+<meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://Zhu-Chenyu.github.io/tags/impact-modeling/" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Impact Modeling">
-  <meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Impact Modeling"/>
+<meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -164,6 +163,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -377,32 +380,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/box_jack_impact/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="碰撞感知动力学仿真：基于 SymPy 的 Box-Jack 系统">碰撞感知动力学仿真：基于 SymPy 的 …</h5>
+                            <h5 class="card-title bg-transparent" title="碰撞感知动力学仿真：基于 SymPy 的 Box-Jack 系统">碰撞感知动力学仿真：基于 SymPy …</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p><div class="lang-zh">
-<video autoplay loop muted playsinline style="width:50%; height:auto; border-radius:12px; display:block; margin:0 auto;">
-  <source src="/images/projects/box_jack_impact/inelastic_impact.mp4" type="video/mp4">
-</video>
-<hr>
-<h2 id="概述">概述</h2>
-<p>本项目构建了一个双刚体系统的<strong>平面刚体动力学仿真器</strong>：一个空心方形<strong>盒子</strong>和一个内部的方形<strong>骰子</strong>。
-仿真器捕获<strong>连续运动</strong>（通过欧拉-拉格朗日动力学）和<strong>离散事件</strong>（通过单面接触约束和基于冲量的速度修正），构成一个<strong>混杂系统</strong>。</p>
-<p>主要特性：</p>
-<ul>
-<li>使用 <strong>SymPy</strong> 进行运动方程的符号推导</li>
-<li>壁面接触和地面接触的<strong>单面间隙约束</strong></li>
-<li>基于约束值和接近方向的碰撞检测</li>
-<li><strong>弹性和非弹性</strong>碰撞更新律的对比</li>
-<li>使用 Matplotlib 时间序列和 Plotly 刚体动画进行可视化</li>
-</ul>
-<hr>
-<h2 id="系统模型">系统模型</h2>
-<h3 id="广义坐标">广义坐标</h3>
-<p>状态使用 6 个广义坐标：</p>
-<ul>
-<li>盒子位姿：$(x_{box}, y_{box}, \theta_{box})$</li>
-<li>骰子位姿 …</li></ul></div></p>
+                            <p>概述 本项目构建了一个双刚体系统的平面刚体动力学仿真器：一个空心方形盒子和一个内部的方形骰子。 仿真器捕获连续运动（通过欧拉-拉格朗日动力学）和离散事件（通过单面接触约束和基于冲量的速度修正），构成一个混杂系统。
+主要特性：
+使用 SymPy 进行运动方程的符号推导 壁面接触和地面接触的单面间隙约束 基于约束值和接近方向的碰撞检测 弹性和非弹性碰撞更新律的对比 使用 Matplotlib 时间序列和 Plotly 刚体动画进行可视化 系统模型 广义坐标 状态使用 6 个广义坐标：
+盒子位姿：$(x_{box}, y_{box}, \theta_{box})$ 骰子位姿：$(x_{jack}, …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
@@ -477,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="http://localhost:1313/" title="朱宸宇的作品集">
+                    <a href="https://Zhu-Chenyu.github.io/" title="朱宸宇的作品集">
                         <img alt="Footer logo" src="/IMG_6321.png"
                             height="40px" width="40px">
                     </a>
@@ -535,6 +519,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+<script src="/js/analytics.js" defer data-endpoint="https://chenyu-analytics.onrender.com/api/analytics"></script>
 
 
 

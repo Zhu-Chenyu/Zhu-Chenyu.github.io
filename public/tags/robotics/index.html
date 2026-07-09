@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<head><meta charset="UTF-8">
+<meta name="page-title-zh" content="Robotics | 朱宸宇的作品集">
+<meta name="page-title-en" content="Robotics | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,17 +30,14 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/tags/robotics/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="Robotics">
-  <meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="Robotics" />
+<meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://Zhu-Chenyu.github.io/tags/robotics/" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Robotics">
-  <meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Robotics"/>
+<meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -164,6 +163,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -376,29 +379,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="card h-100">
                     
                     <div class="card-body bg-transparent p-4 shadow-sm">
+                        <a href="/fold_clothes/" class="primary-font card-title">
+                            <h5 class="card-title bg-transparent" title="LeHome 挑战：基于 VLA 的双臂衣物折叠">LeHome 挑战：基于 VLA 的双臂衣物折叠</h5>
+                        </a>
+                        <div class="card-text secondary-font">
+                            <p>概述 本项目面向 LeHome Challenge 2026：在仿真环境中训练双臂机器人折叠不同类别的衣物。衣物属于典型的可变形物体，状态空间高、接触动力学复杂，且不同服装之间形状差异很大，因此很难用固定轨迹或规则控制解决。
+我们的目标不是为单件衣服写一个专用流程，而是训练一个能跨类别泛化的策略。最终提交团队为 LaundryNauts，官方评测排名 第 54 名，官方分数 40.00%。在我们自己的评估设置中，最佳模型达到 55.2%。
+团队 成员 贡献方向 Md Saif Ahmad Diffusion Policy 训练；关键点函数；硬件测试 Andnet DeBoer 提交系 …</p>
+                        </div>
+                    </div>
+                    <div class="mt-auto post-footer bg-transparent py-3">
+                        <span class="float-start bg-transparent">May 13, 2026</span>
+                        <a href="/fold_clothes/" class="float-end btn btn-outline-info btn-sm">阅读</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card-columns">
+                <div class="card h-100">
+                    
+                    <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/drone/" class="primary-font card-title">
                             <h5 class="card-title bg-transparent" title="力顺从交互四旋翼无人机（LiDAR 避障功能）">力顺从交互四旋翼无人机（LiDAR 避障功能）</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p><div class="lang-zh">
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/drone/main_demo.MP4" type="video/mp4">
-</video>
-<hr>
-<h2 id="灵感来源">灵感来源</h2>
-<p>记得五岁那年第一次看《机器人总动员》。在一个场景中，伊娃处于休眠模式，但她依然悬停着。瓦力用绳子拖着她到处走，她就那样丝滑地跟随着。完全顺应外力，显得很轻松。</p>
-<video autoplay loop muted playsinline style="width:60%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/drone/walle_eve.MP4" type="video/mp4">
-</video>
-<p>那个画面给当时的我留下了深刻的印象。于是这个项目我就试图打造出同样特质的东西：一架能感知施加在它身上的力并与你同行的无人机。当然这样还不够有趣，我要让它可以不是简单地跟随，而是以一种聪明的方式———遇到障碍的时候要抵抗，或者丝滑地绕过去。</p>
-<hr>
-<h2 id="概述">概述</h2>
-<p>一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。
-卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防 …</p></div></p>
+                            <p>灵感来源 记得五岁那年第一次看《机器人总动员》。在一个场景中，伊娃处于休眠模式，但她依然悬停着。瓦力用绳子拖着她到处走，她就那样丝滑地跟随着。完全顺应外力，显得很轻松。
+那个画面给当时的我留下了深刻的印象。于是这个项目我就试图打造出同样特质的东西：一架能感知施加在它身上的力并与你同行的无人机。当然这样还不够有趣，我要让它可以不是简单地跟随，而是以一种聪明的方式———遇到障碍的时候要抵抗，或者丝滑地绕过去。
+概述 一架可沿施加外力方向移动的四旋翼无人机 —— 拖动它，它就会跟随。 卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。
+行为模式：
+无输 …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Feb 1, 2026</span>
+                        <span class="float-start bg-transparent">Mar 15, 2026</span>
                         <a href="/drone/" class="float-end btn btn-outline-info btn-sm">阅读</a>
                     </div>
                 </div>
@@ -420,24 +435,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h5 class="card-title bg-transparent" title="谁偷了我的笔？—— 视觉引导机械臂抓取">谁偷了我的笔？—— 视觉引导机械臂抓取</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p><div class="lang-zh">
-<h2 id="概述">概述</h2>
-<p><strong>谁偷了我的笔？</strong>
-我的笔刚才还在这里，但是现在不见了。周围没有人 —— 只有这个机械臂。不可能是它拿走的……吧？</p>
-<p>本项目展示了一个<strong>视觉引导机器人抓取系统</strong>，使用 <strong>RealSense 深度相机</strong>检测笔，通过<strong>相机-机器人标定</strong>计算其位置，并控制 <strong>Interbotix PX100 机械臂</strong>实时拾取 —— 全部自动完成。</p>
-<p>项目集成了 <strong>RGB-D 感知、坐标变换和运动控制</strong>，作为视觉伺服（Visual Servoing）和机器人抓取操作的小型演示。</p>
-<hr>
-<h2 id="系统组成">系统组成</h2>
-<table>
-  <thead>
-      <tr>
-          <th>组件</th>
-          <th>描述</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>机械臂 …</strong></td></tr></tbody></table></div></p>
+                            <p>概述 谁偷了我的笔？ 我的笔刚才还在这里，但是现在不见了。周围没有人 —— 只有这个机械臂。不可能是它拿走的……吧？
+本项目展示了一个视觉引导机器人抓取系统，使用 RealSense 深度相机检测笔，通过相机-机器人标定计算其位置，并控制 Interbotix PX100 机械臂实时拾取 —— 全部自动完成。
+项目集成了 RGB-D 感知、坐标变换和运动控制，作为视觉伺服（Visual Servoing）和机器人抓取操作的小型演示。
+系统组成 组件 描述 机械臂 Interbotix PX100，5 自由度，通过 ROS Python API 控制 相机 Intel RealSense，提供同 …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
@@ -448,88 +449,29 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
         
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/intuitive/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Intuitive Surgical（直觉外科）实习：机器人手术器械热性能实验研究">Intuitive Surgical（直觉外科）实 …</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p><div class="lang-zh">
-<h2 id="概述">概述</h2>
-<p>在 <strong>Intuitive Surgical</strong> 的实习期间，我参与了一项使用<strong>达芬奇手术系统</strong>进行的<strong>超声刀冷却性能实验研究</strong>。
-目标是开发一套可重复、数据驱动的框架，评估超声刀在激活后的散热表现。</p>
-<p>我负责设计和自动化<strong>机器人辅助测试流程</strong>，集成<strong>热成像数据采集</strong>和<strong>曲线拟合模型</strong>来分析手术器械的冷却特性。
-本项目综合运用了<strong>机器人学、热分析和实验数据建模</strong>技能，应用于医疗器械研发环境。</p>
-<hr>
-<h2 id="系统组成">系统组成</h2>
-<table>
-  <thead>
-      <tr>
-          <th>组件</th>
-          <th>描述</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>机器人系统</strong></td>
-          <td>达芬奇手术系统，编程执行精确运动序列 …</td></tr></tbody></table></div></p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Aug 12, 2025</span>
-                        <a href="/intuitive/" class="float-end btn btn-outline-info btn-sm">阅读</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/fer_domino/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="基于视觉引导的 Franka 机械臂多米诺骨牌摆放">基于视觉引导的 Franka 机械臂多米诺骨牌摆放</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p><div class="lang-zh">
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/fer_domino/squigle_domino.mp4" type="video/mp4">
-</video>
-<hr>
-<h2 id="概述">概述</h2>
-<p>本项目实现了一个使用 <strong>Franka Emika Panda 机械臂</strong>的<strong>视觉引导多米诺骨牌操作系统</strong>。
-机器人检测桌面上的多米诺骨牌，通过 RGB-D 视觉估计其位姿，自主将骨牌重新排列为预设几何图案，最后推倒它们。</p>
-<p>与纯运动学演示不同，本系统应对<strong>真实世界的不确定性</strong>，包括：</p>
-<ul>
-<li>桌面高度变化</li>
-<li>视觉标定误差</li>
-<li>小物体尺寸导致的抓取约束</li>
-</ul>
-<p>为应对这些挑战，系统集成了<strong>相机-机器人外参标定</strong>、<strong>分阶段操作策略</strong>和<strong>力控放置</strong>，构建了一个鲁棒且可重复的操作流水线。</p>
-<hr>
-<h2 id="系统组成">系统组成</h2>
-<table>
-  <thead>
-      <tr>
-          <th>组件</th>
-          <th>描述 …</th></tr></thead></table></div></p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Mar 18, 2025</span>
-                        <a href="/fer_domino/" class="float-end btn btn-outline-info btn-sm">阅读</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
         <div class="row justify-content-center">
             <div class="col-auto m-3">
                 
+    <ul class="pagination pagination-default">
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="/tags/robotics/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/tags/robotics/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/tags/robotics/page/2/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
             </div>
         </div>
     </div>
@@ -591,7 +533,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="http://localhost:1313/" title="朱宸宇的作品集">
+                    <a href="https://Zhu-Chenyu.github.io/" title="朱宸宇的作品集">
                         <img alt="Footer logo" src="/IMG_6321.png"
                             height="40px" width="40px">
                     </a>
@@ -649,6 +591,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+<script src="/js/analytics.js" defer data-endpoint="https://chenyu-analytics.onrender.com/api/analytics"></script>
 
 
 

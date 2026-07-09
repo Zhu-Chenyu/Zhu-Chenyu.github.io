@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<head><meta charset="UTF-8">
+<meta name="page-title-zh" content="Motion Planning | 朱宸宇的作品集">
+<meta name="page-title-en" content="Motion Planning | Chenyu Zhu">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -28,17 +30,14 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/tags/motion-planning/">
-  <meta property="og:site_name" content="朱宸宇的作品集">
-  <meta property="og:title" content="Motion Planning">
-  <meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="Motion Planning" />
+<meta property="og:description" content="美国西北大学 机器人学硕士 26&#39;" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://Zhu-Chenyu.github.io/tags/motion-planning/" /><meta property="og:site_name" content="朱宸宇" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Motion Planning">
-  <meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Motion Planning"/>
+<meta name="twitter:description" content="美国西北大学 机器人学硕士 26&#39;"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -164,6 +163,10 @@ function setLanguage(lang) {
   }
   localStorage.setItem('pref-lang', lang);
   filterToc(lang);
+  var titleMeta = document.querySelector('meta[name="page-title-' + lang + '"]');
+  if (titleMeta) {
+    document.title = titleMeta.getAttribute('content');
+  }
 }
 
 function filterToc(lang) {
@@ -380,28 +383,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h5 class="card-title bg-transparent" title="基于视觉引导的 Franka 机械臂多米诺骨牌摆放">基于视觉引导的 Franka 机械臂多米诺骨牌摆放</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p><div class="lang-zh">
-<video autoplay loop muted playsinline style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;">
-  <source src="/images/projects/fer_domino/squigle_domino.mp4" type="video/mp4">
-</video>
-<hr>
-<h2 id="概述">概述</h2>
-<p>本项目实现了一个使用 <strong>Franka Emika Panda 机械臂</strong>的<strong>视觉引导多米诺骨牌操作系统</strong>。
-机器人检测桌面上的多米诺骨牌，通过 RGB-D 视觉估计其位姿，自主将骨牌重新排列为预设几何图案，最后推倒它们。</p>
-<p>与纯运动学演示不同，本系统应对<strong>真实世界的不确定性</strong>，包括：</p>
-<ul>
-<li>桌面高度变化</li>
-<li>视觉标定误差</li>
-<li>小物体尺寸导致的抓取约束</li>
-</ul>
-<p>为应对这些挑战，系统集成了<strong>相机-机器人外参标定</strong>、<strong>分阶段操作策略</strong>和<strong>力控放置</strong>，构建了一个鲁棒且可重复的操作流水线。</p>
-<hr>
-<h2 id="系统组成">系统组成</h2>
-<table>
-  <thead>
-      <tr>
-          <th>组件</th>
-          <th>描述 …</th></tr></thead></table></div></p>
+                            <p>概述 本项目实现了一个使用 Franka Emika Panda 机械臂的视觉引导多米诺骨牌操作系统。 机器人检测桌面上的多米诺骨牌，通过 RGB-D 视觉估计其位姿，自主将骨牌重新排列为预设几何图案，最后推倒它们。
+与纯运动学演示不同，本系统应对真实世界的不确定性，包括：
+桌面高度变化 视觉标定误差 小物体尺寸导致的抓取约束 为应对这些挑战，系统集成了相机-机器人外参标定、分阶段操作策略和力控放置，构建了一个鲁棒且可重复的操作流水线。
+系统组成 组件 描述 机器人 Franka Emika Panda（7 自由度力矩控制机械臂） 相机 Intel RealSense RGB-D 深度相机（固 …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
@@ -476,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="http://localhost:1313/" title="朱宸宇的作品集">
+                    <a href="https://Zhu-Chenyu.github.io/" title="朱宸宇的作品集">
                         <img alt="Footer logo" src="/IMG_6321.png"
                             height="40px" width="40px">
                     </a>
@@ -534,6 +519,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+<script src="/js/analytics.js" defer data-endpoint="https://chenyu-analytics.onrender.com/api/analytics"></script>
 
 
 
