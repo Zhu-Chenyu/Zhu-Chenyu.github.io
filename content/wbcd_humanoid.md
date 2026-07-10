@@ -50,6 +50,10 @@ links:
 
 整个系统由两个层次构成：**末端执行器层**（怎么抓）与**系统层**（怎么操控）。
 
+<img src="/images/projects/wbcd_humanoid/final_robot.jpeg" style="width:65%; height:auto; border-radius:12px; display:block; margin: 1rem auto;" alt="Unitree G1 系统全貌：双夹爪、主动云台与腿部追踪器">
+
+上图展示了完整系统：左手裸 Dex1-1 夹爪、右手 TPU 手套夹爪、头顶 ZED Mini 相机云台，以及腿部运动追踪器。
+
 | 模块 | 技术方案 |
 |------|---------|
 | **机器人本体** | Unitree G1 人形机器人 |
@@ -187,8 +191,6 @@ links:
 
 这原本可能是灾难性的——但团队沉着重启，让机器人重新站立，随后继续完成了本次运行。最终成绩：**8 次成功转移**，比第一次提升 33%。
 
-<img src="/images/projects/wbcd_humanoid/final_robot.jpeg" style="width:65%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="G1 机器人与货架拣选现场">
-
 第二次运行结束后的现场：G1 在地板上，运输推车中装满了成功转移的物品——薯片、保鲜膜、网球、卫生纸、魔方等。货架仍有剩余物品，但 10 分钟的时钟已到。
 
 <img src="/images/projects/wbcd_humanoid/final_result_secondrun.jpg" style="width:65%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="第二次运行结束后的现场">
@@ -230,6 +232,10 @@ Scoring was unforgiving: only a completed pick-carry-place cycle counted, partia
 ## System Overview
 
 The system operates at two layers: the **end-effector layer** (how to grip) and the **system layer** (how to operate).
+
+<img src="/images/projects/wbcd_humanoid/final_robot.jpeg" style="width:65%; height:auto; border-radius:12px; display:block; margin: 1rem auto;" alt="Unitree G1 full system: dual grippers, active head, and leg trackers">
+
+The photo above shows the complete system: bare Dex1-1 gripper on the left hand, TPU-glove gripper on the right, ZED Mini camera on the custom active head, and leg motion trackers worn by the operator.
 
 | Module | Solution |
 |--------|---------|
@@ -365,8 +371,6 @@ On competition day, the strategy was reliability first. The operator (Jyothi) ha
 Run 2 was about pushing past 6. The operator had built familiarity with the robot's response and set a faster pace. Midway through, however, the G1 lost balance during a deep crouch approaching the bottom shelf and fell to the floor.
 
 What could have ended the run didn't. The team recovered — got the robot back on its feet — and kept going. Final count: **8 successful transfers**, a 33% improvement over Run 1.
-
-<img src="/images/projects/wbcd_humanoid/final_robot.jpeg" style="width:65%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="G1 at the shelf during competition">
 
 After Run 2: the G1 on the floor, the transport cart in the foreground filled with successfully transferred items — chips, cling wrap, tennis ball, toilet paper, speed cube and more. The shelf still has items remaining, but the 10-minute clock had run out.
 
