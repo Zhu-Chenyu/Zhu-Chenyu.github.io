@@ -24,7 +24,7 @@ links:
 
 <div class="lang-zh">
 
-<img src="/images/projects/wbcd_humanoid/final_robot.jpeg" style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="Unitree G1 非对称双夹爪系统">
+<img src="/images/projects/wbcd_humanoid/main_image.jpg" style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="NU Roboticists 团队与 Unitree G1">
 
 ---
 
@@ -170,12 +170,28 @@ links:
 
 ## 比赛结果
 
+两次运行均申报为遥操作（×2 倍率）。
+
 | | 第一次运行 | 第二次运行 |
 |---|---|---|
 | 练习（平均） | ~6 次 | ~6 次 |
 | 正式比赛 | 6 次 | 8 次 |
 
-两次运行均申报为遥操作（×2 倍率）。第二次运行成绩提升来自操作员熟练度，而非硬件变更。
+### 第一次运行
+
+比赛当天，团队以稳健为第一优先。操作员（Jyothi）已在练习中完成约六次转移，策略是专攻中层和底层货架——这两层各得 +10 分，而顶层仅 +8 分。第一次运行顺利完成 6 次转移，系统表现如预期，夹爪零故障。
+
+### 第二次运行
+
+第二次运行的目标是突破 6 次。操作员对机器人的响应已相当熟悉，节奏明显加快。然而运行中途，G1 在一次靠近底层货架的蹲姿动作中失去平衡，倒在了地板上。
+
+这原本可能是灾难性的——但团队沉着重启，让机器人重新站立，随后继续完成了本次运行。最终成绩：**8 次成功转移**，比第一次提升 33%。
+
+<img src="/images/projects/wbcd_humanoid/final_robot.jpeg" style="width:65%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="G1 机器人与货架拣选现场">
+
+第二次运行结束后的现场：G1 在地板上，运输推车中装满了成功转移的物品——薯片、保鲜膜、网球、卫生纸、魔方等。货架仍有剩余物品，但 10 分钟的时钟已到。
+
+<img src="/images/projects/wbcd_humanoid/final_result_secondrun.jpg" style="width:65%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="第二次运行结束后的现场">
 
 **全程夹爪零过力矩故障，所有物品类别均成功拣选，包括令刚性手指折断的满罐可乐。**
 
@@ -189,7 +205,7 @@ links:
 
 <div class="lang-en">
 
-<img src="/images/projects/wbcd_humanoid/final_robot.jpeg" style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="Unitree G1 Asymmetric Dual-Gripper System">
+<img src="/images/projects/wbcd_humanoid/main_image.jpg" style="width:70%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="Team NU Roboticists with Unitree G1">
 
 ---
 
@@ -333,12 +349,28 @@ The solution was implemented in the **gripper motor server**, running at a 2 ms 
 
 ## Results
 
+Both runs were declared as remote teleoperation (×2 multiplier).
+
 | | Run 1 | Run 2 |
 |--|-------|-------|
 | Practice (average) | ~6 | ~6 |
 | Competition | 6 | 8 |
 
-Both runs were declared as remote teleoperation (×2 multiplier). The improvement in Run 2 came from operator familiarity, not hardware changes.
+### Run 1
+
+On competition day, the strategy was reliability first. The operator (Jyothi) had averaged about six transfers in practice, so the plan was to focus on the middle and bottom shelves — each worth +10 points versus +8 for the top. Run 1 completed 6 transfers cleanly, the system performed as expected, and the gripper produced zero faults.
+
+### Run 2
+
+Run 2 was about pushing past 6. The operator had built familiarity with the robot's response and set a faster pace. Midway through, however, the G1 lost balance during a deep crouch approaching the bottom shelf and fell to the floor.
+
+What could have ended the run didn't. The team recovered — got the robot back on its feet — and kept going. Final count: **8 successful transfers**, a 33% improvement over Run 1.
+
+<img src="/images/projects/wbcd_humanoid/final_robot.jpeg" style="width:65%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="G1 at the shelf during competition">
+
+After Run 2: the G1 on the floor, the transport cart in the foreground filled with successfully transferred items — chips, cling wrap, tennis ball, toilet paper, speed cube and more. The shelf still has items remaining, but the 10-minute clock had run out.
+
+<img src="/images/projects/wbcd_humanoid/final_result_secondrun.jpg" style="width:65%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="End of Run 2 — cart full, robot down">
 
 **Zero over-torque faults across all runs. Every object class picked successfully, including the full soda can that had destroyed the rigid PLA finger.**
 
