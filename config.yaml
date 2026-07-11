@@ -297,10 +297,10 @@ params:
     title_en: "Featured Projects"
     items:
 
-    - title: 双臂人形机器人货架拣选 · WBCD 2026 季军 · 最佳创意末端执行器奖
-      title_en: "Bimanual Humanoid Shelf-Picking · WBCD 2026 2nd Place · Best Creative End-Effector Award"
-      content: 为 Unitree G1 人形机器人设计非对称双夹爪与全身遥操作栈，融合 SONIC 全身控制、TWIST2 主动云台与力矩感知夹爪保持模式，荣获 WBCD 2026 竞赛第二名及最佳创意末端执行器奖。
-      content_en: "Asymmetric dual-gripper and whole-body teleoperation system for the Unitree G1 humanoid, integrating SONIC whole-body control, TWIST2-inspired active head, and a torque-aware hold gripper server. Achieved 2nd place overall and Best Creative End-Effector Design Award at WBCD 2026."
+    - title: 双臂人形机器人货架拣选 · WBCD 2026 美国赛区亚军 · 最佳创意末端执行器奖
+      title_en: "Bimanual Humanoid Shelf-Picking · WBCD 2026 US Region 2nd Place · Best Creative End-Effector Award"
+      content: 为 Unitree G1 人形机器人设计非对称双夹爪与全身遥操作栈，融合 SONIC 全身控制、TWIST2 主动云台与力矩感知夹爪保持模式，荣获 WBCD 2026 美国赛区亚军及最佳创意末端执行器设计奖。
+      content_en: "Asymmetric dual-gripper and whole-body teleoperation system for the Unitree G1 humanoid, integrating SONIC whole-body control, TWIST2-inspired active head, and a torque-aware hold gripper server. Achieved 2nd place in the US region and Best Creative End-Effector Design Award at WBCD 2026."
       image: /images/projects/wbcd_humanoid/main_image.jpg
       featured:
         name: 查看详情
