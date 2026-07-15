@@ -199,9 +199,17 @@ links:
 
 ---
 
+## 奖项
+
+除美国赛区亚军外，本项目的非对称双夹爪设计还获得了由 IEEE Robotics and Automation Society 于 ICRA 2026 颁发的 **Best Creative End-Effector Design Award**。对我们而言，这个奖项最有意义之处在于它认可的正是那条最曲折的路线——从加宽手指、断裂的 PLA 延长指，到最终"套手套而非换手指"的思路转变。一个不起眼却决定成败的细节（用圆柱定位特征替代精确负形来固定手套），恰恰是让整套方案真正可用的关键。
+
+<img src="/images/projects/wbcd_humanoid/award.jpg" style="width:55%; height:auto; border-radius:12px; display:block; margin: 1rem auto;" alt="ICRA 2026 WBCD 最佳创意末端执行器设计奖证书">
+
+---
+
 ## 致谢
 
-本项目由 **Jyothi Swaroop Kasina、Chenyu Zhu、Andnet DeBoer、Md Saif Ahmad** 共同完成，均来自西北大学。感谢 WBCD 2026 组委会提供的精彩赛事平台。
+本项目由 **Jyothi Swaroop Kasina、Chenyu Zhu、Andnet DeBoer、Md Saif Ahmad** 共同完成，均来自西北大学，四位作者贡献均等。感谢 WBCD 2026 组委会提供的精彩赛事平台。
 
 </div>
 
@@ -377,6 +385,14 @@ After Run 2: the G1 on the floor, the transport cart in the foreground filled wi
 <img src="/images/projects/wbcd_humanoid/final_result_secondrun.jpg" style="width:65%; height:auto; border-radius:12px; display:block; margin: 0 auto;" alt="End of Run 2 — cart full, robot down">
 
 **Zero over-torque faults across all runs. Every object class picked successfully, including the full soda can that had destroyed the rigid PLA finger.**
+
+---
+
+## Award
+
+Beyond 2nd place in the US region, the asymmetric dual-gripper design received the **Best Creative End-Effector Design Award**, presented by the IEEE Robotics and Automation Society at ICRA 2026. What made this recognition meaningful to us is that it honored the messiest part of the path — from the widened finger, through the PLA extension that snapped, to the eventual shift in thinking from *replacing the finger* to *sleeving a glove over it*. An unglamorous but decisive detail (retaining the glove with cylindrical locators instead of an exact negative) was what turned the whole scheme into something that actually worked.
+
+<img src="/images/projects/wbcd_humanoid/award.jpg" style="width:55%; height:auto; border-radius:12px; display:block; margin: 1rem auto;" alt="ICRA 2026 WBCD Best Creative End-Effector Design Award certificate">
 
 ---
 
