@@ -316,9 +316,6 @@ params:
         - icon: fas fa-trophy
           name: "Competition"
           url: https://wbcdcompetition.github.io
-        - icon: fas fa-file-alt
-          name: "Paper"
-          url: https://wbcdcompetition.github.io
 
     - title: LeHome 挑战：基于 VLA 的双臂衣物折叠
       title_en: "LeHome Challenge: Bimanual Garment Folding with VLA Policies"
