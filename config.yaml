@@ -1,6 +1,10 @@
 baseURL: "https://Zhu-Chenyu.github.io/"
 languageCode: "zh-cn"
-title: "朱宸宇的作品集"
+# Site title feeds the browser <title> and the Open Graph / Twitter cards that
+# link-preview crawlers (WeChat, Slack, iMessage, X) read. Kept in English so a
+# shared link previews in English by default; the Chinese browser-tab title is
+# supplied via params.title_zh and swapped client-side by the language toggle.
+title: "Chenyu Zhu | Portfolio"
 theme: hugo-profile
 
 outputs:
@@ -87,8 +91,12 @@ Menus:
 params:
   title: "朱宸宇"
   title_en: "Chenyu Zhu"
-  description: 美国西北大学 机器人学硕士 26'
+  # Chinese site title for the browser tab (used by the language toggle; the
+  # canonical site.Title above stays English for link previews).
+  title_zh: "朱宸宇的作品集"
+  description: "MS in Robotics, Northwestern University '26"
   description_en: "MS in Robotics, Northwestern University '26"
+  description_zh: 美国西北大学 机器人学硕士 26'
   # staticPath: ""  # The path to serve the static files from
   favicon: "/IMG_6321.png"
   analytics:

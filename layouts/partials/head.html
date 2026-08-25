@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<meta name="page-title-zh" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+<meta name="page-title-zh" content="{{ $siteTitleZh := .Site.Params.title_zh | default .Site.Title }}{{ if .IsHome }}{{ $siteTitleZh }}{{ else }}{{ .Title }} | {{ $siteTitleZh }}{{ end }}">
 <meta name="page-title-en" content="{{ if .IsHome }}{{ .Site.Params.title_en | default .Site.Title }}{{ else }}{{ .Params.title_en | default .Title }} | {{ .Site.Params.title_en | default .Site.Title }}{{ end }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
