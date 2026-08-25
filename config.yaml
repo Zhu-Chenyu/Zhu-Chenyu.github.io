@@ -317,25 +317,6 @@ params:
           name: "Competition"
           url: https://wbcdcompetition.github.io
 
-    - title: LeHome 挑战：基于 VLA 的双臂衣物折叠
-      title_en: "LeHome Challenge: Bimanual Garment Folding with VLA Policies"
-      content: 比较 SmolVLA、xVLA、Lingbot、ACT 与 Diffusion Policy 的衣物折叠策略，最终 SmolVLA 在自行评估中取得最高成功率。
-      content_en: "A bimanual garment-folding project comparing SmolVLA, xVLA, Lingbot, ACT, and Diffusion Policy, with SmolVLA achieving the best internal success rate."
-      image: /images/projects/fold_clothes/smolvla_shirt_5x.mp4
-      featured:
-        name: 查看详情
-        name_en: "View Details"
-        link: /fold_clothes
-      badges:
-        - "VLA"
-        - "Imitation Learning"
-        - "Bimanual Manipulation"
-        - "Deformable Objects"
-      links:
-        - icon: fa-regular fa-face-smile
-          name: "Hugging Face"
-          url: https://huggingface.co/LaundryNauts
-
     - title: 力顺从交互四旋翼无人机（LiDAR 避障功能）
       title_en: "Force-Compliant Quadrotor with LiDAR Obstacle Avoidance"
       content: 一架可沿施加外力方向移动的四旋翼无人机。通过卡尔曼滤波器仅从位置观测中估计外力，基于 LiDAR 的人工势场在保持预期运动方向的同时防止碰撞。
@@ -386,6 +367,25 @@ params:
     title: "其他项目"
     title_en: "Other Projects"
     items:
+
+      - title: LeHome 挑战：基于 VLA 的双臂衣物折叠
+        title_en: "LeHome Challenge: Bimanual Garment Folding with VLA Policies"
+        content: 比较 SmolVLA、xVLA、Lingbot、ACT 与 Diffusion Policy 的衣物折叠策略，最终 SmolVLA 在自行评估中取得最高成功率。
+        content_en: "A bimanual garment-folding project comparing SmolVLA, xVLA, Lingbot, ACT, and Diffusion Policy, with SmolVLA achieving the best internal success rate."
+        image: /images/projects/fold_clothes/smolvla_shirt_5x.mp4
+        featured:
+          name: 查看详情
+          name_en: "View Details"
+          link: /fold_clothes
+        badges:
+          - "VLA"
+          - "Imitation Learning"
+          - "Bimanual Manipulation"
+          - "Deformable Objects"
+        links:
+          - icon: fa-regular fa-face-smile
+            name: "Hugging Face"
+            url: https://huggingface.co/LaundryNauts
 
       - title: EKF SLAM：TurtleBot3 实体机器人实现
         title_en: "EKF SLAM on a Real TurtleBot3"
