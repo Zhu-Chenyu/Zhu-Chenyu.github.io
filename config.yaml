@@ -413,7 +413,7 @@ params:
         links:
           - icon: fab fa-github
             name: "Github"
-            url: https://github.com/Zhu-Chenyu/slam
+            url: https://github.com/Zhu-Chenyu/EKF-SLAM-from-scratch
 
       - title: 谁偷了我的笔？—— 视觉引导机械臂抓取
         title_en: "Who Stole My Pen? -- Vision-Guided Robot Pen Grasping"
