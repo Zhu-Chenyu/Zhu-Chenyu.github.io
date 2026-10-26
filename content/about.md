@@ -25,7 +25,7 @@ socialShare: false
         <p class="contact-intro">
             可通过邮箱 <a href="mailto:zhuc1915@gmail.com">zhuc1915@gmail.com</a> 联系我，
             也可在 <a href="https://www.linkedin.com/in/chenyu-zhu/" target="_blank" rel="noopener">LinkedIn</a> 上与我交流，
-            或查看我的<a href="/Chenyu_Zhu_resume.pdf" target="_blank" rel="noopener">简历</a>。
+            或查看我的<a href="/ChenyuZhu_resume_r.pdf" target="_blank" rel="noopener">简历</a>。
         </p>
     <img src="/images/misc/working_photo.jpg"  alt="drawing" width="800"/>
     </div>
@@ -74,7 +74,7 @@ socialShare: false
         <p class="contact-intro">
             Reach me at <a href="mailto:zhuc1915@gmail.com">zhuc1915@gmail.com</a>,
             connect on <a href="https://www.linkedin.com/in/chenyu-zhu/" target="_blank" rel="noopener">LinkedIn</a>,
-            or check out my <a href="/Chenyu_Zhu_resume.pdf" target="_blank" rel="noopener">resume</a>.
+            or check out my <a href="/ChenyuZhu_resume_r.pdf" target="_blank" rel="noopener">resume</a>.
         </p>
     <img src="/images/misc/working_photo.jpg"  alt="drawing" width="800"/>
     </div>
