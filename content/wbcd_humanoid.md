@@ -231,7 +231,7 @@ Each shelf level demanded a different whole-body posture:
 Scoring was unforgiving: only a completed pick-carry-place cycle counted, partial credit was zero, dropping an item during transfer cost −3, and each run's score was multiplied by the declared autonomy level (×2 for remote teleoperation, ×4 for full autonomy).
 
 **Team NU Roboticists (Northwestern University) achieved:**
-- 🥈 **2nd place overall**
+- 🥈 **2nd place, US region**
 - 🏆 **Best Creative End-Effector Design Award**
 - **14 successful transfers** across two runs, zero gripper faults
 

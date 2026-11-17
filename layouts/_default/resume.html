@@ -1,0 +1,205 @@
+{{/*
+  Resume page. The PDF is drawn straight into the page with PDF.js (vendored in
+  static/js/pdfjs) instead of an <iframe>, so the page itself is the only thing
+  that scrolls — no nested scroll box — and it also works on phones, where
+  browsers often refuse to show a PDF inside an iframe.
+
+  Front matter:
+    pdf:  path of the PDF under static/ (e.g. /ChenyuZhu_resume_r.pdf)
+    date: when the PDF was last updated — shown as "Last updated", so bump it
+          whenever the PDF is replaced.
+*/}}
+
+{{ define "head" }}
+<meta name="description" content="{{ .Params.description }}">
+<link rel="stylesheet" href="{{.Site.Params.staticPath}}/css/single.css">
+<script defer src="{{.Site.Params.staticPath}}/fontawesome-6/all-6.4.2.js"></script>
+<style>
+  #resume .resume-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 16px;
+    color: var(--text-secondary-color);
+    font-size: 0.95rem;
+  }
+  #resume .resume-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  #resume .resume-download:hover {
+    border-color: var(--text-secondary-color);
+  }
+  #resume-viewer {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  #resume-viewer .resume-page {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+  #resume-viewer .resume-page + .resume-page {
+    margin-top: 24px;
+  }
+  #resume-viewer canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  #resume-viewer .resume-link {
+    position: absolute;
+    display: block;
+  }
+  #resume-viewer .resume-status {
+    padding: 48px 16px;
+    text-align: center;
+    color: var(--text-secondary-color);
+  }
+</style>
+{{ end }}
+
+{{ define "title" }}
+{{.Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+{{ $pdf := .Params.pdf | default "/ChenyuZhu_resume_r.pdf" }}
+<section id="single">
+  <div id="resume" class="container">
+    <div class="title mb-4">
+      <h1 class="text-center mb-3"><span class="lang-zh">{{ .Title }}</span><span class="lang-en">{{ .Params.title_en | default .Title }}</span></h1>
+      <div class="resume-meta">
+        <span>
+          <span class="lang-zh">最后更新：{{ .Date.Format "2006 年 1 月 2 日" }}</span><span class="lang-en">Last updated: {{ .Date.Format "Jan 2, 2006" }}</span>
+        </span>
+        <a class="resume-download" href="{{ $pdf }}" download>
+          <i class="fas fa-download"></i>
+          <span class="lang-zh">下载 PDF</span><span class="lang-en">Download PDF</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="resume-viewer" data-src="{{ $pdf }}">
+      <div class="resume-status" id="resume-status">
+        <span class="lang-zh">简历加载中…</span><span class="lang-en">Loading resume…</span>
+      </div>
+    </div>
+    <noscript>
+      <p class="text-center"><a href="{{ $pdf }}">Open the resume (PDF)</a></p>
+    </noscript>
+  </div>
+</section>
+
+<script src="{{.Site.Params.staticPath}}/js/pdfjs/pdf.min.js"></script>
+<script>
+(function () {
+  var viewer = document.getElementById('resume-viewer');
+  var src = viewer.getAttribute('data-src');
+
+  function showFallback() {
+    viewer.innerHTML =
+      '<div class="resume-status">' +
+      '<span class="lang-zh">无法在页面中显示简历，请<a href="' + src + '" target="_blank" rel="noopener">直接打开 PDF</a>。</span>' +
+      '<span class="lang-en">The resume could not be displayed here. <a href="' + src + '" target="_blank" rel="noopener">Open the PDF</a> instead.</span>' +
+      '</div>';
+  }
+
+  if (!window.pdfjsLib) { showFallback(); return; }
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '{{.Site.Params.staticPath}}/js/pdfjs/pdf.worker.min.js';
+
+  var pdfDoc = null;
+  var renderedWidth = 0;
+
+  // Pixels per CSS pixel to draw at. Narrow screens get extra so the text
+  // stays sharp when someone pinch-zooms; capped to keep canvases reasonable.
+  function outputScale(cssWidth) {
+    var dpr = window.devicePixelRatio || 1;
+    var scale = cssWidth < 600 ? dpr * 2 : dpr;
+    return Math.min(scale, 3000 / cssWidth);
+  }
+
+  function renderPage(pageNum, cssWidth) {
+    return pdfDoc.getPage(pageNum).then(function (page) {
+      var base = page.getViewport({ scale: 1 });
+      var ratio = outputScale(cssWidth);
+      var viewport = page.getViewport({ scale: (cssWidth / base.width) * ratio });
+
+      var wrapper = document.createElement('div');
+      wrapper.className = 'resume-page';
+      wrapper.style.aspectRatio = base.width + ' / ' + base.height;
+
+      var canvas = document.createElement('canvas');
+      canvas.width = Math.floor(viewport.width);
+      canvas.height = Math.floor(viewport.height);
+      canvas.setAttribute('role', 'img');
+      canvas.setAttribute('aria-label', 'Resume page ' + pageNum);
+      wrapper.appendChild(canvas);
+
+      // Keep the PDF's links (email, LinkedIn, GitHub, website) clickable by
+      // laying transparent anchors over them, positioned in % of the page.
+      var links = page.getAnnotations().then(function (annots) {
+        annots.forEach(function (a) {
+          if (a.subtype !== 'Link' || !a.url) return;
+          var r = base.convertToViewportRectangle(a.rect);
+          var x = Math.min(r[0], r[2]), y = Math.min(r[1], r[3]);
+          var w = Math.abs(r[2] - r[0]), h = Math.abs(r[3] - r[1]);
+          var link = document.createElement('a');
+          link.className = 'resume-link';
+          link.href = a.url;
+          link.title = a.url.replace(/^(mailto|tel):/, '');
+          if (/^https?:/.test(a.url)) { link.target = '_blank'; link.rel = 'noopener'; }
+          link.style.left = (x / base.width * 100) + '%';
+          link.style.top = (y / base.height * 100) + '%';
+          link.style.width = (w / base.width * 100) + '%';
+          link.style.height = (h / base.height * 100) + '%';
+          wrapper.appendChild(link);
+        });
+      }).catch(function () {});
+
+      var draw = page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport }).promise;
+      return Promise.all([draw, links]).then(function () { return wrapper; });
+    });
+  }
+
+  function render() {
+    var cssWidth = viewer.clientWidth;
+    if (!cssWidth) return;
+    renderedWidth = cssWidth;
+    var jobs = [];
+    for (var i = 1; i <= pdfDoc.numPages; i++) jobs.push(renderPage(i, cssWidth));
+    // Swap in the new pages only once they are fully drawn, so a re-render on
+    // resize never flashes blank.
+    Promise.all(jobs).then(function (pages) {
+      viewer.innerHTML = '';
+      pages.forEach(function (p) { viewer.appendChild(p); });
+    }).catch(function () { if (!viewer.querySelector('.resume-page')) showFallback(); });
+  }
+
+  pdfjsLib.getDocument(src).promise.then(function (doc) {
+    pdfDoc = doc;
+    render();
+    // Pages stretch with CSS between renders; only redraw once the width has
+    // grown enough that the canvas would look soft.
+    var timer;
+    window.addEventListener('resize', function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        if (viewer.clientWidth > renderedWidth * 1.15) render();
+      }, 250);
+    });
+  }).catch(showFallback);
+})();
+</script>
+{{ end }}

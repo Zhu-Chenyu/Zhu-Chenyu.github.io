@@ -1,7 +1,7 @@
 ---
 title: "碰撞感知动力学仿真：基于 SymPy 的 Box-Jack 系统"
 title_en: "Impact-Aware Dynamics Simulation: SymPy-Based Box-Jack System"
-date: 2025-03-20
+date: 2025-12-12
 draft: false
 author: "Chenyu Zhu"
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "EKF SLAM：TurtleBot3 实体机器人实现"
 title_en: "EKF SLAM on a Real TurtleBot3"
-date: 2025-03-15
+date: 2026-03-15
 draft: false
 author: "Chenyu Zhu"
 tags:
@@ -34,7 +34,7 @@ repoName: slam
 
 ## 概述
 
-本项目为西北大学 ME495《机器人感知、导航与机器学习》课程作业（2025年冬季学期），在真实 TurtleBot3 上实现了完整的 EKF SLAM 管线，包含路标检测、里程计与双机 ROS 2 通信架构。
+本项目为西北大学 ME495《机器人感知、导航与机器学习》课程作业（2026年冬季学期），在真实 TurtleBot3 上实现了完整的 EKF SLAM 管线，包含路标检测、里程计与双机 ROS 2 通信架构。
 
 **核心成果：**
 
@@ -206,7 +206,7 @@ The robot drives a circuit and returns to its starting position. The green robot
 
 ## Overview
 
-This project, built for Northwestern University's ME495 *Sensing, Navigation and Machine Learning for Robotics* (Winter 2025), implements a full EKF SLAM pipeline on a real TurtleBot3 — including landmark detection, odometry, and a two-machine ROS 2 architecture.
+This project, built for Northwestern University's ME495 *Sensing, Navigation and Machine Learning for Robotics* (Winter 2026), implements a full EKF SLAM pipeline on a real TurtleBot3 — including landmark detection, odometry, and a two-machine ROS 2 architecture.
 
 **Key Results:**
 

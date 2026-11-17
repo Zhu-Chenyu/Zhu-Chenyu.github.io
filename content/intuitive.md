@@ -1,7 +1,7 @@
 ---
 title: "Intuitive Surgical（直觉外科）实习：机器人手术器械热性能实验研究"
 title_en: "Intuitive Surgical Internship: Thermal Performance Study of Robotic Surgical Tools"
-date: 2025-08-12
+date: 2024-08-12
 draft: false
 author: "Chenyu Zhu"
 tags:

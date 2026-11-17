@@ -1,7 +1,7 @@
 ---
 title: "基于视觉引导的 Franka 机械臂多米诺骨牌摆放"
 title_en: "Vision-Guided Domino Placement with Franka Emika Robot"
-date: 2025-03-18
+date: 2025-12-12
 draft: false
 author: "Chenyu Zhu"
 tags:

@@ -1,15 +1,12 @@
 ---
 title: "我的简历"
 title_en: "Chenyu Zhu's Resume"
-date: 2025-03-27
+# Shown on the page as "Last updated" — bump this whenever the PDF is replaced.
+date: 2026-10-26
 draft: false
 author: "Chenyu Zhu"
-tags:
-image:
+layout: resume
+pdf: /ChenyuZhu_resume_r.pdf
 description: ""
-toc: true
-mathjax: true
 socialShare: false
 ---
-<iframe src="/ChenyuZhu_resume_r.pdf" width="100%" height="800px"></iframe>
-

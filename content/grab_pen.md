@@ -125,7 +125,7 @@ links:
 
 本项目作为**美国西北大学黑客马拉松**的一部分，在 **Matthew Elwin 教授**的指导和框架设计下开发完成。
 他的指导和课程资料为将计算机视觉、机器人标定和运动控制集成为一个完整系统奠定了基础。
-特别感谢**西北大学 2025 级机器人学硕士同学们**的协作与支持，极大地丰富了开发过程。
+特别感谢**西北大学 MSR 2026** 的同学们的协作与支持，极大地丰富了开发过程。
 
 </div>
 
@@ -231,6 +231,6 @@ To enable the robot to act on camera observations, a **transformation matrix** b
 
 This project was developed as part of the **Northwestern University Hackathon**, under the guidance and framework design of **Prof. Matthew Elwin**.
 His instruction and course materials laid the foundation for integrating computer vision, robot calibration, and motion control into a complete system.
-Special thanks to the **Northwestern MS in Robotics Class of 2025** for their collaboration and support, which greatly enriched the development process.
+Special thanks to the **Northwestern MSR 2026** cohort for their collaboration and support, which greatly enriched the development process.
 
 </div>
